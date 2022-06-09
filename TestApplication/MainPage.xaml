@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestApplication.MainPage">
+
+    <StackLayout x:Name="stackLayout">
+        <Frame BackgroundColor="#FFF" Padding="16" CornerRadius="0">
+            <Label Text="Приложение для тестирования" HorizontalTextAlignment="Center" TextColor="Black" FontSize="24"/>
+        </Frame>
+    </StackLayout>
+    
+    
+
+</ContentPage>
