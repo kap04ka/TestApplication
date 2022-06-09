@@ -4,9 +4,7 @@
              x:Class="TestApplication.MainPage">
 
     <StackLayout x:Name="stackLayout">
-        <Frame BackgroundColor="#FFF" Padding="16" CornerRadius="0">
-            <Label Text="Приложение для тестирования" HorizontalTextAlignment="Center" TextColor="Black" FontSize="24"/>
-        </Frame>
+        
     </StackLayout>
     
     
