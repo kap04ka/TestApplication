@@ -19,9 +19,9 @@ namespace TestApplication
         /// </summary>
         public int[] arrayAnswer;
 
-        public Client()
+        public Client(int countQuestion)
         {
-            arrayAnswer = new int[6];
+            arrayAnswer = new int[countQuestion];
         }
     }
 
@@ -33,7 +33,7 @@ namespace TestApplication
         {
             InitializeComponent();
             Title = "Европейский опросник качества жизнии";
-            client = new Client();
+            client = new Client(6);
         }
 
         private void button_CalculateResult(object sender, System.EventArgs e)

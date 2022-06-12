@@ -16,54 +16,54 @@
                 <Label Text="Подвижность" FontSize="Medium" Padding="10, 10, 0, 0" TextColor="Black"/>
                 <Picker x:Name="firstQuestion" Margin="10,0,10,10" FontSize="Medium">
                     <Picker.Items>
-                        <x:String>У меня не возникает никаких проблем с передвижением</x:String>
-                        <x:String>У меня есть некоторые затруднения при передвижении</x:String>
-                        <x:String>Я полностью прикован к постели</x:String>
+                        <x:String>У меня не возникает никаких проблем с передвижением.</x:String>
+                        <x:String>У меня есть некоторые затруднения при передвижении.</x:String>
+                        <x:String>Я полностью прикован к постели.</x:String>
                  </Picker.Items>
                 </Picker>
 
                 <Label Text="Самообслуживание" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
                 <Picker x:Name="secondQuestion" Margin="10,0,10,10" FontSize="Medium">
                     <Picker.Items>
-                        <x:String>У меня не возникает никаких проблем с самообслуживанием</x:String>
-                        <x:String>У меня есть некоторые проблемы с умыванием или одеванием</x:String>
-                        <x:String>Я совершенно не способен самостоятельно умываться или одеваться</x:String>
+                        <x:String>У меня не возникает никаких проблем с самообслуживанием.</x:String>
+                        <x:String>У меня есть некоторые проблемы с умыванием или одеванием.</x:String>
+                        <x:String>Я совершенно не способен самостоятельно умываться или одеваться.</x:String>
                     </Picker.Items>
                 </Picker>
 
                 <Label Text="Бытовая активность" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
                 <Picker x:Name="thirdQuestion" Margin="10,0,10,10" FontSize="Medium">
                     <Picker.Items>
-                        <x:String>У меня не возникает проблем с выполнением повседневных привычных обязанностей (работа, учеба, ведение домашнего хозяйства, досуг)</x:String>
-                        <x:String>У меня есть некоторые проблемы с выполнением повседневных привычных обязанностей</x:String>
-                        <x:String>Я совершенно не способен выполнять повседневные привычные	обязанности</x:String>
+                        <x:String>У меня не возникает проблем с выполнением повседневных привычных обязанностей (работа, учеба, ведение домашнего хозяйства, досуг).</x:String>
+                        <x:String>У меня есть некоторые проблемы с выполнением повседневных привычных обязанностей.</x:String>
+                        <x:String>Я совершенно не способен выполнять повседневные привычные	обязанности.</x:String>
                     </Picker.Items>
                 </Picker>
 
                 <Label Text="Боль/Дискомфорт" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
                 <Picker x:Name="fourthQuestion" Margin="10,0,10,10" FontSize="Medium">
                     <Picker.Items>
-                        <x:String>Я не испытываю болей или дискомфорта</x:String>
-                        <x:String>Я испытываю умеренные боли или дискомфорт</x:String>
-                        <x:String>Я испытываю очень сильные боли или дискомфорт</x:String>
+                        <x:String>Я не испытываю болей или дискомфорта.</x:String>
+                        <x:String>Я испытываю умеренные боли или дискомфорт.</x:String>
+                        <x:String>Я испытываю очень сильные боли или дискомфорт.</x:String>
                     </Picker.Items>
                 </Picker>
 
                 <Label Text="Тревога/Депрессия" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
                 <Picker x:Name="fifthQuestion" Margin="10,0,10,10" FontSize="Medium">
                     <Picker.Items>
-                        <x:String>Я не испытываю тревоги или депрессии</x:String>
-                        <x:String>Я испытываю умеренную тревогу или депрессию</x:String>
-                        <x:String>Я испытываю очень сильную тревогу или депрессию</x:String>
+                        <x:String>Я не испытываю тревоги или депрессии.</x:String>
+                        <x:String>Я испытываю умеренную тревогу или депрессию.</x:String>
+                        <x:String>Я испытываю очень сильную тревогу или депрессию.</x:String>
                     </Picker.Items>
                 </Picker>
 
                 <Label Text="По сравнению с общим уровнем моего здоровья за последние 12 месяцев мое нынешнее состояние здоровья" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
                 <Picker x:Name="sixthQuestion" Margin="10,0,10,10" FontSize="Medium">
                     <Picker.Items>
-                        <x:String>Лучше</x:String>
-                        <x:String>Примерно такое же</x:String>
-                        <x:String>Хуже</x:String>
+                        <x:String>Лучше.</x:String>
+                        <x:String>Примерно такое же.</x:String>
+                        <x:String>Хуже.</x:String>
                     </Picker.Items>
                 </Picker>
 

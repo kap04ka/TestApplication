@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestApplication.TestAnxietyAndDepression">
+
+    <!--Отступ сверху для iOS-->
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0"/>
+    </ContentPage.Padding>
+    
+    <ScrollView>
+        
+        <StackLayout>
+
+            <Label Text="Пожалуйста, выберите тот из ответов, который соответсвует вашему состоянию." HorizontalTextAlignment="Center" FontSize="Medium" FontAttributes="Bold" TextColor="Black" Padding="10, 10, 10, 0" />
+
+            <!--Тест на тревогу-->
+
+            <Frame BackgroundColor="#FFE5B4" Padding="24" CornerRadius="0">
+                <Label Text="Оценка тревожности" HorizontalTextAlignment="Center" FontSize="Title" FontAttributes="Bold" TextColor="Black"/>
+            </Frame>
+
+            <Label Text="Я испытываю напряжение, мне не по себе" FontSize="Medium" Padding="10, 10, 0, 0" TextColor="Black"/>
+            <Picker x:Name="firstQuestionAnxiety" Margin="10,0,10,10" FontSize="Medium">
+                <Picker.Items>
+                    <x:String>Совсем не испытываю.</x:String>
+                    <x:String>Время от времени, иногда.</x:String>
+                    <x:String>Часто.</x:String>
+                    <x:String>Все время.</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="Я испытываю страх, кажется, что что-то ужасное может вот-вот случиться" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Picker x:Name="secondQuestionAnxiety" Margin="10,0,10,10" FontSize="Medium">
+                <Picker.Items>
+                    <x:String>Совсем не испытываю.</x:String>
+                    <x:String>Иногда, но это меня не беспокоит.</x:String>
+                    <x:String>Да, это так, но страх не очень велик.</x:String>
+                    <x:String>Определенно это так, и страх очень велик.</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="Беспокойные мысли крутятся у меня в голове" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Picker x:Name="thirdQuestionAnxiety" Margin="10,0,10,10" FontSize="Medium">
+                <Picker.Items>
+                    <x:String>Только иногда.</x:String>
+                    <x:String>Время от времени и не так часто.</x:String>
+                    <x:String>Большую часть времени.</x:String>
+                    <x:String>Постоянно.</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="Я легко могу присесть и расслабиться" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Picker x:Name="fourthQuestionAnxiety" Margin="10,0,10,10" FontSize="Medium">
+                <Picker.Items>
+                    <x:String>Определенно, это так.</x:String>
+                    <x:String>Наверно, это так.</x:String>
+                    <x:String>Лишь изредка, это так.</x:String>
+                    <x:String>Совсем не могу.</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="Я испытываю внутреннее напряжение или дрожь" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Picker x:Name="fifthQuestionAnxiety" Margin="10,0,10,10" FontSize="Medium">
+                <Picker.Items>
+                    <x:String>Совсем не испытываю.</x:String>
+                    <x:String>Иногда.</x:String>
+                    <x:String>Часто.</x:String>
+                    <x:String>Очень часто.</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="Я испытываю неусидчивость, мне постоянно нужно двигаться" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Picker x:Name="sixthQuestionAnxiety" Margin="10,0,10,10" FontSize="Medium">
+                <Picker.Items>
+                    <x:String>Совсем не испытываю.</x:String>
+                    <x:String>Лишь в некоторой степени, это так.</x:String>
+                    <x:String>Наверно, это так.</x:String>
+                    <x:String>Определенно, это так.</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="У меня бывает внезапное чувство паники" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Picker x:Name="seventhQuestionAnxiety" Margin="10,0,10,10" FontSize="Medium">
+                <Picker.Items>
+                    <x:String>Совсем не бывает.</x:String>
+                    <x:String>Не так уж часто.</x:String>
+                    <x:String>Довольно часто.</x:String>
+                    <x:String>Очень часто.</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <!--Тест на депрессию-->
+
+            <Frame BackgroundColor="#FFE5B4" Padding="24" CornerRadius="0">
+                <Label Text="Оценка депрессии" HorizontalTextAlignment="Center" FontSize="Title" FontAttributes="Bold" TextColor="Black"/>
+            </Frame>
+
+            <Label Text="То, что приносило мне большое удовольствие, и сейчас вызывает у меня такое же чувство" FontSize="Medium" Padding="10, 10, 0, 0" TextColor="Black"/>
+            <Picker x:Name="firstQuestionDepression" Margin="10,0,10,10" FontSize="Medium">
+                <Picker.Items>
+                    <x:String>Определенно, это так.</x:String>
+                    <x:String>Наверное, это так.</x:String>
+                    <x:String>Лишь в очень малой степени это так.</x:String>
+                    <x:String>Это совсем не так.</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="Я способен рассмеяться и увидеть в том или ином событии смешное" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Picker x:Name="secondQuestionDepression" Margin="10,0,10,10" FontSize="Medium">
+                <Picker.Items>
+                    <x:String>Определенно, это так.</x:String>
+                    <x:String>Наверное, это так.</x:String>
+                    <x:String>Лишь в очень малой степени это так.</x:String>
+                    <x:String>Совсем не способен.</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="Я испытываю бодрость" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Picker x:Name="thirdQuestionDepression" Margin="10,0,10,10" FontSize="Medium">
+                <Picker.Items>
+                    <x:String>Поактически все время.</x:String>
+                    <x:String>Иногда.</x:String>
+                    <x:String>Очень редко.</x:String>
+                    <x:String>Совсем не испытываю.</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="Мне кажется, что я стал все делать очень медленно" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Picker x:Name="fourthQuestionDepression" Margin="10,0,10,10" FontSize="Medium">
+                <Picker.Items>
+                    <x:String>Совсем нет.</x:String>
+                    <x:String>Иногда.</x:String>
+                    <x:String>Часто.</x:String>
+                    <x:String>Практически все время.</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="Я не слежу за своей внешностью" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Picker x:Name="fifthQuestionDepression" Margin="10,0,10,10" FontSize="Medium">
+                <Picker.Items>
+                    <x:String>Я слежу за собой так же, как и раньше.</x:String>
+                    <x:String>Может быть, я стал меньше уделять этому времени.</x:String>
+                    <x:String>Я не уделяю этому времени столько, сколько нужно.</x:String>
+                    <x:String>Определенно, это так.</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="Я считаю, что мои дела (занятия, увлечения) могут принести мне чувство удовлетворения" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Picker x:Name="sixthQuestionDepression" Margin="10,0,10,10" FontSize="Medium">
+                <Picker.Items>
+                    <x:String>Точно так же, как и обычно.</x:String>
+                    <x:String>Да, но не в той степени как раньше.</x:String>
+                    <x:String>Значительно меньше, чем обычно.</x:String>
+                    <x:String>Совсем так не считаю.</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="Я могу получить удовольствие от хорошей книги, радио- или телепрограммы" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Picker x:Name="seventhQuestionDepression" Margin="10,0,10,10" FontSize="Medium">
+                <Picker.Items>
+                    <x:String>Часто.</x:String>
+                    <x:String>Иногда.</x:String>
+                    <x:String>Редко.</x:String>
+                    <x:String>Очень редко.</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <!--Окончание теста-->
+            <Button x:Name="buttonResultTest" Text="Получить результат" HorizontalOptions="End" Margin="0,15,10,20" FontSize="Medium" Clicked="button_CalculateResult" BackgroundColor="#FFE5B4" TextColor="Black"/>
+
+
+        </StackLayout>
+        
+    </ScrollView>
+
+</ContentPage>
