@@ -13,7 +13,7 @@
 
             <!--Иконка-->
             <Frame BackgroundColor="Orange" Padding="16" CornerRadius="0">
-                <Label Text="Форма заполнения пользователя" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="Title"/>
+                <Label Text="Форма регистрации пользователя" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="Title"/>
             </Frame>
 
             <!--Фамилия-->
