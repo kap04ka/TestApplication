@@ -30,6 +30,7 @@ namespace TestApplication
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TestLocus_control : ContentPage
     {
+        Task task;
         ClientKirill client;
 
         public TestLocus_control()
@@ -44,20 +45,23 @@ namespace TestApplication
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void button_CalculateResult(object sender, System.EventArgs e)
+        private async void button_CalculateResult(object sender, System.EventArgs e)
         {
             ReadDataPicker();
             if (AnswersAllQuestions())
             {
                 CalculateResult();
-                DisplayAlert("Результат", $"Ваше количетво баллов = {client.Score}", "Принял");
+                task = DisplayAlert("Результат", $"Ваше количетво баллов = {client.Score}", "Принял");
 
                 client.Score = 0;
+                await task;
+                //возврат в меню тестов
+                await Navigation.PopAsync();
             }
             //пациент ответил не на все вопросы
             else
             {
-                DisplayAlert("Предупреждение", "Пожалуйста ответьте на все вопросы", "Хорошо");
+                task = DisplayAlert("Предупреждение", "Пожалуйста ответьте на все вопросы", "Хорошо");
             }
         }
 
