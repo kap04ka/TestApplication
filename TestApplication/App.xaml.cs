@@ -6,9 +6,12 @@ namespace TestApplication
 {
     public partial class App : Application
     {
+        public static Patient patient;
         public App()
         {
             InitializeComponent();
+            patient = new Patient();
+
 
             MainPage = new NavigationPage(new MainPage());
         }
