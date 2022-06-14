@@ -34,7 +34,7 @@ namespace TestApplication
                 if (DataValidation())
                 {
                     //переход на тест
-                    await Navigation.PushAsync(new TestAsthenia());
+                    await Navigation.PushModalAsync(App.navigationPage);
                 }
                 //не правильно введены данные
                 else
@@ -45,7 +45,7 @@ namespace TestApplication
                     //переход на тест
                     if (resultWarning.Result == true)
                     {
-                        await Navigation.PushAsync(new TestAsthenia());
+                        await Navigation.PushModalAsync(App.navigationPage);
                     }
                 }
             }
@@ -58,7 +58,7 @@ namespace TestApplication
                 //переход на тест
                 if (resultError.Result == true)
                 {
-                    await Navigation.PushAsync(new TestAsthenia());
+                    await Navigation.PushModalAsync(App.navigationPage);
                 }
             }
         }
