@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestApplication.TestAsthenia"
+             Title="Субъективная шкала оценки астении">
+
+    <!--Отступ сверху для iOS-->
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0"/>
+    </ContentPage.Padding>
+
+    <ScrollView>
+        <StackLayout>
+
+            <!--Иконка-->
+            <Frame BackgroundColor="Orange" Padding="16" CornerRadius="0">
+                <Label Text="Субъективная шкала оценки астении" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="Title"/>
+            </Frame>
+
+            <!--Пояснение к тесту-->
+            <BoxView Color="#FFC14E" HeightRequest="2" HorizontalOptions="Fill" Margin="0,25,0,5"/>
+            <Label Text="Оцените ваше самочувствие. Для каждого утверждения оцените степень его применимости к своему состоянию по пятибалльной шкале:" TextColor="Black" FontSize="Default" Margin="10,0"/>
+            <Label Text="   1 - Да, это правда" TextColor="Black" FontSize="Default" Margin="10,0"/>
+            <Label Text="   5 - Нет, это неправда" TextColor="Black" FontSize="Default" Margin="10,0"/>
+            <BoxView Color="#FFC14E" HeightRequest="2" HorizontalOptions="Fill" Margin="0,5,0,25"/>
+
+            <!--Первый вопрос-->
+            <Label Text="1. Я чувствую себя здоровым" TextColor="Black" FontSize="Default" Margin="10,0"/>
+            <Grid Margin="20,4,20,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="labelFirstAnswer" Text="Значение = 1" TextColor="Gray" FontSize="Default" Grid.Column="0" Grid.Row="0"/>
+                <Slider x:Name="sliderFirstAnswer" Maximum="5.49" Minimum="0.5" Value="0.5" ThumbColor="Orange" MaximumTrackColor="Gray" MinimumTrackColor="#FFC14E" Grid.Column="1" Grid.Row="0" ValueChanged="Slider_ValueChanged"/>
+            </Grid>
+
+            <!--Второй вопрос-->
+            <Label Text="2. Физически я мало на что способен" TextColor="Black" FontSize="Default" Margin="10,0"/>
+            <Grid Margin="20,4,20,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="labelSecondAnswer" Text="Значение = 1" TextColor="Gray" FontSize="Default" Grid.Column="0" Grid.Row="0"/>
+                <Slider x:Name="sliderSecondAnswer" Maximum="5.49" Minimum="0.5" Value="0.5" ThumbColor="Orange" MaximumTrackColor="Gray" MinimumTrackColor="#FFC14E" Grid.Column="1" Grid.Row="0" ValueChanged="Slider_ValueChanged"/>
+            </Grid>
+
+            <!--Третий вопрос-->
+            <Label Text="3. Я чувствую себя активным" TextColor="Black" FontSize="Default" Margin="10,0"/>
+            <Grid Margin="20,4,20,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="labelThirdAnswer" Text="Значение = 1" TextColor="Gray" FontSize="Default" Grid.Column="0" Grid.Row="0"/>
+                <Slider x:Name="sliderThirdAnswer" Maximum="5.49" Minimum="0.5" Value="0.5" ThumbColor="Orange" MaximumTrackColor="Gray" MinimumTrackColor="#FFC14E" Grid.Column="1" Grid.Row="0" ValueChanged="Slider_ValueChanged"/>
+            </Grid>
+
+            <!--Четвертый вопрос-->
+            <Label Text="4. Все, что я делаю, доставляет мне удовольствие" TextColor="Black" FontSize="Default" Margin="10,0"/>
+            <Grid Margin="20,4,20,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="labelFourthAnswer" Text="Значение = 1" TextColor="Gray" FontSize="Default" Grid.Column="0" Grid.Row="0"/>
+                <Slider x:Name="sliderFourthAnswer" Maximum="5.49" Minimum="0.5" Value="0.5" ThumbColor="Orange" MaximumTrackColor="Gray" MinimumTrackColor="#FFC14E" Grid.Column="1" Grid.Row="0" ValueChanged="Slider_ValueChanged"/>
+            </Grid>
+
+            <!--Пятый вопрос-->
+            <Label Text="5. Я чувствую себя усталым" TextColor="Black" FontSize="Default" Margin="10,0"/>
+            <Grid Margin="20,4,20,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="labelFifthAnswer" Text="Значение = 1" TextColor="Gray" FontSize="Default" Grid.Column="0" Grid.Row="0"/>
+                <Slider x:Name="sliderFifthAnswer" Maximum="5.49" Minimum="0.5" Value="0.5" ThumbColor="Orange" MaximumTrackColor="Gray" MinimumTrackColor="#FFC14E" Grid.Column="1" Grid.Row="0" ValueChanged="Slider_ValueChanged"/>
+            </Grid>
+
+            <!--Шестой вопрос-->
+            <Label Text="6. Мне кажется, я многое успеваю за день" TextColor="Black" FontSize="Default" Margin="10,0"/>
+            <Grid Margin="20,4,20,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="labelSixthAnswer" Text="Значение = 1" TextColor="Gray" FontSize="Default" Grid.Column="0" Grid.Row="0"/>
+                <Slider x:Name="sliderSixthAnswer" Maximum="5.49" Minimum="0.5" Value="0.5" ThumbColor="Orange" MaximumTrackColor="Gray" MinimumTrackColor="#FFC14E" Grid.Column="1" Grid.Row="0" ValueChanged="Slider_ValueChanged"/>
+            </Grid>
+
+            <!--Седьмой вопрос-->
+            <Label Text="7.Когда я занимаюсь чем-либо, я могу сконцентрироваться на этом" TextColor="Black" FontSize="Default" Margin="10,0"/>
+            <Grid Margin="20,4,20,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="labelSeventhAnswer" Text="Значение = 1" TextColor="Gray" FontSize="Default" Grid.Column="0" Grid.Row="0"/>
+                <Slider x:Name="sliderSeventhAnswer" Maximum="5.49" Minimum="0.5" Value="0.5" ThumbColor="Orange" MaximumTrackColor="Gray" MinimumTrackColor="#FFC14E" Grid.Column="1" Grid.Row="0" ValueChanged="Slider_ValueChanged"/>
+            </Grid>
+
+            <!--Восьмой вопрос-->
+            <Label Text="8. Физически я способен на многое" TextColor="Black" FontSize="Default" Margin="10,0"/>
+            <Grid Margin="20,4,20,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="labelEighthAnswer" Text="Значение = 1" TextColor="Gray" FontSize="Default" Grid.Column="0" Grid.Row="0"/>
+                <Slider x:Name="sliderEighthAnswer" Maximum="5.49" Minimum="0.5" Value="0.5" ThumbColor="Orange" MaximumTrackColor="Gray" MinimumTrackColor="#FFC14E" Grid.Column="1" Grid.Row="0" ValueChanged="Slider_ValueChanged"/>
+            </Grid>
+
+            <!--Девятый вопрос-->
+            <Label Text="9. Я боюсь дел, которые мне необходимо сделать" TextColor="Black" FontSize="Default" Margin="10,0"/>
+            <Grid Margin="20,4,20,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="labelNinthAnswer" Text="Значение = 1" TextColor="Gray" FontSize="Default" Grid.Column="0" Grid.Row="0"/>
+                <Slider x:Name="sliderNinthAnswer" Maximum="5.49" Minimum="0.5" Value="0.5" ThumbColor="Orange" MaximumTrackColor="Gray" MinimumTrackColor="#FFC14E" Grid.Column="1" Grid.Row="0" ValueChanged="Slider_ValueChanged"/>
+            </Grid>
+
+            <!--Десятый вопрос-->
+            <Label Text="10. Я думаю, что за день выполняю очень мало дел" TextColor="Black" FontSize="Default" Margin="10,0"/>
+            <Grid Margin="20,4,20,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="labelTenthAnswer" Text="Значение = 1" TextColor="Gray" FontSize="Default" Grid.Column="0" Grid.Row="0"/>
+                <Slider x:Name="sliderTenthAnswer" Maximum="5.49" Minimum="0.5" Value="0.5" ThumbColor="Orange" MaximumTrackColor="Gray" MinimumTrackColor="#FFC14E" Grid.Column="1" Grid.Row="0" ValueChanged="Slider_ValueChanged"/>
+            </Grid>
+
+            <!--Одиннадцатый вопрос-->
+            <Label Text="11. Я могу хорошо концентрировать внимание" TextColor="Black" FontSize="Default" Margin="10,0"/>
+            <Grid Margin="20,4,20,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="labelEleventhAnswer" Text="Значение = 1" TextColor="Gray" FontSize="Default" Grid.Column="0" Grid.Row="0"/>
+                <Slider x:Name="sliderEleventhAnswer" Maximum="5.49" Minimum="0.5" Value="0.5" ThumbColor="Orange" MaximumTrackColor="Gray" MinimumTrackColor="#FFC14E" Grid.Column="1" Grid.Row="0" ValueChanged="Slider_ValueChanged"/>
+            </Grid>
+
+            <!--Двенадцатый вопрос-->
+            <Label Text="12. Я чувствую себя отдохнувшим" TextColor="Black" FontSize="Default" Margin="10,0"/>
+            <Grid Margin="20,4,20,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="labelTwelfthAnswer" Text="Значение = 1" TextColor="Gray" FontSize="Default" Grid.Column="0" Grid.Row="0"/>
+                <Slider x:Name="sliderTwelfthAnswer" Maximum="5.49" Minimum="0.5" Value="0.5" ThumbColor="Orange" MaximumTrackColor="Gray" MinimumTrackColor="#FFC14E" Grid.Column="1" Grid.Row="0" ValueChanged="Slider_ValueChanged"/>
+            </Grid>
+
+            <!--Тринадцатый вопрос-->
+            <Label Text="13. Мне требуется много усилий для концентрации внимания" TextColor="Black" FontSize="Default" Margin="10,0"/>
+            <Grid Margin="20,4,20,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="labelThirteenAnswer" Text="Значение = 1" TextColor="Gray" FontSize="Default" Grid.Column="0" Grid.Row="0"/>
+                <Slider x:Name="sliderThirteenAnswer" Maximum="5.49" Minimum="0.5" Value="0.5" ThumbColor="Orange" MaximumTrackColor="Gray" MinimumTrackColor="#FFC14E" Grid.Column="1" Grid.Row="0" ValueChanged="Slider_ValueChanged"/>
+            </Grid>
+
+            <!--Четырнадцатый вопрос-->
+            <Label Text="14. Физически я чувствую себя в плохом состоянии" TextColor="Black" FontSize="Default" Margin="10,0"/>
+            <Grid Margin="20,4,20,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="labelFourteenthAnswer" Text="Значение = 1" TextColor="Gray" FontSize="Default" Grid.Column="0" Grid.Row="0"/>
+                <Slider x:Name="sliderFourteenthAnswer" Maximum="5.49" Minimum="0.5" Value="0.5" ThumbColor="Orange" MaximumTrackColor="Gray" MinimumTrackColor="#FFC14E" Grid.Column="1" Grid.Row="0" ValueChanged="Slider_ValueChanged"/>
+            </Grid>
+
+            <!--Пятнадцатый вопрос-->
+            <Label Text="15. У меня много планов" TextColor="Black" FontSize="Default" Margin="10,0"/>
+            <Grid Margin="20,4,20,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="labelFifteenthAnswer" Text="Значение = 1" TextColor="Gray" FontSize="Default" Grid.Column="0" Grid.Row="0"/>
+                <Slider x:Name="sliderFifteenthAnswer" Maximum="5.49" Minimum="0.5" Value="0.5" ThumbColor="Orange" MaximumTrackColor="Gray" MinimumTrackColor="#FFC14E" Grid.Column="1" Grid.Row="0" ValueChanged="Slider_ValueChanged"/>
+            </Grid>
+
+            <!--Шестнадцатый вопрос-->
+            <Label Text="16. Я быстро устаю" TextColor="Black" FontSize="Default" Margin="10,0"/>
+            <Grid Margin="20,4,20,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="labelSixteenthAnswer" Text="Значение = 1" TextColor="Gray" FontSize="Default" Grid.Column="0" Grid.Row="0"/>
+                <Slider x:Name="sliderSixteenthAnswer" Maximum="5.49" Minimum="0.5" Value="0.5" ThumbColor="Orange" MaximumTrackColor="Gray" MinimumTrackColor="#FFC14E" Grid.Column="1" Grid.Row="0" ValueChanged="Slider_ValueChanged"/>
+            </Grid>
+
+            <!--Семнадцатый вопрос-->
+            <Label Text="17. Я очень мало успеваю сделать" TextColor="Black" FontSize="Default" Margin="10,0"/>
+            <Grid Margin="20,4,20,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="labelSeventeenthAnswer" Text="Значение = 1" TextColor="Gray" FontSize="Default" Grid.Column="0" Grid.Row="0"/>
+                <Slider x:Name="sliderSeventeenthAnswer" Maximum="5.49" Minimum="0.5" Value="0.5" ThumbColor="Orange" MaximumTrackColor="Gray" MinimumTrackColor="#FFC14E" Grid.Column="1" Grid.Row="0" ValueChanged="Slider_ValueChanged"/>
+            </Grid>
+
+            <!--Восемнадцатый вопрос-->
+            <Label Text="18. Мне кажется, что я ничего не делаю" TextColor="Black" FontSize="Default" Margin="10,0"/>
+            <Grid Margin="20,4,20,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="labelEighteenthAnswer" Text="Значение = 1" TextColor="Gray" FontSize="Default" Grid.Column="0" Grid.Row="0"/>
+                <Slider x:Name="sliderEighteenthAnswer" Maximum="5.49" Minimum="0.5" Value="0.5" ThumbColor="Orange" MaximumTrackColor="Gray" MinimumTrackColor="#FFC14E" Grid.Column="1" Grid.Row="0" ValueChanged="Slider_ValueChanged"/>
+            </Grid>
+
+            <!--Девятнадцатый вопрос-->
+            <Label Text="19. Мои мысли легко рассеиваются" TextColor="Black" FontSize="Default" Margin="10,0"/>
+            <Grid Margin="20,4,20,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="labelNineteenthAnswer" Text="Значение = 1" TextColor="Gray" FontSize="Default" Grid.Column="0" Grid.Row="0"/>
+                <Slider x:Name="sliderNineteenthAnswer" Maximum="5.49" Minimum="0.5" Value="0.5" ThumbColor="Orange" MaximumTrackColor="Gray" MinimumTrackColor="#FFC14E" Grid.Column="1" Grid.Row="0" ValueChanged="Slider_ValueChanged"/>
+            </Grid>
+
+            <!--Двадцатый вопрос-->
+            <Label Text="20. Физически я чувствую себя в прекрасном состоянии" TextColor="Black" FontSize="Default" Margin="10,0"/>
+            <Grid Margin="20,4,20,10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="labelTwentiethAnswer" Text="Значение = 1" TextColor="Gray" FontSize="Default" Grid.Column="0" Grid.Row="0"/>
+                <Slider x:Name="sliderTwentiethAnswer" Maximum="5.49" Minimum="0.5" Value="0.5" ThumbColor="Orange" MaximumTrackColor="Gray" MinimumTrackColor="#FFC14E" Grid.Column="1" Grid.Row="0" ValueChanged="Slider_ValueChanged"/>
+            </Grid>
+
+            <!--Кнопки-->
+            <Grid Margin="10,20,10,15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <!--Кнопка возврата в общее меню-->
+                <Button x:Name="buttonMainMenu" Grid.Column="0" Grid.Row="0" FontSize="Default" Text="Вернутся в меню" TextColor="Black" Margin="0,0,10,0" BackgroundColor="Orange" Clicked="buttonMainMenu_Clicked"/>
+                <!--Кнопка получения результатов теста-->
+                <Button x:Name="buttonCalculateResult" Grid.Column="1" Grid.Row="0" FontSize="Default" Text="Получить результат" TextColor="Black" Margin="10,0,0,0" BackgroundColor="Orange" Clicked="buttonCalculateResult_Clicked"/>
+            </Grid>
+
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
