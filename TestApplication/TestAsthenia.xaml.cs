@@ -158,20 +158,20 @@ namespace TestApplication
         /// </summary>
         private void CalculateScore()
         {
-            MainPage.patient.scoreMFI20.ScoreAnswerGeneralAsthenia =
+            App.patient.scoreMFI20.ScoreAnswerGeneralAsthenia =
                 arrayAnswerMFI[0] + arrayAnswerMFI[4] + arrayAnswerMFI[11] + arrayAnswerMFI[15];
-            MainPage.patient.scoreMFI20.ScoreAnswerReducedActivity =
+            App.patient.scoreMFI20.ScoreAnswerReducedActivity =
                 arrayAnswerMFI[2] + arrayAnswerMFI[5] + arrayAnswerMFI[9] + arrayAnswerMFI[16];
-            MainPage.patient.scoreMFI20.ScoreAnswerDecreasedMotivation =
+            App.patient.scoreMFI20.ScoreAnswerDecreasedMotivation =
                 arrayAnswerMFI[3] + arrayAnswerMFI[8] + arrayAnswerMFI[14] + arrayAnswerMFI[17];
-            MainPage.patient.scoreMFI20.ScoreAnswerPhysicalAsthenia =
+            App.patient.scoreMFI20.ScoreAnswerPhysicalAsthenia =
                 arrayAnswerMFI[1] + arrayAnswerMFI[7] + arrayAnswerMFI[13] + arrayAnswerMFI[19];
-            MainPage.patient.scoreMFI20.ScoreAnswerMentalAsthenia =
+            App.patient.scoreMFI20.ScoreAnswerMentalAsthenia =
                 arrayAnswerMFI[6] + arrayAnswerMFI[10] + arrayAnswerMFI[12] + arrayAnswerMFI[18];
 
-            MainPage.patient.scoreMFI20.TotalTestScore = MainPage.patient.scoreMFI20.ScoreAnswerGeneralAsthenia +
-                 MainPage.patient.scoreMFI20.ScoreAnswerReducedActivity + MainPage.patient.scoreMFI20.ScoreAnswerDecreasedMotivation +
-                 MainPage.patient.scoreMFI20.ScoreAnswerPhysicalAsthenia + MainPage.patient.scoreMFI20.ScoreAnswerMentalAsthenia;
+            App.patient.scoreMFI20.TotalTestScore = App.patient.scoreMFI20.ScoreAnswerGeneralAsthenia +
+                 App.patient.scoreMFI20.ScoreAnswerReducedActivity + App.patient.scoreMFI20.ScoreAnswerDecreasedMotivation +
+                 App.patient.scoreMFI20.ScoreAnswerPhysicalAsthenia + App.patient.scoreMFI20.ScoreAnswerMentalAsthenia;
         }
 
 
@@ -192,14 +192,14 @@ namespace TestApplication
             CorrectionScore();
             CalculateScore();
 
-            if (MainPage.patient.scoreMFI20.TotalTestScore <= 30)
+            if (App.patient.scoreMFI20.TotalTestScore <= 30)
             {
-                task = DisplayAlert("Результат теста", $"Количество баллов = {MainPage.patient.scoreMFI20.TotalTestScore}\n" +
+                task = DisplayAlert("Результат теста", $"Количество баллов = {App.patient.scoreMFI20.TotalTestScore}\n" +
                     "Балл в норме", "ОК");
             }
             else
             {
-                task = DisplayAlert("Результат теста", $"Количество баллов = {MainPage.patient.scoreMFI20.TotalTestScore}\n" +
+                task = DisplayAlert("Результат теста", $"Количество баллов = {App.patient.scoreMFI20.TotalTestScore}\n" +
                     "Балл выше нормы", "ОК");
             }
 
