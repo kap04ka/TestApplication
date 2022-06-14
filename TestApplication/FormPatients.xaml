@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestApplication.FormPatients">
+
+    <!--Отступ сверху для iOS-->
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0"/>
+    </ContentPage.Padding>
+
+    <ScrollView>
+        <StackLayout>
+
+            <!--Иконка-->
+            <Frame BackgroundColor="Orange" Padding="16" CornerRadius="0">
+                <Label Text="Форма заполнения пользователя" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="Title"/>
+            </Frame>
+
+            <!--Фамилия-->
+            <Label Text="Фамилия:" TextColor="Black" Margin="20,5,20,0" FontSize="Default"/>
+            <Entry x:Name="entrySurname" TextColor="Black" Placeholder="Введите вашу фамилию" Margin="20,0" PlaceholderColor="Gray" FontSize="Default" Keyboard="Text"/>
+
+            <!--Имя-->
+            <Label Text="Имя:" TextColor="Black" Margin="20,5,20,0" FontSize="Default"/>
+            <Entry x:Name="entryForename" TextColor="Black" Placeholder="Введите ваше имя" Margin="20,0" PlaceholderColor="Gray" FontSize="Default" Keyboard="Text"/>
+
+            <!--Отчество-->
+            <Label Text="Отчество:" TextColor="Black" Margin="20,5,20,0" FontSize="Default"/>
+            <Entry x:Name="entryPatronymic" TextColor="Black" Placeholder="Введите ваше отчество" Margin="20,0" PlaceholderColor="Gray" FontSize="Default" Keyboard="Text"/>
+
+            <!--Работа-->
+            <Label Text="Место работы (кампания):" TextColor="Black" Margin="20,5,20,0" FontSize="Default"/>
+            <Entry x:Name="entryWork" TextColor="Black" Placeholder="Введите место работы (название кампании)" Margin="20,0" PlaceholderColor="Gray" FontSize="Default" Keyboard="Text"/>
+
+            <!--Дата рождения-->
+            <Label Text="Дата рождения:" TextColor="Black" Margin="20,5,20,0" FontSize="Default"/>
+            <DatePicker x:Name="dataPickerDateOfBirth" Format="d/MMMM/yyyy" TextColor="Black" FontSize="Default" HorizontalOptions="Start" Margin="20,0">
+                <DatePicker.MinimumDate>12/06/1922</DatePicker.MinimumDate>
+                <DatePicker.MaximumDate>6/07/2042</DatePicker.MaximumDate>
+            </DatePicker>
+
+            <!--Почта-->
+            <Label Text="Электронная почта:" TextColor="Black" Margin="20,5,20,0" FontSize="Default"/>
+            <Entry x:Name="entryEmail" TextColor="Black" Placeholder="Введите вашу электронную почту" Margin="20,0" PlaceholderColor="Gray" FontSize="Default" Keyboard="Email"/>
+
+            <!--Телефон-->
+            <Label Text="Номер телефона:" TextColor="Black" Margin="20,5,20,0" FontSize="Default"/>
+            <Entry x:Name="entryTelephone" TextColor="Black" Placeholder="Введите ваш номер сотового телефона" Margin="20,0" PlaceholderColor="Gray" FontSize="Default" Keyboard="Telephone"/>
+
+            <!--Врач-->
+            <Label Text="ФИО лечащего врача:" TextColor="Black" Margin="20,5,20,0" FontSize="Default"/>
+            <Entry x:Name="entryAttendingDoctor" TextColor="Black" Placeholder="Введите ФИО вашего лечащего врача" Margin="20,0" PlaceholderColor="Gray" FontSize="Default" Keyboard="Text"/>
+
+            <!--Кнопка регистрации пользователя-->
+            <Button x:Name="buttonSignIn" Text="Войти" HorizontalOptions="End" Margin="0,15,20,20" FontSize="Default" Clicked="button_SignIn" BackgroundColor="Orange" WidthRequest="200" HeightRequest="50" TextColor="Black"/>
+
+
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

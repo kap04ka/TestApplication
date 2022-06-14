@@ -7,6 +7,8 @@ namespace TestApplication
     public partial class App : Application
     {
         public static Patient patient;
+
+
         public App()
         {
             InitializeComponent();
