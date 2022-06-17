@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TestApplication;assembly=TestApplication"
+             x:Class="TestApplication.TestPraxisAndGnosis">
+
+    <!--Отступ сверху для iOS-->
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0"/>
+    </ContentPage.Padding>
+
+    <ScrollView>
+        <StackLayout BackgroundColor="White">
+
+            <Label Text="Отметьте галочками пункты, если пациент выполнил их успешно." HorizontalTextAlignment="Center" FontSize="Medium" FontAttributes="Bold" TextColor="Black" Padding="10, 10, 10, 0" />
+
+            <!--Задание 1-->
+
+            <Label Text="1.	Моторный праксис" FontSize="Medium" FontAttributes="Bold" Padding="10, 10, 0, 0" TextColor="Black"/>
+            <Label Text="Совершите серию движений по заданному плану" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            
+            <Label Text="1 - Покажите жестом, что вы здороваетесь" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <CheckBox x:Name="motorPraxisFirst" CheckedChanged="OnCheckBoxCheckedChangedMotorPraxis"/>
+
+            <Label Text="2 - Покажите жестом, что у вас болит голова" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <CheckBox x:Name="motorPraxisSecond" CheckedChanged="OnCheckBoxCheckedChangedMotorPraxis"/>
+
+            <Label Text="3 - Покажите жестом отказ" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <CheckBox x:Name="motorPraxisThird" CheckedChanged="OnCheckBoxCheckedChangedMotorPraxis"/>
+
+            <Label Text="4 - Покажите жестом согласие" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <CheckBox x:Name="motorPraxisFourth" CheckedChanged="OnCheckBoxCheckedChangedMotorPraxis"/>
+
+            <Label Text="5 - Покажите жестом число времен года" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <CheckBox x:Name="motorPraxisFifth" CheckedChanged="OnCheckBoxCheckedChangedMotorPraxis"/>
+
+            <!--Задание 2-->
+            <Label Text="2.	Динамический праксис" FontSize="Medium" FontAttributes="Bold" Padding="10, 10, 0, 0" TextColor="Black"/>
+            <Label Text="Воспроизведите движения по заданной схеме" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+
+            <Image Source="{local:ImageResource TestApplication.Images.jesti1.JPG}" HeightRequest="200" WidthRequest="200"/>
+
+            <RelativeLayout HorizontalOptions="FillAndExpand">
+                <CheckBox x:Name="dynamicPraxisFirst" CheckedChanged="OnCheckBoxCheckedChangedDynamicPraxis"
+                          RelativeLayout.XConstraint="{ConstraintExpression 
+                          Type=RelativeToParent,Property=Width,Factor=.15,Constant=0}"/>
+                <CheckBox x:Name="dynamicPraxisSecond" CheckedChanged="OnCheckBoxCheckedChangedDynamicPraxis"
+                          RelativeLayout.XConstraint="{ConstraintExpression
+                          Type=RelativeToParent,Property=Width,Factor=.45,Constant=0}"/>
+                <CheckBox x:Name="dynamicPraxisThird" CheckedChanged="OnCheckBoxCheckedChangedDynamicPraxis"
+                          RelativeLayout.XConstraint="{ConstraintExpression
+                          Type=RelativeToParent,Property=Width,Factor=.75,Constant=0}"/>
+            </RelativeLayout>
+            
+            <Image Source="{local:ImageResource TestApplication.Images.jesti2.JPG}" HeightRequest="200" WidthRequest="200" />
+
+            <RelativeLayout HorizontalOptions="FillAndExpand">
+                <CheckBox x:Name="dynamicPraxisFourth" CheckedChanged="OnCheckBoxCheckedChangedDynamicPraxis"
+                          RelativeLayout.XConstraint="{ConstraintExpression 
+                          Type=RelativeToParent,Property=Width,Factor=.15,Constant=0}"/>
+                <CheckBox x:Name="dynamicPraxisFifth" CheckedChanged="OnCheckBoxCheckedChangedDynamicPraxis"
+                          RelativeLayout.XConstraint="{ConstraintExpression
+                          Type=RelativeToParent,Property=Width,Factor=.45,Constant=0}"/>
+                <CheckBox x:Name="dynamicPraxisSixth" CheckedChanged="OnCheckBoxCheckedChangedDynamicPraxis"
+                          RelativeLayout.XConstraint="{ConstraintExpression
+                          Type=RelativeToParent,Property=Width,Factor=.75,Constant=0}"/>
+            </RelativeLayout>
+
+            <!--Задание 3-->
+            
+            <Label Text="3.	Конструктивный  праксис" FontSize="Medium" FontAttributes="Bold" Padding="10, 10, 0, 0" TextColor="Black"/>
+            <Label Text="Сложите из счетных палочек/спичек фгуры:" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+
+            <FlexLayout Direction="Row">
+                <Label Text="Треугольник" WidthRequest="200" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="constructivePraxisFirst" CheckedChanged="OnCheckBoxCheckedChangedConstructivePraxis"/>
+            </FlexLayout>
+            
+            <FlexLayout Direction="Row">
+                <Label Text="Квадрат" WidthRequest="200" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="constructivePraxisSecond" CheckedChanged="OnCheckBoxCheckedChangedConstructivePraxis"/>
+            </FlexLayout>
+
+            <FlexLayout Direction="Row">
+                <Label Text="Прямоугольник" WidthRequest="200" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="constructivePraxisThird" CheckedChanged="OnCheckBoxCheckedChangedConstructivePraxis"/>
+            </FlexLayout>
+
+            <!--Задание 4-->
+
+            <Label Text="4. Предметный гнозис" FontSize="Medium" FontAttributes="Bold" Padding="10, 10, 0, 0" TextColor="Black"/>
+            <Label Text="Узнайте и назовите предметы, контуры которых наложены друг на друга" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Image Source="{local:ImageResource TestApplication.Images.PictureWithItems.JPG}" HeightRequest="200" WidthRequest="200" />
+
+            <FlexLayout Direction="Row">
+                <Label Text="Ключ" WidthRequest="200" FontSize="Medium" Padding="10, 10, 0, 0" TextColor="Black"/>
+                <CheckBox x:Name="subjectGnosisFirst" CheckedChanged="OnCheckBoxCheckedChangedSubjectGnosis"/>
+            </FlexLayout>
+
+            <FlexLayout Direction="Row">
+                <Label Text="Кувшин" WidthRequest="200" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="subjectGnosisSecond" CheckedChanged="OnCheckBoxCheckedChangedSubjectGnosis"/>
+            </FlexLayout>
+
+            <FlexLayout Direction="Row">
+                <Label Text="Настольная лампа" WidthRequest="200" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="subjectGnosisThird" CheckedChanged="OnCheckBoxCheckedChangedSubjectGnosis"/>
+            </FlexLayout>
+            
+            <!--Задание 5-->
+
+            <Label Text="5. Скопируйте часы" FontSize="Medium" FontAttributes="Bold" Padding="10, 10, 0, 0" TextColor="Black"/>
+
+            <Label Text="Введите количество баллов, на которое пациент скопировал часы (максимум 8)" TextColor="Black" Margin="10, 0" FontSize="Medium"/>
+            <Image Source="{local:ImageResource TestApplication.Images.Watch.JPG}" HeightRequest="200" WidthRequest="200" />
+            <Entry x:Name="entryPoints" TextColor="Black" Placeholder="Введите количество баллов" Margin="10,0" PlaceholderColor="Gray" FontSize="Default" Keyboard="Telephone" Text="0" TextChanged="OnTextChanged"/>
+
+            <!--Окончание теста-->
+            <Button x:Name="buttonResultTest" Text="Получить результат" HorizontalOptions="End" Margin="0,15,10,20" FontSize="Medium" Clicked="button_CalculateResult" BackgroundColor="#FFE5B4" TextColor="Black"/>
+
+        </StackLayout>
+    </ScrollView>
+    
+</ContentPage>
