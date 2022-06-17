@@ -18,7 +18,10 @@ namespace TestApplication
         /// Массив ответов
         /// </summary>
         public int[] arrayAnswer;
+        public Client()
+        {
 
+        }
         public Client(int countQuestion)
         {
             arrayAnswer = new int[countQuestion];
