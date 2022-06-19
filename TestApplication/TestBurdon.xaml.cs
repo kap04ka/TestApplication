@@ -12,7 +12,6 @@ namespace TestApplication
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TestBurdon : ContentPage
     {
-
         /// <summary>
         /// Количество просмотренных строк
         /// </summary>
@@ -59,23 +58,25 @@ namespace TestApplication
         /// <summary>
         /// Обработчик нажатия кнопки результатов расчета
         /// </summary>
-        private void buttonCalculateResult_Clicked(object sender, EventArgs e)
+        private async void buttonCalculateResult_Clicked(object sender, EventArgs e)
         {
             if (EmptyData())
             {
-                DisplayAlert("Ошибка", "Введите все требуемые данные", "ОК");
+                await DisplayAlert("Ошибка", "Введите все требуемые данные", "ОК");
             }
             else
             {
                 if (UnvalidationData())
                 {
-                    DisplayAlert("Предупреждение", "Введите корректные данные", "ОК");
+                    await DisplayAlert("Предупреждение", "Введите корректные данные", "ОК");
                 }
                 else
                 {
                     ReadData();
                     CalculateResult();
-                    DisplayAlert("Результат", FormatOutputString(), "ОК");
+                    await DisplayAlert("Результат", FormatOutputString(), "ОК");
+                    ResetValueTest();
+                    await Navigation.PopAsync();
                 }
             }
         }
@@ -195,6 +196,20 @@ namespace TestApplication
             }
 
             return lineOne + lineTwo;
+        }
+
+        /// <summary>
+        /// Сброс полей для ввода данных
+        /// </summary>
+        private void ResetValueTest()
+        {
+            entryNumberOfLines.Text = null;
+            entryNumberOfMistakes.Text = null;
+            entryNumberOfLetters1.Text = null;
+            entryNumberOfLetters2.Text = null;
+            entryNumberOfLetters3.Text = null;
+            entryNumberOfLetters4.Text = null;
+            entryNumberOfLetters5.Text = null;
         }
     }
 
