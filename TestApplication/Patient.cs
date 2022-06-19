@@ -54,13 +54,22 @@ namespace TestApplication
         /// Количество баллов за субъективную шкалу оценки астении 
         /// </summary>
         public ScoreMFI20 scoreMFI20;
+        /// <summary>
+        /// Количество баллов за корректурный тест Бурдона
+        /// </summary>
+        public TestCorrectionBourdon scoreBourdon;
 
         public Patient()
         {
             scoreMFI20 = new ScoreMFI20();
+            scoreBourdon = new TestCorrectionBourdon();
         }
     }
 
+
+    /// <summary>
+    /// Тест на астению
+    /// </summary>
     public class ScoreMFI20
     {
         /// <summary>
@@ -94,6 +103,31 @@ namespace TestApplication
         public ScoreMFI20()
         {
 
+        }
+    }
+
+
+    /// <summary>
+    /// Ответы на тест корректурная проба Бурдона 
+    /// </summary>
+    public class TestCorrectionBourdon
+    {
+        /// <summary>
+        /// Концентрация внимания
+        /// </summary>
+        public int ConcentrationOfAtention { get; set; }
+        /// <summary>
+        /// Темп выполнения за определенное количество минут
+        /// </summary>
+        public int[] PaceArray { get; set; }
+        /// <summary>
+        /// Устойчивость внимания
+        /// </summary>
+        public int AttentionSpan { get; set; }
+
+        public TestCorrectionBourdon()
+        {
+            PaceArray = new int[5];
         }
     }
 }
