@@ -12,18 +12,6 @@ namespace TestApplication
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TestBurdon : ContentPage
     {
-        /// <summary>
-        /// Концентрация внимания
-        /// </summary>
-        public int ConcentrationOfAtention { get; set; }
-        /// <summary>
-        /// Темп выполнения за определенное количество минут
-        /// </summary>
-        public int[] PaceArray { get; set; }
-        /// <summary>
-        /// Устойчивость внимания
-        /// </summary>
-        public int AttentionSpan { get; set; }
 
         /// <summary>
         /// Количество просмотренных строк
@@ -65,7 +53,6 @@ namespace TestApplication
         public TestBurdon()
         {
             InitializeComponent();
-            PaceArray = new int[5];
         }
 
 
@@ -154,22 +141,22 @@ namespace TestApplication
         {
             if (amountMistakes == 0)
             {
-                ConcentrationOfAtention = 2 * amountLines;
+                App.patient.scoreBourdon.ConcentrationOfAtention = 2 * amountLines;
             }
             else
             {
-                ConcentrationOfAtention = (int)Math.Round(2.0 * amountLines / amountMistakes, 0);
+                App.patient.scoreBourdon.ConcentrationOfAtention = (int)Math.Round(2.0 * amountLines / amountMistakes, 0);
             }
 
-            PaceArray[0] = (int)Math.Round(amountLettersInOneMinute / 1.0, 0);
-            PaceArray[1] = (int)Math.Round(amountLettersInTwoMinutes / 2.0, 0);
-            PaceArray[2] = (int)Math.Round(amountLettersInThreeMinutes / 3.0, 0);
-            PaceArray[3] = (int)Math.Round(amountLettersInFourMinutes / 4.0, 0);
-            PaceArray[4] = (int)Math.Round(amountLettersInFiveMinutes / 5.0, 0);
+            App.patient.scoreBourdon.PaceArray[0] = (int)Math.Round(amountLettersInOneMinute / 1.0, 0);
+            App.patient.scoreBourdon.PaceArray[1] = (int)Math.Round(amountLettersInTwoMinutes / 2.0, 0);
+            App.patient.scoreBourdon.PaceArray[2] = (int)Math.Round(amountLettersInThreeMinutes / 3.0, 0);
+            App.patient.scoreBourdon.PaceArray[3] = (int)Math.Round(amountLettersInFourMinutes / 4.0, 0);
+            App.patient.scoreBourdon.PaceArray[4] = (int)Math.Round(amountLettersInFiveMinutes / 5.0, 0);
 
-            maxPaceInTime = PaceArray.Max();
-            minPaceInTime = PaceArray.Min();
-            AttentionSpan = maxPaceInTime - minPaceInTime;
+            maxPaceInTime = App.patient.scoreBourdon.PaceArray.Max();
+            minPaceInTime = App.patient.scoreBourdon.PaceArray.Min();
+            App.patient.scoreBourdon.AttentionSpan = maxPaceInTime - minPaceInTime;
         }
 
 
@@ -180,9 +167,9 @@ namespace TestApplication
         {
             string lineOne;
             string lineTwo;
-            lineOne = "Концентрация внимания = " + ConcentrationOfAtention.ToString() + "\n";
-            lineTwo = "Устойчивость внимания = " + AttentionSpan.ToString();
-            switch (AttentionSpan)
+            lineOne = "Концентрация внимания = " + App.patient.scoreBourdon.ConcentrationOfAtention.ToString() + "\n";
+            lineTwo = "Устойчивость внимания = " + App.patient.scoreBourdon.AttentionSpan.ToString();
+            switch (App.patient.scoreBourdon.AttentionSpan)
             {
                 case 0:
                 case 1:
