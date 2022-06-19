@@ -119,7 +119,7 @@
             <Label Text="Я испытываю бодрость" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
             <Picker x:Name="thirdQuestionDepression" Margin="10,0,10,10" FontSize="Medium">
                 <Picker.Items>
-                    <x:String>Поактически все время.</x:String>
+                    <x:String>Практически все время.</x:String>
                     <x:String>Иногда.</x:String>
                     <x:String>Очень редко.</x:String>
                     <x:String>Совсем не испытываю.</x:String>

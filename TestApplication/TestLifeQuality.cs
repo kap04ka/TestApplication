@@ -30,13 +30,15 @@ namespace TestApplication
 
     public partial class TestLifeQuality : ContentPage
     {
-        Client client;
+        //Client client;
+
+        int testResult = 0;
 
         public TestLifeQuality()
         {
             InitializeComponent();
             Title = "Европейский опросник качества жизнии";
-            client = new Client(6);
+            //client = new Client(6);
         }
 
         private void button_CalculateResult(object sender, System.EventArgs e)
@@ -45,9 +47,11 @@ namespace TestApplication
             if (AnswersAllQuestions())
             {
                 CalculateResult();
-                DisplayAlert("Результат", $"Ваше количетво баллов = {client.Score}", "Принять");
+                DisplayAlert("Результат", $"Ваше количетво баллов = {App.patient.resultLifeQuality.TotalResultLifeQuality}", "Принять");
                 //SaveJson(client);
-                client.Score = 0;
+                testResult = 0;
+                Console.WriteLine($"{App.patient.resultLifeQuality.TotalResultLifeQuality} у пациента");
+                Console.WriteLine($"{testResult} после окончания теста");
             }
             //пациент ответил не на все вопросы
             else
@@ -61,12 +65,12 @@ namespace TestApplication
         /// </summary>
         private void ReadDataPicker()
         {
-            client.arrayAnswer[0] = firstQuestion.SelectedIndex;
-            client.arrayAnswer[1] = secondQuestion.SelectedIndex;
-            client.arrayAnswer[2] = thirdQuestion.SelectedIndex;
-            client.arrayAnswer[3] = fourthQuestion.SelectedIndex;
-            client.arrayAnswer[4] = fifthQuestion.SelectedIndex;
-            client.arrayAnswer[5] = sixthQuestion.SelectedIndex;
+            App.patient.resultLifeQuality.arrayAnswerLifeQuality[0] = firstQuestion.SelectedIndex;
+            App.patient.resultLifeQuality.arrayAnswerLifeQuality[1] = secondQuestion.SelectedIndex;
+            App.patient.resultLifeQuality.arrayAnswerLifeQuality[2] = thirdQuestion.SelectedIndex;
+            App.patient.resultLifeQuality.arrayAnswerLifeQuality[3] = fourthQuestion.SelectedIndex;
+            App.patient.resultLifeQuality.arrayAnswerLifeQuality[4] = fifthQuestion.SelectedIndex;
+            App.patient.resultLifeQuality.arrayAnswerLifeQuality[5] = sixthQuestion.SelectedIndex;
         }
 
         /// <summary>
@@ -75,9 +79,10 @@ namespace TestApplication
         /// <returns></returns>
         private bool AnswersAllQuestions()
         {
+
             for (int i = 0; i < 6; i++)
             {
-                if (client.arrayAnswer[i] == -1)
+                if (App.patient.resultLifeQuality.arrayAnswerLifeQuality[i] == -1)
                 {
                     return false;
                 }
@@ -93,12 +98,12 @@ namespace TestApplication
         {
             for (int i = 0; i < 6; i++)
             {
-                client.Score += client.arrayAnswer[i];
+                testResult += App.patient.resultLifeQuality.arrayAnswerLifeQuality[i];
             }
-           
+            App.patient.resultLifeQuality.TotalResultLifeQuality = testResult;
         }
 
-        private void SaveJson(Client _client)
+       /* private void SaveJson(Client _client)
         {
             var jsonString = JsonConvert.SerializeObject(_client);
 
@@ -112,7 +117,7 @@ namespace TestApplication
             StreamWriter sw = new StreamWriter(path);
             sw.WriteLine(jsonString);
             sw.Close();
-        }
+        }*/
 
     }
 

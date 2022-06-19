@@ -55,10 +55,56 @@ namespace TestApplication
         /// </summary>
         public ScoreMFI20 scoreMFI20;
 
+        /// <summary>
+        /// Количество баллов за тест качества жизни 
+        /// </summary>
+        public ResultLifeQuality resultLifeQuality;
+
+        /// <summary>
+        /// Количество баллов за тест на тревожность и депрессию 
+        /// </summary>
+        public ResultAnxietyAndDepression resultAnxietyAndDepression;
+
         public Patient()
         {
             scoreMFI20 = new ScoreMFI20();
+            resultLifeQuality = new ResultLifeQuality();
+            resultAnxietyAndDepression = new ResultAnxietyAndDepression();
         }
+
+    }
+
+    public class ResultAnxietyAndDepression
+    {
+        /// <summary>
+        /// Массив ответов теста тревожности
+        /// </summary>
+        public int[] arrayAnswerAnxiety = new int[7];
+        /// <summary>
+        /// Итоговый результат тревожности
+        /// </summary>
+        public int TotalResultAnxiety = 0;
+
+        /// <summary>
+        /// Массив ответов теста деперессии
+        /// </summary>
+        public int[] arrayAnswerDepression = new int[7];
+        /// <summary>
+        /// Итоговый результат депрессии
+        /// </summary>
+        public int TotalResultDepression = 0;
+    }
+
+    public class ResultLifeQuality
+    {
+        /// <summary>
+        /// Массив ответов теста качества жизни
+        /// </summary>
+        public int[] arrayAnswerLifeQuality = new int[6];
+        /// <summary>
+        /// Итоговый результат
+        /// </summary>
+        public int TotalResultLifeQuality = 0;
     }
 
     public class ScoreMFI20
