@@ -9,12 +9,13 @@ namespace TestApplication
 {
     public partial class TestVasserman : ContentPage
     {
-        Client client;
+        //Client client;
+        int testResult = 0;
         public TestVasserman()
         {
             InitializeComponent();
             Title = "Шкала Вассермана";
-            client = new Client(21);
+            //client = new Client(21);
         }
         private void button_CalculateResult(object sender, System.EventArgs e)
         {
@@ -22,8 +23,11 @@ namespace TestApplication
             if (AnswersAllQuestions())
             {
                 CalculateResult();
-                DisplayAlert("Результат", $"{TakeDiagnose(client.Score)}", "Принять");
-                client.Score = 0;
+                DisplayAlert("Результат", $"{TakeDiagnose(testResult)}", "Принять");
+                testResult = 0;
+
+                Console.WriteLine($"{App.patient.resultVasserman.TotalResultVasserman} у пациента");
+                Console.WriteLine($"{testResult} после окончания теста");
             }
             //пациент ответил не на все вопросы
             else
@@ -44,27 +48,27 @@ namespace TestApplication
         /// </summary>
         private void ReadDataPicker()
         {
-            client.arrayAnswer[0] = firstQuestion.SelectedIndex;
-            client.arrayAnswer[1] = secondQuestion.SelectedIndex;
-            client.arrayAnswer[2] = thirdQuestion.SelectedIndex;
-            client.arrayAnswer[3] = fourthQuestion.SelectedIndex;
-            client.arrayAnswer[4] = fifthQuestion.SelectedIndex;
-            client.arrayAnswer[5] = sixthQuestion.SelectedIndex;
-            client.arrayAnswer[6] = seventhQuestion.SelectedIndex;
-            client.arrayAnswer[7] = eighthQuestion.SelectedIndex;
-            client.arrayAnswer[8] = ninthQuestion.SelectedIndex;
-            client.arrayAnswer[9] = tenthQuestion.SelectedIndex;
-            client.arrayAnswer[10] = eleventhQuestion.SelectedIndex;
-            client.arrayAnswer[11] = twelfthQuestion.SelectedIndex;
-            client.arrayAnswer[12] = thirteenthQuestion.SelectedIndex;
-            client.arrayAnswer[13] = fourteenthQuestion.SelectedIndex;
-            client.arrayAnswer[14] = fifteenthQuestion.SelectedIndex;
-            client.arrayAnswer[15] = sixteenthQuestion.SelectedIndex;
-            client.arrayAnswer[16] = seventhQuestion.SelectedIndex;
-            client.arrayAnswer[17] = eighteenthQuestion.SelectedIndex;
-            client.arrayAnswer[18] = nineteenthQuestion.SelectedIndex;
-            client.arrayAnswer[19] = twentiethQuestion.SelectedIndex;
-            client.arrayAnswer[20] = twentyFirstQuestion.SelectedIndex;
+            App.patient.resultVasserman.arrayAnswerVasserman[0] = firstQuestion.SelectedIndex;
+            App.patient.resultVasserman.arrayAnswerVasserman[1] = secondQuestion.SelectedIndex;
+            App.patient.resultVasserman.arrayAnswerVasserman[2] = thirdQuestion.SelectedIndex;
+            App.patient.resultVasserman.arrayAnswerVasserman[3] = fourthQuestion.SelectedIndex;
+            App.patient.resultVasserman.arrayAnswerVasserman[4] = fifthQuestion.SelectedIndex;
+            App.patient.resultVasserman.arrayAnswerVasserman[5] = sixthQuestion.SelectedIndex;
+            App.patient.resultVasserman.arrayAnswerVasserman[6] = seventhQuestion.SelectedIndex;
+            App.patient.resultVasserman.arrayAnswerVasserman[7] = eighthQuestion.SelectedIndex;
+            App.patient.resultVasserman.arrayAnswerVasserman[8] = ninthQuestion.SelectedIndex;
+            App.patient.resultVasserman.arrayAnswerVasserman[9] = tenthQuestion.SelectedIndex;
+            App.patient.resultVasserman.arrayAnswerVasserman[10] = eleventhQuestion.SelectedIndex;
+            App.patient.resultVasserman.arrayAnswerVasserman[11] = twelfthQuestion.SelectedIndex;
+            App.patient.resultVasserman.arrayAnswerVasserman[12] = thirteenthQuestion.SelectedIndex;
+            App.patient.resultVasserman.arrayAnswerVasserman[13] = fourteenthQuestion.SelectedIndex;
+            App.patient.resultVasserman.arrayAnswerVasserman[14] = fifteenthQuestion.SelectedIndex;
+            App.patient.resultVasserman.arrayAnswerVasserman[15] = sixteenthQuestion.SelectedIndex;
+            App.patient.resultVasserman.arrayAnswerVasserman[16] = seventhQuestion.SelectedIndex;
+            App.patient.resultVasserman.arrayAnswerVasserman[17] = eighteenthQuestion.SelectedIndex;
+            App.patient.resultVasserman.arrayAnswerVasserman[18] = nineteenthQuestion.SelectedIndex;
+            App.patient.resultVasserman.arrayAnswerVasserman[19] = twentiethQuestion.SelectedIndex;
+            App.patient.resultVasserman.arrayAnswerVasserman[20] = twentyFirstQuestion.SelectedIndex;
         }
 
         /// <summary>
@@ -75,7 +79,7 @@ namespace TestApplication
         {
             for (int i = 0; i < 21; i++)
             {
-                if (client.arrayAnswer[i] == -1)
+                if (App.patient.resultVasserman.arrayAnswerVasserman[i] == -1)
                 {
                     return false;
                 }
@@ -89,24 +93,25 @@ namespace TestApplication
         /// </summary>
         private void CalculateResult()
         {
-            if (client.arrayAnswer[0] == 2 || client.arrayAnswer[0] == 3) client.Score += 2;
-            else if (client.arrayAnswer[0] == 4 || client.arrayAnswer[0] == 5) client.Score += 3;
-            else client.Score += client.arrayAnswer[0];
+            if (App.patient.resultVasserman.arrayAnswerVasserman[0] == 2 || App.patient.resultVasserman.arrayAnswerVasserman[0] == 3) testResult += 2;
+            else if (App.patient.resultVasserman.arrayAnswerVasserman[0] == 4 || App.patient.resultVasserman.arrayAnswerVasserman[0] == 5) testResult += 3;
+            else testResult += App.patient.resultVasserman.arrayAnswerVasserman[0];
 
             for (int i = 1; i < 3; i++)
             {
-                client.Score += client.arrayAnswer[i];
+                testResult += App.patient.resultVasserman.arrayAnswerVasserman[i];
             }
 
-            if (client.arrayAnswer[3] == 2 || client.arrayAnswer[3] == 3) client.Score += 2;
-            else if (client.arrayAnswer[3] == 4 || client.arrayAnswer[3] == 5) client.Score += 3;
-            else client.Score += client.arrayAnswer[3];
+            if (App.patient.resultVasserman.arrayAnswerVasserman[3] == 2 || App.patient.resultVasserman.arrayAnswerVasserman[3] == 3) testResult += 2;
+            else if (App.patient.resultVasserman.arrayAnswerVasserman[3] == 4 || App.patient.resultVasserman.arrayAnswerVasserman[3] == 5) testResult += 3;
+            else testResult += App.patient.resultVasserman.arrayAnswerVasserman[3];
 
             for (int i = 4; i < 21; i++)
             {
-                client.Score += client.arrayAnswer[i];
+                testResult += App.patient.resultVasserman.arrayAnswerVasserman[i];
             }
 
+            App.patient.resultVasserman.TotalResultVasserman = testResult;
         }
 
     }

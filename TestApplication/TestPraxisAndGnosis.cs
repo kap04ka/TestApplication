@@ -9,33 +9,40 @@ namespace TestApplication
 {
     public partial class TestPraxisAndGnosis : ContentPage
     {
-        Client client;
-        Client clientMotorPraxis;
-        Client clientDynamicPraxis;
-        Client clientConstructivePraxis;
-        Client clientSubjectGnosis;
+        //Client client;
+        //Client clientMotorPraxis;
+        //Client clientDynamicPraxis;
+        //Client clientConstructivePraxis;
+        //Client clientSubjectGnosis;
+        int resultTest = 0;
+        int resultMotor = 0;
+        int resultDynamic = 0;
+        int resultConstructive = 0;
+        int resultSubject = 0;
+
 
         public TestPraxisAndGnosis()
         {
             InitializeComponent();
             Title = "Тесты на оценку конструктивного, моторного и динамического праксиса, предметного гнозиса";
-            client = new Client();
-            clientMotorPraxis = new Client();
-            clientDynamicPraxis = new Client();
-            clientConstructivePraxis = new Client();
-            clientSubjectGnosis = new Client();
+            //client = new Client();
+            //clientMotorPraxis = new Client();
+            //clientDynamicPraxis = new Client();
+            //clientConstructivePraxis = new Client();
+            //clientSubjectGnosis = new Client();
 
         }
 
         private void button_CalculateResult(object sender, System.EventArgs e)
         {
-          
-            client.Score += Int32.Parse(entryPoints.Text);
-            DisplayAlert("Результат", $"Общий результат = {client.Score}\n" +
-                                      $"Моторный праксис = {clientMotorPraxis.Score}\n" +
-                                      $"Динамический праксис = {clientDynamicPraxis.Score}\n" +
-                                      $"Конструктивный праксис = {clientConstructivePraxis.Score}\n" +
-                                      $"Объектный гнозис = {clientSubjectGnosis.Score}\n" +
+
+            resultTest += Int32.Parse(entryPoints.Text);
+            SetResults();
+            DisplayAlert("Результат", $"Общий результат = {resultTest}\n" +
+                                      $"Моторный праксис = {resultMotor}\n" +
+                                      $"Динамический праксис = {resultDynamic}\n" +
+                                      $"Конструктивный праксис = {resultConstructive}\n" +
+                                      $"Объектный гнозис = {resultSubject}\n" +
                                       $"Повторение часов = {Int32.Parse(entryPoints.Text)}\n",
                                       "Принять");
 
@@ -60,13 +67,30 @@ namespace TestApplication
             subjectGnosisSecond.IsChecked = false;
             subjectGnosisThird.IsChecked = false;
 
-            client.Score = 0;
-            clientMotorPraxis.Score = 0;
-            clientDynamicPraxis.Score = 0;
-            clientConstructivePraxis.Score = 0;
-            clientSubjectGnosis.Score = 0;
+            resultTest = 0;
+            resultMotor = 0;
+            resultDynamic = 0;
+            resultConstructive = 0;
+            resultSubject = 0;
+            entryPoints.Text = "0";
+
+
+            Console.WriteLine($"{App.patient.resultPraxisAndGnosis.resultMotorPraxis}, {App.patient.resultPraxisAndGnosis.resultDynamicPraxis}, {App.patient.resultPraxisAndGnosis.resultConstructivePraxis}," +
+                $" {App.patient.resultPraxisAndGnosis.resultSubjectGnosis}, {App.patient.resultPraxisAndGnosis.resultClock}, {App.patient.resultPraxisAndGnosis.TotalResultPraxisAndGnosis} у пациента");
+            Console.WriteLine($"{resultTest}, {resultMotor}, {resultDynamic}, {resultConstructive}, {resultSubject}, {Int32.Parse(entryPoints.Text)} после окончания теста");
 
         }
+
+        private void SetResults()
+        {
+            App.patient.resultPraxisAndGnosis.resultMotorPraxis = resultMotor;
+            App.patient.resultPraxisAndGnosis.resultDynamicPraxis = resultDynamic;
+            App.patient.resultPraxisAndGnosis.resultConstructivePraxis = resultConstructive;
+            App.patient.resultPraxisAndGnosis.resultSubjectGnosis = resultSubject;
+            App.patient.resultPraxisAndGnosis.resultClock = Int32.Parse(entryPoints.Text);
+            App.patient.resultPraxisAndGnosis.TotalResultPraxisAndGnosis = resultTest;
+        }
+
         private void OnTextChanged(object sender, EventArgs e)
         {
             Entry entry = sender as Entry;
@@ -92,34 +116,35 @@ namespace TestApplication
 
         }
 
-            private void OnCheckBoxCheckedChangedMotorPraxis(object sender, CheckedChangedEventArgs e)
+        private void OnCheckBoxCheckedChangedMotorPraxis(object sender, CheckedChangedEventArgs e)
         {
             CheckBox chBox = (CheckBox)sender;
             if (chBox.IsChecked)
             {
-                client.Score += 1;
-                clientMotorPraxis.Score += 1;
+                resultTest += 1;
+                resultMotor += 1;
             }
 
             else
             {
-                client.Score -= 1;
-                clientMotorPraxis.Score -= 1;
+                resultTest -= 1;
+                resultMotor -= 1;
             }
         }
+
         private void OnCheckBoxCheckedChangedDynamicPraxis(object sender, CheckedChangedEventArgs e)
         {
             CheckBox chBox = (CheckBox)sender;
             if (chBox.IsChecked)
             {
-                client.Score += 1;
-                clientDynamicPraxis.Score += 1;
+                resultTest += 1;
+                resultDynamic += 1;
             }
 
             else
             {
-                client.Score -= 1;
-                clientDynamicPraxis.Score -= 1;
+                resultTest -= 1;
+                resultDynamic -= 1;
             }
         }
 
@@ -128,14 +153,14 @@ namespace TestApplication
             CheckBox chBox = (CheckBox)sender;
             if (chBox.IsChecked)
             {
-                client.Score += 1;
-                clientConstructivePraxis.Score += 1;
+                resultTest += 1;
+                resultConstructive += 1;
             }
 
             else
             {
-                client.Score -= 1;
-                clientConstructivePraxis.Score -= 1;
+                resultTest -= 1;
+                resultConstructive -= 1;
             }
         }
 
@@ -144,14 +169,14 @@ namespace TestApplication
             CheckBox chBox = (CheckBox)sender;
             if (chBox.IsChecked)
             {
-                client.Score += 1;
-                clientSubjectGnosis.Score += 1;
+                resultTest += 1;
+                resultSubject += 1;
             }
 
             else
             {
-                client.Score -= 1;
-                clientSubjectGnosis.Score -= 1;
+                resultTest -= 1;
+                resultSubject -= 1;
             }
         }
 

@@ -54,6 +54,7 @@ namespace TestApplication
         /// Количество баллов за субъективную шкалу оценки астении 
         /// </summary>
         public ScoreMFI20 scoreMFI20;
+
         /// <summary>
         /// Количество баллов за корректурный тест Бурдона
         /// </summary>
@@ -69,15 +70,87 @@ namespace TestApplication
         /// </summary>
         public ResultAnxietyAndDepression resultAnxietyAndDepression;
 
+        /// <summary>
+        /// Количество баллов за тест Вассермана
+        /// </summary>
+        public ResultVasserman resultVasserman;
+
+        /// <summary>
+        /// Количество баллов за тест локус-контроля
+        /// </summary>
+        public ResultLocus resultLocus;
+
+        /// <summary>
+        /// Количество баллов за тест локус-контроля
+        /// </summary>
+        public ResultPraxisAndGnosis resultPraxisAndGnosis;
+
         public Patient()
         {
             scoreMFI20 = new ScoreMFI20();
             scoreBourdon = new TestCorrectionBourdon();
-        }
             resultLifeQuality = new ResultLifeQuality();
             resultAnxietyAndDepression = new ResultAnxietyAndDepression();
+            resultVasserman = new ResultVasserman();
+            resultLocus = new ResultLocus();
+            resultPraxisAndGnosis = new ResultPraxisAndGnosis();
         }
 
+    }
+
+    public class ResultPraxisAndGnosis
+    {
+        /// <summary>
+        /// Массив ответов теста локус-контроля
+        /// </summary>
+        public int resultMotorPraxis = 0;
+        /// <summary>
+        /// Массив ответов теста локус-контроля
+        /// </summary>
+        public int resultDynamicPraxis = 0;
+        /// <summary>
+        /// Массив ответов теста локус-контроля
+        /// </summary>
+        public int resultConstructivePraxis = 0;
+        /// <summary>
+        /// Массив ответов теста локус-контроля
+        /// </summary>
+        public int resultSubjectGnosis = 0;
+        /// <summary>
+        /// Массив ответов теста локус-контроля
+        /// </summary>
+        public int resultClock = 0;
+        /// <summary>
+        /// Массив ответов теста локус-контроля
+        /// </summary>
+        public int TotalResultPraxisAndGnosis = 0;
+
+    }
+
+    public class ResultLocus
+    {
+        /// <summary>
+        /// Массив ответов теста локус-контроля
+        /// </summary>
+        public int[] arrayAnswerLocus = new int[9];
+
+        /// <summary>
+        /// Итоговый результат теста локус-контроля
+        /// </summary>
+        public int TotalResultLocus = 0;
+    }
+
+    public class ResultVasserman
+    {
+        /// <summary>
+        /// Массив ответов теста Вассермана
+        /// </summary>
+        public int[] arrayAnswerVasserman = new int[21];
+
+        /// <summary>
+        /// Итоговый результат теста Вассермана
+        /// </summary>
+        public int TotalResultVasserman = 0;
     }
 
     public class ResultAnxietyAndDepression
