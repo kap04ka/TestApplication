@@ -54,6 +54,10 @@ namespace TestApplication
         /// Количество баллов за субъективную шкалу оценки астении 
         /// </summary>
         public ScoreMFI20 scoreMFI20;
+        /// <summary>
+        /// Количество баллов за корректурный тест Бурдона
+        /// </summary>
+        public TestCorrectionBourdon scoreBourdon;
 
         /// <summary>
         /// Количество баллов за тест качества жизни 
@@ -65,17 +69,13 @@ namespace TestApplication
         /// </summary>
         public ResultAnxietyAndDepression resultAnxietyAndDepression;
 
-        /// <summary>
-        /// Количество баллов за корректурный тест Бурдона
-        /// </summary>
-        public TestCorrectionBourdon scoreBourdon;
-
         public Patient()
         {
             scoreMFI20 = new ScoreMFI20();
+            scoreBourdon = new TestCorrectionBourdon();
+        }
             resultLifeQuality = new ResultLifeQuality();
             resultAnxietyAndDepression = new ResultAnxietyAndDepression();
-            scoreBourdon = new TestCorrectionBourdon();
         }
 
     }
