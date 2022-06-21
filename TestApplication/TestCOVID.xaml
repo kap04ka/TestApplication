@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TestApplication.TestCOVID">
+             x:Class="TestApplication.TestCOVID"
+             Title="Тест COVID – 19">
 
     <ScrollView>
         <StackLayout>
@@ -73,7 +74,7 @@
             </StackLayout>
 
             <!--Четвертый вопрос-->
-            <Label Text="4) Были ли у Вас диагностированы какие-либо из следующих состояний до коронfвирусного заболевания?" TextColor="Black" FontSize="Small" Margin="15,25,15,0"/>
+            <Label Text="4) Были ли у Вас диагностированы какие-либо из следующих состояний до короновирусного заболевания?" TextColor="Black" FontSize="Small" Margin="15,25,15,0"/>
             <StackLayout Orientation="Horizontal" Margin="30,0">
                 <CheckBox Color="Orange" x:Name="checkBoxDiseases1" VerticalOptions="Center" CheckedChanged="checkBoxDiseases_CheckedChanged"/>
                 <Label x:Name="labelDiseases1" TextColor="Black" FontSize="Small" VerticalOptions="Center"/>
