@@ -32,12 +32,15 @@ namespace TestApplication
             for (int i = 0; i < pages.Count; i++)
             {
                 button = new Button();
+                button.TextColor = Color.Black;
+                button.BorderColor = Color.Gray;
                 button.Text = nameTests[i];
                 button.BackgroundColor = Color.FromRgb(255, 229, 180);
 
                 ContentPage page = pages[i];
 
                 button.Clicked += async (sender, args) => await Navigation.PushAsync(page);
+                
 
                 stackLayout.Children.Add(button);
             }
