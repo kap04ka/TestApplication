@@ -85,6 +85,9 @@ namespace TestApplication
         /// </summary>
         public ResultPraxisAndGnosis resultPraxisAndGnosis;
 
+
+        public CovidTest resultCovidTest;
+
         public Patient()
         {
             scoreMFI20 = new ScoreMFI20();
@@ -94,6 +97,7 @@ namespace TestApplication
             resultVasserman = new ResultVasserman();
             resultLocus = new ResultLocus();
             resultPraxisAndGnosis = new ResultPraxisAndGnosis();
+            resultCovidTest = new CovidTest();
         }
 
     }
@@ -248,6 +252,316 @@ namespace TestApplication
         public TestCorrectionBourdon()
         {
             PaceArray = new int[5];
+        }
+    }
+
+
+    /// <summary>
+    /// Результаты теста на ковид
+    /// </summary>
+    public class CovidTest
+    {
+        /// <summary>
+        /// Пол пациента
+        /// </summary>
+        public string GenderPatient { get; set; }
+        /// <summary>
+        /// Образование пациента
+        /// </summary>
+        public string EducationPatient { get; set; }
+        /// <summary>
+        /// Деятельность пациента
+        /// </summary>
+        public string ActivityPatient { get; set; }
+        /// <summary>
+        /// Заболевания пациента
+        /// </summary>
+        public string DiseasesPatient { get; set; }
+        /// <summary>
+        /// Трудоспособность пациента
+        /// </summary>
+        public string AbilityToWorkPatient { get; set; }
+        /// <summary>
+        /// Оцентка трудоспособности
+        /// </summary>
+        public int WorkCapacityAssessment { get; set; }
+        /// <summary>
+        /// Работоспособность по дому пациента
+        /// </summary>
+        public string WorkAtHomePatient { get; set; }
+        /// <summary>
+        /// Оценка работоспособности по дому
+        /// </summary>
+        public int PerformanceEvaluation { get; set; }
+        /// <summary>
+        /// Досуговая активность пациента
+        /// </summary>
+        public string LeisureActivitiesPatient { get; set; }
+        /// <summary>
+        /// Оценка досуговой активности
+        /// </summary>
+        public int LeisureEvaluation { get; set; }
+
+
+        /// <summary>
+        /// Кратковременная потеря памяти (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesShortTermMemoryLoss { get; set; }
+        /// <summary>
+        /// Снижение памяти (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesDecreasedMemory { get; set; }
+        /// <summary>
+        /// Снижение концентрации внимания, "туман в мозгу" (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesDecreasedConcentration { get; set; }
+        /// <summary>
+        /// Повышенная утомляемость (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesFatigue { get; set; }
+        /// <summary>
+        /// Спутанность сознания (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesConfusion { get; set; }
+        /// <summary>
+        /// Нарушение сна (патологическое бодрствование, бессонница) (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesSleepDisturbance { get; set; }
+        /// <summary>
+        /// Проблемы с речью (подбор слов или произношение) (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesSpeechProblems { get; set; }
+        /// <summary>
+        /// Изменение характера (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesChangeOfCharacter { get; set; }
+        /// <summary>
+        /// Изменение частоты (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesFrequencyChange { get; set; }
+        /// <summary>
+        /// Изменение интенсивности (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesIntensityChange { get; set; }
+        /// <summary>
+        /// Перепады настроения (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesMoodSwings { get; set; }
+        /// <summary>
+        /// Тревога (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesAnxiety { get; set; }
+        /// <summary>
+        /// Депрессия (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesDepression { get; set; }
+        /// <summary>
+        /// Навязчивые состояния (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesObsessiveStates { get; set; }
+        /// <summary>
+        /// Лихорадка (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesFever { get; set; }
+        /// <summary>
+        /// Повышенное потоотделение (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesIncreasedSweating { get; set; }
+        /// <summary>
+        /// Ночная потливость (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesNightSweats { get; set; }
+        /// <summary>
+        /// Непереносимость тепла (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesHeatIntolerance { get; set; }
+        /// <summary>
+        /// Брадикардия (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesBradycardia { get; set; }
+        /// <summary>
+        /// Тахикардия (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesTachycardia { get; set; }
+        /// <summary>
+        /// Сердцебиение (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesHeartbeat { get; set; }
+        /// <summary>
+        /// Подъемы АД (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesBPRises { get; set; }
+        /// <summary>
+        /// Понижение АД (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesLoweringBloodPressure { get; set; }
+        /// <summary>
+        /// Обморок (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesFainting { get; set; }
+        /// <summary>
+        /// Боль в мышцах  (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesMusclePain { get; set; }
+        /// <summary>
+        /// Боль в суставах (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesJointPain { get; set; }
+        /// <summary>
+        /// Головокружение (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesDizziness { get; set; }
+        /// <summary>
+        /// Нарушение равновесия (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesImbalance { get; set; }
+        /// <summary>
+        /// Нарушение зрения (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesVisualImpairment { get; set; }
+        /// <summary>
+        /// Кожная гиперестезия (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesSkinHyperesthesia { get; set; }
+        /// <summary>
+        /// Боль в конечностях (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesPainInTheLimbs { get; set; }
+        /// <summary>
+        /// Онемение в конечностях (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesNumbnessInTheLimbs { get; set; }
+        /// <summary>
+        /// Парестезии (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesParesthesia { get; set; }
+        /// <summary>
+        /// Нарушения вкуса (агевзия, снижение вкуса, искажение вкуса) (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesTasteDisorders { get; set; }
+        /// <summary>
+        /// Нарушения обоняния (аносмия, фантомия, паросмия) (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesOlfactoryDisorders { get; set; }
+        /// <summary>
+        /// кашель (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesCough { get; set; }
+        /// <summary>
+        /// Одышка (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesDyspnea { get; set; }
+        /// <summary>
+        /// Стеснение в груди, боль в груди (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesChestPain { get; set; }
+        /// <summary>
+        /// Учащенное сердцебиение (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesCardiopalmus { get; set; }
+        /// <summary>
+        /// Анорексия, снижение аппетита (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesAnorexia { get; set; }
+        /// <summary>
+        /// Судороги (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesConvulsions { get; set; }
+        /// <summary>
+        /// боль в горле (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesSoreThroat { get; set; }
+        /// <summary>
+        /// Шум в ушах (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesNoiseInEars { get; set; }
+        /// <summary>
+        /// Ушная боль (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesEarAche { get; set; }
+        /// <summary>
+        /// заложенность носа (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesNasalCongestion { get; set; }
+        /// <summary>
+        /// Боль и сухость носа (Синдром сухого носа) (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesPainAndDrynessOfTheNose { get; set; }
+        /// <summary>
+        /// Боль в животе (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesAbdominalPain { get; set; }
+        /// <summary>
+        /// Диарея (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesDiarrhea { get; set; }
+        /// <summary>
+        /// тошнота и рвота (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesNauseaAndVomiting { get; set; }
+        /// <summary>
+        /// выпадение волос (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesHairLoss { get; set; }
+        /// <summary>
+        /// Кожные высыпания (При поступлении, При выписке, Через 3 месяца после выписки)
+        /// </summary>
+        public string[] TableEntriesSkinRashes { get; set; }
+
+
+        public CovidTest()
+        {
+            TableEntriesShortTermMemoryLoss = new string[3];
+            TableEntriesDecreasedMemory = new string[3];
+            TableEntriesDecreasedConcentration = new string[3];
+            TableEntriesFatigue = new string[3];
+            TableEntriesConfusion = new string[3];
+            TableEntriesSleepDisturbance = new string[3];
+            TableEntriesSpeechProblems = new string[3];
+            TableEntriesChangeOfCharacter = new string[3];
+            TableEntriesFrequencyChange = new string[3];
+            TableEntriesIntensityChange = new string[3];
+            TableEntriesMoodSwings = new string[3];
+            TableEntriesAnxiety = new string[3];
+            TableEntriesDepression = new string[3];
+            TableEntriesObsessiveStates = new string[3];
+            TableEntriesFever = new string[3];
+            TableEntriesIncreasedSweating = new string[3];
+            TableEntriesNightSweats = new string[3];
+            TableEntriesHeatIntolerance = new string[3];
+            TableEntriesBradycardia = new string[3];
+            TableEntriesTachycardia = new string[3];
+            TableEntriesHeartbeat = new string[3];
+            TableEntriesBPRises = new string[3];
+            TableEntriesLoweringBloodPressure = new string[3];
+            TableEntriesFainting = new string[3];
+            TableEntriesMusclePain = new string[3];
+            TableEntriesJointPain = new string[3];
+            TableEntriesDizziness = new string[3];
+            TableEntriesImbalance = new string[3];
+            TableEntriesVisualImpairment = new string[3];
+            TableEntriesSkinHyperesthesia = new string[3];
+            TableEntriesPainInTheLimbs = new string[3];
+            TableEntriesNumbnessInTheLimbs = new string[3];
+            TableEntriesParesthesia = new string[3];
+            TableEntriesTasteDisorders = new string[3];
+            TableEntriesOlfactoryDisorders = new string[3];
+            TableEntriesCough = new string[3];
+            TableEntriesDyspnea = new string[3];
+            TableEntriesChestPain = new string[3];
+            TableEntriesCardiopalmus = new string[3];
+            TableEntriesAnorexia = new string[3];
+            TableEntriesConvulsions = new string[3];
+            TableEntriesSoreThroat = new string[3];
+            TableEntriesNoiseInEars = new string[3];
+            TableEntriesEarAche = new string[3];
+            TableEntriesNasalCongestion = new string[3];
+            TableEntriesPainAndDrynessOfTheNose = new string[3];
+            TableEntriesAbdominalPain = new string[3];
+            TableEntriesDiarrhea = new string[3];
+            TableEntriesNauseaAndVomiting = new string[3];
+            TableEntriesHairLoss = new string[3];
+            TableEntriesSkinRashes = new string[3];
         }
     }
 }
