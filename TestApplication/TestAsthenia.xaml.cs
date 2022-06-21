@@ -205,7 +205,36 @@ namespace TestApplication
 
             CorrectionScore();
             await task;
+            ResetAnswersTest();
             buttonMainMenu_Clicked(sender, e);
+        }
+
+
+        /// <summary>
+        /// Сброс ответов теста
+        /// </summary>
+        private void ResetAnswersTest()
+        {
+            sliderFirstAnswer.Value = 0.5;
+            sliderSecondAnswer.Value = 0.5;
+            sliderThirdAnswer.Value = 0.5;
+            sliderFourthAnswer.Value = 0.5;
+            sliderFifthAnswer.Value = 0.5;
+            sliderSixthAnswer.Value = 0.5;
+            sliderSeventhAnswer.Value = 0.5;
+            sliderEighthAnswer.Value = 0.5;
+            sliderNinthAnswer.Value = 0.5;
+            sliderTenthAnswer.Value = 0.5;
+            sliderEleventhAnswer.Value = 0.5;
+            sliderTwelfthAnswer.Value = 0.5;
+            sliderThirteenAnswer.Value = 0.5;
+            sliderFourteenthAnswer.Value = 0.5;
+            sliderFifteenthAnswer.Value = 0.5;
+            sliderSixteenthAnswer.Value = 0.5;
+            sliderSeventeenthAnswer.Value = 0.5;
+            sliderEighteenthAnswer.Value = 0.5;
+            sliderNineteenthAnswer.Value = 0.5;
+            sliderTwentiethAnswer.Value = 0.5;
         }
 
 
