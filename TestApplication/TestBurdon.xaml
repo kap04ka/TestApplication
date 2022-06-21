@@ -19,7 +19,7 @@
     </ContentPage.Resources>
 
     <ScrollView>
-        <StackLayout>
+        <StackLayout BackgroundColor="White">
 
 
             <!--Первый раздел-->

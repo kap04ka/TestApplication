@@ -10,7 +10,7 @@
     </ContentPage.Padding>
 
     <ScrollView>
-        <StackLayout>
+        <StackLayout BackgroundColor="White">
 
             <!--Название теста в рамке-->
             <Frame BackgroundColor="Orange" Padding="24" CornerRadius="0">
