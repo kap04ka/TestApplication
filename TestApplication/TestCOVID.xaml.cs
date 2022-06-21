@@ -196,18 +196,19 @@ namespace TestApplication
         /// <summary>
         /// Обработчик сохранения результатов
         /// </summary>
-        private void buttonSaveData_Clicked(object sender, EventArgs e)
+        private async void buttonSaveData_Clicked(object sender, EventArgs e)
         {
             //пациент пропустил пункт
             if (CheckEmptyValue())
             {
-                DisplayAlert("Ошибка", "Введите все требуемые данные", "ОК");
+                await DisplayAlert("Ошибка", "Введите все требуемые данные", "ОК");
             }
             //пациент ввел все данные
             else
             {
                 SaveData();
-                DisplayAlert("Сохранение", "Данные теста сохранились", "ОК");
+                await DisplayAlert("Сохранение", "Данные теста сохранились", "ОК");
+                await Navigation.PopAsync();
             }
         }
 
