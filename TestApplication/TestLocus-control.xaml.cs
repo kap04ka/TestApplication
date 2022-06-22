@@ -42,6 +42,7 @@ namespace TestApplication
                 Console.WriteLine($"{App.patient.resultLocus.TotalResultLocus} у пациента");
                 Console.WriteLine($"{testResult} после окончания теста");
                 await task;
+                ResetAnswersInTest();
                 //возврат в меню тестов
                 await Navigation.PopAsync();
             }
@@ -67,6 +68,24 @@ namespace TestApplication
             App.patient.resultLocus.arrayAnswerLocus[7] = pickerEighthQuestion.SelectedIndex;
             App.patient.resultLocus.arrayAnswerLocus[8] = pickerNinthQuestion.SelectedIndex;
         }
+
+
+        /// <summary>
+        /// Сброс ответов теста
+        /// </summary>
+        private void ResetAnswersInTest()
+        {
+            pickerFirstQuestion.SelectedIndex = -1;
+            pickerSecondQuestion.SelectedIndex = -1;
+            pickerThirdQuestion.SelectedIndex = -1;
+            pickerFourthQuestion.SelectedIndex = -1;
+            pickerFifthQuestion.SelectedIndex = -1;
+            pickerSixthQuestion.SelectedIndex = -1;
+            pickerSeventhQuestion.SelectedIndex = -1;
+            pickerEighthQuestion.SelectedIndex = -1;
+            pickerNinthQuestion.SelectedIndex = -1;
+        }
+
 
         /// <summary>
         /// Проверка на все ли вопросы ответил пациент
