@@ -88,6 +88,11 @@ namespace TestApplication
 
         public CovidTest resultCovidTest;
 
+        /// <summary>
+        /// Количество баллов за когнитивный тест МОСА
+        /// </summary>
+        public ResultMOSA resultMOSA;
+
         public Patient()
         {
             scoreMFI20 = new ScoreMFI20();
@@ -98,34 +103,71 @@ namespace TestApplication
             resultLocus = new ResultLocus();
             resultPraxisAndGnosis = new ResultPraxisAndGnosis();
             resultCovidTest = new CovidTest();
+            resultMOSA = new ResultMOSA();
         }
 
+    }
+
+    public class ResultMOSA
+    {
+        /// <summary>
+        /// Результат за тест МОСА
+        /// </summary>
+        public int resultMOSATest = 0;
+        /// <summary>
+        /// Результат за Зрительно-конструктивные/исполнительные навыки
+        /// </summary>
+        public int resultVisualConstructiveSkillsMOSA = 0;
+        /// <summary>
+        /// Результат Называние
+        /// </summary>
+        public int resultNamingMOSA = 0;
+        /// <summary>
+        /// Результат Внимание
+        /// </summary>
+        public int resultAttentionMOSA = 0;
+        /// <summary>
+        /// Результат Речь
+        /// </summary>
+        public int resultSpeechMOSA = 0;
+        /// <summary>
+        /// Результат Абстракция
+        /// </summary>
+        public int resultAbstractionMOSA = 0;
+        /// <summary>
+        /// Результат Отсроченное воспроизведение 
+        /// </summary>
+        public int resultDelayedPlaybackMOSA = 0;
+        /// <summary>
+        /// Результат Ориентация
+        /// </summary>
+        public int resultOrientationMOSA = 0;
     }
 
     public class ResultPraxisAndGnosis
     {
         /// <summary>
-        /// Массив ответов теста локус-контроля
+        /// Ответы моторного праксиса 
         /// </summary>
         public int resultMotorPraxis = 0;
         /// <summary>
-        /// Массив ответов теста локус-контроля
+        /// Ответы динамического праксиса
         /// </summary>
         public int resultDynamicPraxis = 0;
         /// <summary>
-        /// Массив ответов теста локус-контроля
+        /// Ответы конструктивного праксиса
         /// </summary>
         public int resultConstructivePraxis = 0;
         /// <summary>
-        /// Массив ответов теста локус-контроля
+        /// Ответы объектного гнозиса
         /// </summary>
         public int resultSubjectGnosis = 0;
         /// <summary>
-        /// Массив ответов теста локус-контроля
+        /// Ответы перерисовывания часов
         /// </summary>
         public int resultClock = 0;
         /// <summary>
-        /// Массив ответов теста локус-контроля
+        /// Ответ на тест Праксиса и Гнозиса
         /// </summary>
         public int TotalResultPraxisAndGnosis = 0;
 

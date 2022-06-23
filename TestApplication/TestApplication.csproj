@@ -11,16 +11,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\Cube.JPG" />
     <None Remove="Images\jesti1.JPG" />
     <None Remove="Images\jesti2.JPG" />
+    <None Remove="Images\jivotnie.JPG" />
     <None Remove="Images\PictureWithItems.JPG" />
+    <None Remove="Images\Putb.JPG" />
     <None Remove="Images\Watch.JPG" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Images\Cube.JPG" />
     <EmbeddedResource Include="Images\jesti1.JPG" />
     <EmbeddedResource Include="Images\jesti2.JPG" />
+    <EmbeddedResource Include="Images\jivotnie.JPG" />
     <EmbeddedResource Include="Images\PictureWithItems.JPG" />
+    <EmbeddedResource Include="Images\Putb.JPG" />
     <EmbeddedResource Include="Images\Watch.JPG" />
   </ItemGroup>
 
@@ -41,6 +47,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="TestBurdon.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="TestCognitive.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="TestCOVID.xaml">
