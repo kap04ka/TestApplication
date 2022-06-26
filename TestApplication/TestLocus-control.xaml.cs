@@ -15,12 +15,10 @@ namespace TestApplication
     {
         Task task;
         int testResult = 0;
-        //ClientKirill client;
 
         public TestLocus_control()
         {
             InitializeComponent();
-            //client = new ClientKirill();
         }
 
 

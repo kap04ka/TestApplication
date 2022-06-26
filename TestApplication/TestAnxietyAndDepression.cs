@@ -5,14 +5,15 @@ using System.IO;
 using System.Text;
 using Newtonsoft.Json;
 using Xamarin.Forms;
+using System.Threading.Tasks;
+
 
 namespace TestApplication
 {
 
     public partial class TestAnxietyAndDepression : ContentPage
     {
-        //Client clientAnxiety;
-        //Client clientDepression;
+        Task task;
 
         int intermediateAnxietyResult = 0;
         int intermediateDepressionResult = 0;
@@ -24,28 +25,48 @@ namespace TestApplication
             //clientAnxiety = new Client(7);
             //clientDepression = new Client(7);
         }
-        private void button_CalculateResult(object sender, System.EventArgs e)
+        private async void button_CalculateResult(object sender, System.EventArgs e)
         {
             ReadDataPicker();
             if (AnswersAllQuestions())
             {
                 var result = CalculateResult();
-                DisplayAlert("Результат", $"{result.Item1} \n {result.Item2}", "Принять");
-                //SaveJson(client);
-                //clientAnxiety.Score = 0;
-                //clientDepression.Score = 0;
+                task = DisplayAlert("Результат", $"{result.Item1} \n {result.Item2}", "Принять");
+                await task;
+
+                ResetAnswersInTest();
                 intermediateAnxietyResult = 0;
                 intermediateDepressionResult = 0;
                 Console.WriteLine($"Real res = {App.patient.resultAnxietyAndDepression.TotalResultAnxiety} + {App.patient.resultAnxietyAndDepression.TotalResultDepression}");
                 Console.WriteLine($"Intermediate res = {intermediateAnxietyResult} + {intermediateDepressionResult}");
+
+                await Navigation.PopAsync();
             }
             //пациент ответил не на все вопросы
             else
             {
-                DisplayAlert("Предупреждение", "Пожалуйста ответьте на все вопросы", "Хорошо");
+                task = DisplayAlert("Предупреждение", "Пожалуйста ответьте на все вопросы", "Хорошо");
             }
         }
 
+        private void ResetAnswersInTest()
+        {
+            firstQuestionAnxiety.SelectedIndex = -1;
+            secondQuestionAnxiety.SelectedIndex = -1;
+            thirdQuestionAnxiety.SelectedIndex = -1;
+            fourthQuestionAnxiety.SelectedIndex = -1;
+            fifthQuestionAnxiety.SelectedIndex = -1;
+            sixthQuestionAnxiety.SelectedIndex = -1;
+            seventhQuestionAnxiety.SelectedIndex = -1;
+
+            firstQuestionDepression.SelectedIndex = -1;
+            secondQuestionDepression.SelectedIndex = -1;
+            thirdQuestionDepression.SelectedIndex = -1;
+            fourthQuestionDepression.SelectedIndex = -1;
+            fifthQuestionDepression.SelectedIndex = -1;
+            sixthQuestionDepression.SelectedIndex = -1;
+            seventhQuestionDepression.SelectedIndex = -1;
+        }
         /// <summary>
         /// Считывание ответов из выпадающих списков
         /// </summary>

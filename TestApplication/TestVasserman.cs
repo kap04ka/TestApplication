@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
@@ -9,7 +10,7 @@ namespace TestApplication
 {
     public partial class TestVasserman : ContentPage
     {
-        //Client client;
+        Task task;
         int testResult = 0;
         public TestVasserman()
         {
@@ -17,22 +18,25 @@ namespace TestApplication
             Title = "Шкала Вассермана";
             //client = new Client(21);
         }
-        private void button_CalculateResult(object sender, System.EventArgs e)
+
+        private async void button_CalculateResult(object sender, System.EventArgs e)
         {
             ReadDataPicker();
             if (AnswersAllQuestions())
             {
                 CalculateResult();
-                DisplayAlert("Результат", $"{TakeDiagnose(testResult)}", "Принять");
+                task = DisplayAlert("Результат", $"{TakeDiagnose(testResult)}", "Принять");
+                await task;
                 testResult = 0;
-
+                ResetAnswersInTest();
                 Console.WriteLine($"{App.patient.resultVasserman.TotalResultVasserman} у пациента");
                 Console.WriteLine($"{testResult} после окончания теста");
+                await Navigation.PopAsync();
             }
             //пациент ответил не на все вопросы
             else
             {
-                DisplayAlert("Предупреждение", "Пожалуйста ответьте на все вопросы", "Хорошо");
+                task = DisplayAlert("Предупреждение", "Пожалуйста ответьте на все вопросы", "Хорошо");
             }
         }
         private string TakeDiagnose(int score)
@@ -43,6 +47,30 @@ namespace TestApplication
             else return $"Ваше количество баллов = {score}, грубая степень нарушений";
         }
 
+        private void ResetAnswersInTest()
+        {
+            firstQuestion.SelectedIndex = -1;
+            secondQuestion.SelectedIndex = -1;
+            thirdQuestion.SelectedIndex = -1;
+            fourthQuestion.SelectedIndex = -1;
+            fifthQuestion.SelectedIndex = -1;
+            sixthQuestion.SelectedIndex = -1;
+            seventhQuestion.SelectedIndex = -1;
+            eighthQuestion.SelectedIndex = -1;
+            ninthQuestion.SelectedIndex = -1;
+            tenthQuestion.SelectedIndex = -1;
+            eleventhQuestion.SelectedIndex = -1;
+            twelfthQuestion.SelectedIndex = -1;
+            thirteenthQuestion.SelectedIndex = -1;
+            fourteenthQuestion.SelectedIndex = -1;
+            fifteenthQuestion.SelectedIndex = -1;
+            sixteenthQuestion.SelectedIndex = -1;
+            seventeenthQuestion.SelectedIndex = -1;
+            eighteenthQuestion.SelectedIndex = -1;
+            nineteenthQuestion.SelectedIndex = -1;
+            twentiethQuestion.SelectedIndex = -1;
+            twentyFirstQuestion.SelectedIndex = -1;
+        }
         /// <summary>
         /// Считывание ответов из выпадающих списков
         /// </summary>
@@ -64,7 +92,7 @@ namespace TestApplication
             App.patient.resultVasserman.arrayAnswerVasserman[13] = fourteenthQuestion.SelectedIndex;
             App.patient.resultVasserman.arrayAnswerVasserman[14] = fifteenthQuestion.SelectedIndex;
             App.patient.resultVasserman.arrayAnswerVasserman[15] = sixteenthQuestion.SelectedIndex;
-            App.patient.resultVasserman.arrayAnswerVasserman[16] = seventhQuestion.SelectedIndex;
+            App.patient.resultVasserman.arrayAnswerVasserman[16] = seventeenthQuestion.SelectedIndex;
             App.patient.resultVasserman.arrayAnswerVasserman[17] = eighteenthQuestion.SelectedIndex;
             App.patient.resultVasserman.arrayAnswerVasserman[18] = nineteenthQuestion.SelectedIndex;
             App.patient.resultVasserman.arrayAnswerVasserman[19] = twentiethQuestion.SelectedIndex;

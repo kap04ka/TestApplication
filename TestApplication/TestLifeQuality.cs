@@ -4,33 +4,16 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
+using System.Threading.Tasks;
+
 using Xamarin.Forms;
 
 namespace TestApplication
 {
-    internal class Client
-    {
-        /// <summary>
-        /// Количество баллов заработанных пациентом за тест
-        /// </summary>
-        public int Score { get; set; }
-        /// <summary>
-        /// Массив ответов
-        /// </summary>
-        public int[] arrayAnswer;
-        public Client()
-        {
-
-        }
-        public Client(int countQuestion)
-        {
-            arrayAnswer = new int[countQuestion];
-        }
-    }
 
     public partial class TestLifeQuality : ContentPage
     {
-        //Client client;
+        Task task;
 
         int testResult = 0;
 
@@ -38,26 +21,40 @@ namespace TestApplication
         {
             InitializeComponent();
             Title = "Европейский опросник качества жизнии";
-            //client = new Client(6);
         }
 
-        private void button_CalculateResult(object sender, System.EventArgs e)
+        private async void button_CalculateResult(object sender, System.EventArgs e)
         {
             ReadDataPicker();
             if (AnswersAllQuestions())
             {
                 CalculateResult();
-                DisplayAlert("Результат", $"Ваше количетво баллов = {App.patient.resultLifeQuality.TotalResultLifeQuality}", "Принять");
-                //SaveJson(client);
+                task = DisplayAlert("Результат", $"Ваше количетво баллов = {App.patient.resultLifeQuality.TotalResultLifeQuality}", "Принять");
+                
+                await task;
+
                 testResult = 0;
+                ResetAnswersInTest();
                 Console.WriteLine($"{App.patient.resultLifeQuality.TotalResultLifeQuality} у пациента");
                 Console.WriteLine($"{testResult} после окончания теста");
+
+                await Navigation.PopAsync();
             }
             //пациент ответил не на все вопросы
             else
             {
-                DisplayAlert("Предупреждение", "Пожалуйста ответьте на все вопросы", "Хорошо");
+                task = DisplayAlert("Предупреждение", "Пожалуйста ответьте на все вопросы", "Хорошо");
             }
+        }
+
+        private void ResetAnswersInTest()
+        {
+            firstQuestion.SelectedIndex = -1;
+            secondQuestion.SelectedIndex = -1;
+            thirdQuestion.SelectedIndex = -1;
+            fourthQuestion.SelectedIndex = -1;
+            fifthQuestion.SelectedIndex = -1;
+            sixthQuestion.SelectedIndex = -1;
         }
 
         /// <summary>

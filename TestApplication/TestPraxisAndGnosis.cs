@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
@@ -9,11 +10,8 @@ namespace TestApplication
 {
     public partial class TestPraxisAndGnosis : ContentPage
     {
-        //Client client;
-        //Client clientMotorPraxis;
-        //Client clientDynamicPraxis;
-        //Client clientConstructivePraxis;
-        //Client clientSubjectGnosis;
+        Task task;
+
         int resultTest = 0;
         int resultMotor = 0;
         int resultDynamic = 0;
@@ -25,26 +23,21 @@ namespace TestApplication
         {
             InitializeComponent();
             Title = "Тесты на оценку конструктивного, моторного и динамического праксиса, предметного гнозиса";
-            //client = new Client();
-            //clientMotorPraxis = new Client();
-            //clientDynamicPraxis = new Client();
-            //clientConstructivePraxis = new Client();
-            //clientSubjectGnosis = new Client();
-
         }
 
-        private void button_CalculateResult(object sender, System.EventArgs e)
+        private async void button_CalculateResult(object sender, System.EventArgs e)
         {
 
             resultTest += Int32.Parse(entryPoints.Text);
             SetResults();
-            DisplayAlert("Результат", $"Общий результат = {resultTest}\n" +
+            task = DisplayAlert("Результат", $"Общий результат = {resultTest}\n" +
                                       $"Моторный праксис = {resultMotor}\n" +
                                       $"Динамический праксис = {resultDynamic}\n" +
                                       $"Конструктивный праксис = {resultConstructive}\n" +
                                       $"Объектный гнозис = {resultSubject}\n" +
                                       $"Повторение часов = {Int32.Parse(entryPoints.Text)}\n",
                                       "Принять");
+            await task;
 
             motorPraxisFirst.IsChecked = false;
             motorPraxisSecond.IsChecked = false;
@@ -74,11 +67,10 @@ namespace TestApplication
             resultSubject = 0;
             entryPoints.Text = "0";
 
-
             Console.WriteLine($"{App.patient.resultPraxisAndGnosis.resultMotorPraxis}, {App.patient.resultPraxisAndGnosis.resultDynamicPraxis}, {App.patient.resultPraxisAndGnosis.resultConstructivePraxis}," +
                 $" {App.patient.resultPraxisAndGnosis.resultSubjectGnosis}, {App.patient.resultPraxisAndGnosis.resultClock}, {App.patient.resultPraxisAndGnosis.TotalResultPraxisAndGnosis} у пациента");
             Console.WriteLine($"{resultTest}, {resultMotor}, {resultDynamic}, {resultConstructive}, {resultSubject}, {Int32.Parse(entryPoints.Text)} после окончания теста");
-
+            await Navigation.PopAsync();
         }
 
         private void SetResults()

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
@@ -9,6 +10,8 @@ namespace TestApplication
 {
     public partial class TestCognitive : ContentPage
     {
+        Task task;
+
         int resultTest = 0;
         int resultVisualConstructiveSkills = 0;
         int resultNaming = 0;
@@ -25,7 +28,7 @@ namespace TestApplication
             Title = "Оценка когнитивной сферы";
         }
 
-        private void button_CalculateResult(object sender, System.EventArgs e)
+        private async void button_CalculateResult(object sender, System.EventArgs e)
         {
             if(serialSubstractionResult == 5 || serialSubstractionResult == 4)
             {
@@ -54,7 +57,7 @@ namespace TestApplication
             App.patient.resultMOSA.resultDelayedPlaybackMOSA = resultDelayedPlayback;
             App.patient.resultMOSA.resultOrientationMOSA = resultOrientation;
 
-            DisplayAlert("Результат", $"Общий результат = {resultTest}\n" +
+            task = DisplayAlert("Результат", $"Общий результат = {resultTest}\n" +
                                        $"Баллы за зрительно-конструктивные навыки = {resultVisualConstructiveSkills}\n" +
                                        $"Баллы за называние = {resultNaming}\n" +
                                        $"Баллы за память = {resultAttention}\n" +
@@ -63,6 +66,8 @@ namespace TestApplication
                                        $"Баллы за отсроченное воспроизведение = {resultDelayedPlayback}\n" +
                                        $"Баллы за ориентацию = {resultOrientation}\n",
                                        "Принять");
+
+            await task;
 
             visualConstructiveSkillsFirst.IsChecked = false;
             visualConstructiveSkillsSecond.IsChecked = false;
@@ -125,6 +130,8 @@ namespace TestApplication
             resultDelayedPlayback = 0;
             resultOrientation = 0;
             serialSubstractionResult = 0;
+
+            await Navigation.PopAsync();
         }
 
         private void OnCheckBoxCheckedVisualConstructiveSkills(object sender, CheckedChangedEventArgs e)
