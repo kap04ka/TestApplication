@@ -81,7 +81,7 @@ namespace TestApplication
         public ResultLocus resultLocus;
 
         /// <summary>
-        /// Количество баллов за тест локус-контроля
+        /// Количество баллов за тест Праксиса и Гнозиса
         /// </summary>
         public ResultPraxisAndGnosis resultPraxisAndGnosis;
 
