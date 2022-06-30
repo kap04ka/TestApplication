@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:TestApplication;assembly=TestApplication"
              x:Class="TestApplication.TestPraxisAndGnosis">
 
     <!--Отступ сверху для iOS-->
@@ -38,7 +37,7 @@
             <Label Text="2.	Динамический праксис" FontSize="Medium" FontAttributes="Bold" Padding="10, 10, 0, 0" TextColor="Black"/>
             <Label Text="Воспроизведите движения по заданной схеме" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
 
-            <Image Source="{local:ImageResource TestApplication.Images.jesti1.JPG}" HeightRequest="200" WidthRequest="200"/>
+            <Image Source="jesti1.JPG" HeightRequest="200" WidthRequest="200"/>
 
             <RelativeLayout HorizontalOptions="FillAndExpand">
                 <CheckBox x:Name="dynamicPraxisFirst" CheckedChanged="OnCheckBoxCheckedChangedDynamicPraxis"
@@ -52,7 +51,7 @@
                           Type=RelativeToParent,Property=Width,Factor=.75,Constant=0}"/>
             </RelativeLayout>
             
-            <Image Source="{local:ImageResource TestApplication.Images.jesti2.JPG}" HeightRequest="200" WidthRequest="200" />
+            <Image Source="jesti2.JPG" HeightRequest="200" WidthRequest="200" />
 
             <RelativeLayout HorizontalOptions="FillAndExpand">
                 <CheckBox x:Name="dynamicPraxisFourth" CheckedChanged="OnCheckBoxCheckedChangedDynamicPraxis"
@@ -90,7 +89,7 @@
 
             <Label Text="4. Предметный гнозис" FontSize="Medium" FontAttributes="Bold" Padding="10, 10, 0, 0" TextColor="Black"/>
             <Label Text="Узнайте и назовите предметы, контуры которых наложены друг на друга" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
-            <Image Source="{local:ImageResource TestApplication.Images.PictureWithItems.JPG}" HeightRequest="200" WidthRequest="200" />
+            <Image Source="PictureWithItems.JPG" HeightRequest="200" WidthRequest="200" />
 
             <FlexLayout Direction="Row">
                 <Label Text="Ключ" WidthRequest="200" FontSize="Medium" Padding="10, 10, 0, 0" TextColor="Black"/>
@@ -112,7 +111,7 @@
             <Label Text="5. Скопируйте часы" FontSize="Medium" FontAttributes="Bold" Padding="10, 10, 0, 0" TextColor="Black"/>
 
             <Label Text="Введите количество баллов, на которое пациент скопировал часы (максимум 8)" TextColor="Black" Margin="10, 0" FontSize="Medium"/>
-            <Image Source="{local:ImageResource TestApplication.Images.Watch.JPG}" HeightRequest="200" WidthRequest="200" />
+            <Image Source="Watch.JPG" HeightRequest="200" WidthRequest="200" />
             <Entry x:Name="entryPoints" TextColor="Black" Placeholder="Введите количество баллов" Margin="10,0" PlaceholderColor="Gray" FontSize="Default" Keyboard="Telephone" Text="0" TextChanged="OnTextChanged"/>
 
             <!--Окончание теста-->

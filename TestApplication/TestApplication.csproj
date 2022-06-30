@@ -11,26 +11,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Images\Cube.JPG" />
-    <None Remove="Images\jesti1.JPG" />
-    <None Remove="Images\jesti2.JPG" />
-    <None Remove="Images\jivotnie.JPG" />
-    <None Remove="Images\PictureWithItems.JPG" />
-    <None Remove="Images\Putb.JPG" />
-    <None Remove="Images\Watch.JPG" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Images\Cube.JPG" />
-    <EmbeddedResource Include="Images\jesti1.JPG" />
-    <EmbeddedResource Include="Images\jesti2.JPG" />
-    <EmbeddedResource Include="Images\jivotnie.JPG" />
-    <EmbeddedResource Include="Images\PictureWithItems.JPG" />
-    <EmbeddedResource Include="Images\Putb.JPG" />
-    <EmbeddedResource Include="Images\Watch.JPG" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2478" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.3" />

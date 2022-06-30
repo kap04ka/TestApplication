@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:TestApplication;assembly=TestApplication"
              x:Class="TestApplication.TestCognitive">
     
     <!--Отступ сверху для iOS-->
@@ -19,10 +18,10 @@
             <!--Задание 1-->
             <Label Text="Черчение ломаной линии" FontSize="Medium" FontAttributes="Bold" Padding="10, 10, 0, 0" TextColor="Black"/>
             <Label Text="Попросите исследуемого нарисовать линию от цифры к букве в порядке увеличения. Отметьте задание выполненным, если обследуемый правильно соединяет знаки в следующем порядке: 1-А-2-Б-3-В-4-Г-5-Д так, чтобы линии не пересекались. Любая ошибка, не исправленная немедленно самостоятельно, рассматривается как невыполнение задания." FontSize="Medium" Padding="10, 0" TextColor="Black"/>
-            <Image Source="{local:ImageResource TestApplication.Images.Putb.JPG}" HeightRequest="200" WidthRequest="200"/>
+            <Image Source="Putb.JPG" HeightRequest="200" WidthRequest="200"/>
             
             <FlexLayout Direction="Row">
-                <Label Text="Результат" WidthRequest="110" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <Label Text="Результат" WidthRequest="120" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
                 <CheckBox x:Name="visualConstructiveSkillsFirst" CheckedChanged="OnCheckBoxCheckedVisualConstructiveSkills"/>
             </FlexLayout>
 
@@ -36,10 +35,10 @@
             <Label Text="•	линии должны быть относительно параллельны и незначительно отличаться по длине (принимается рисунок прямоугольной призмы)." FontSize="Medium" Padding="10, 0" TextColor="Black"/>
             <Label Text="Задание не засчитывается, если не выполнено какое-либо из вышеуказанных условий." FontSize="Medium" Padding="10, 0" TextColor="Black"/>
             <Label Text="Если задание выполнено верно, отметьте поле результат." FontSize="Medium" Padding="10, 0" TextColor="Black"/>
-            <Image Source="{local:ImageResource TestApplication.Images.Cube.JPG}" HeightRequest="200" WidthRequest="200"/>
+            <Image Source="Cube.JPG" HeightRequest="200" WidthRequest="200"/>
             
             <FlexLayout Direction="Row">
-                <Label Text="Результат" WidthRequest="110" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <Label Text="Результат" WidthRequest="120" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
                 <CheckBox x:Name="visualConstructiveSkillsSecond" CheckedChanged="OnCheckBoxCheckedVisualConstructiveSkills"/>
             </FlexLayout>
 
@@ -73,7 +72,7 @@
             <!--Задание 4-->
             <Label Text="Называние" FontSize="Medium" FontAttributes="Bold" Padding="10, 10, 0, 0" TextColor="Black"/>
             <Label Text="Попросите пациента назвать животных на картинке." FontSize="Medium" Padding="10, 0" TextColor="Black"/>
-            <Image Source="{local:ImageResource TestApplication.Images.jivotnie.JPG}" HeightRequest="200" WidthRequest="200"/>
+            <Image Source="jivotnie.JPG" HeightRequest="200" WidthRequest="200"/>
 
             <FlexLayout Direction="Row">
                 <Label Text="Лев" WidthRequest="100" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
@@ -162,7 +161,7 @@
             <Label Text="Ошибка – хлопок не на ту букву или отсутствие хлопка на букву А." FontSize="Medium" Padding="10, 0" TextColor="Black"/>
 
             <FlexLayout Direction="Row">
-                <Label Text="Результат" WidthRequest="110" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <Label Text="Результат" WidthRequest="120" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
                 <CheckBox x:Name="attentionThird" CheckedChanged="OnCheckBoxCheckedAttention"/>
             </FlexLayout>
             
@@ -224,7 +223,7 @@
             <Label Text="Если за минуту пациент назвал 11 слов или более на названную букву, отметьте поле результат." FontSize="Medium" Padding="10, 0" TextColor="Black"/>
 
             <FlexLayout Direction="Row">
-                <Label Text="Результат" WidthRequest="110" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <Label Text="Результат" WidthRequest="120" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
                 <CheckBox x:Name="speechThird" CheckedChanged="OnCheckBoxCheckedSpeech"/>
             </FlexLayout>
             

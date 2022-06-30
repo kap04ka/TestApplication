@@ -133,4 +133,25 @@
       <Name>TestApplication</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Cube.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\jesti1.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\jesti2.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\jivotnie.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\PictureWithItems.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Putb.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Watch.JPG" />
+  </ItemGroup>
 </Project>
