@@ -86,6 +86,7 @@ namespace TestApplication
                 App.patient.Age--;
             }
 
+            //инициализируем имя и фамилия в классах результатов теста для бд
             App.patient.scoreMFI20.Name = App.patient.Forename;
             App.patient.scoreMFI20.Surname = App.patient.Surname;
             App.patient.scoreBourdon.Name = App.patient.Forename;
@@ -102,6 +103,8 @@ namespace TestApplication
             App.patient.resultLocus.Surname = App.patient.Surname;
             App.patient.resultLifeQuality.Name = App.patient.Forename;
             App.patient.resultLifeQuality.Surname = App.patient.Surname;
+            App.patient.resultCovidTest.Name = App.patient.Forename;
+            App.patient.resultCovidTest.Surname = App.patient.Surname;
         }
 
 

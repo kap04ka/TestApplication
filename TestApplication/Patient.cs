@@ -439,47 +439,66 @@ namespace TestApplication
     }
 
 
+    [Table ("Тест на ковид")]
     /// <summary>
     /// Результаты теста на ковид
     /// </summary>
     public class CovidTest
     {
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
+        [Column("ID пациента")]
+        public int IdPatient { get; set; }
+        [Column("Фамилия пациента")]
+        public string Surname { get; set; }
+        [Column("Имя пациента")]
+        public string Name { get; set; }
+        [Column("Пол пациента")]
         /// <summary>
         /// Пол пациента
         /// </summary>
         public string GenderPatient { get; set; }
+        [Column("Образование пациента")]
         /// <summary>
         /// Образование пациента
         /// </summary>
         public string EducationPatient { get; set; }
+        [Column("Деятельность пациента")]
         /// <summary>
         /// Деятельность пациента
         /// </summary>
         public string ActivityPatient { get; set; }
+        [Column("Заболевания пациента")]
         /// <summary>
         /// Заболевания пациента
         /// </summary>
         public string DiseasesPatient { get; set; }
+        [Column("Трудоспособность пациента")]
         /// <summary>
         /// Трудоспособность пациента
         /// </summary>
         public string AbilityToWorkPatient { get; set; }
+        [Column("Оценка трудоспособности пациента")]
         /// <summary>
         /// Оцентка трудоспособности
         /// </summary>
         public int WorkCapacityAssessment { get; set; }
+        [Column("Работоспособность по дому пациента")]
         /// <summary>
         /// Работоспособность по дому пациента
         /// </summary>
         public string WorkAtHomePatient { get; set; }
+        [Column("Оценка работоспособности по дому пациента")]
         /// <summary>
         /// Оценка работоспособности по дому
         /// </summary>
         public int PerformanceEvaluation { get; set; }
+        [Column("Досуговая активность пациента")]
         /// <summary>
         /// Досуговая активность пациента
         /// </summary>
         public string LeisureActivitiesPatient { get; set; }
+        [Column("Оценка досуговой активности пациента")]
         /// <summary>
         /// Оценка досуговой активности
         /// </summary>
@@ -489,71 +508,105 @@ namespace TestApplication
         /// <summary>
         /// Кратковременная потеря памяти (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesShortTermMemoryLoss { get; set; }
+        public string[] TableEntriesShortTermMemoryLoss;
+        [Column("Кратковременная потеря памяти")]
+        public string EntriesShortTermMemoryLoss { get; set; }
         /// <summary>
         /// Снижение памяти (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesDecreasedMemory { get; set; }
+        public string[] TableEntriesDecreasedMemory;
+        [Column("Снижение памяти")]
+        public string EntriesDecreasedMemory { get; set; }
         /// <summary>
         /// Снижение концентрации внимания, "туман в мозгу" (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
         public string[] TableEntriesDecreasedConcentration { get; set; }
+        [Column("Снижение концентрации внимания")]
+        public string EntriesDecreasedConcentration { get; set; }
         /// <summary>
         /// Повышенная утомляемость (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesFatigue { get; set; }
+        public string[] TableEntriesFatigue;
+        [Column("Повышенная утомляемость")]
+        public string EntriesFatigue { get; set; }
         /// <summary>
         /// Спутанность сознания (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesConfusion { get; set; }
+        public string[] TableEntriesConfusion;
+        [Column("Спутанность сознания")]
+        public string EntriesConfusion { get; set; }
         /// <summary>
         /// Нарушение сна (патологическое бодрствование, бессонница) (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesSleepDisturbance { get; set; }
+        public string[] TableEntriesSleepDisturbance;
+        [Column("Нарушение сна")]
+        public string EntriesSleepDisturbance { get; set; }
         /// <summary>
         /// Проблемы с речью (подбор слов или произношение) (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesSpeechProblems { get; set; }
+        public string[] TableEntriesSpeechProblems;
+        [Column("Проблемы с речью")]
+        public string EntriesSpeechProblems { get; set; }
         /// <summary>
         /// Изменение характера (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesChangeOfCharacter { get; set; }
+        public string[] TableEntriesChangeOfCharacter;
+        [Column("Изменение характера")]
+        public string EntriesChangeOfCharacter { get; set; }
         /// <summary>
         /// Изменение частоты (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesFrequencyChange { get; set; }
+        public string[] TableEntriesFrequencyChange;
+        [Column("Изменение частоты")]
+        public string EntriesFrequencyChange { get; set; }
         /// <summary>
         /// Изменение интенсивности (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
         public string[] TableEntriesIntensityChange { get; set; }
+        [Column("Изменение интенсивности")]
+        public string EntriesIntensityChange { get; set; }
         /// <summary>
         /// Перепады настроения (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesMoodSwings { get; set; }
+        public string[] TableEntriesMoodSwings;
+        [Column("Перепады настроения")]
+        public string EntriesMoodSwings { get; set; }
         /// <summary>
         /// Тревога (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesAnxiety { get; set; }
+        public string[] TableEntriesAnxiety;
+        [Column("Тревога")]
+        public string EntriesAnxiety { get; set; }
         /// <summary>
         /// Депрессия (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesDepression { get; set; }
+        public string[] TableEntriesDepression;
+        [Column("Депрессия")]
+        public string EntriesDepression { get; set; }
         /// <summary>
         /// Навязчивые состояния (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesObsessiveStates { get; set; }
+        public string[] TableEntriesObsessiveStates;
+        [Column("Навязчивые состояния")]
+        public string EntriesObsessiveStates { get; set; }
         /// <summary>
         /// Лихорадка (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
         public string[] TableEntriesFever { get; set; }
+        [Column("Лихорадка")]
+        public string EntriesFever { get; set; }
         /// <summary>
         /// Повышенное потоотделение (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesIncreasedSweating { get; set; }
+        public string[] TableEntriesIncreasedSweating;
+        [Column("Повышенное потоотделение")]
+        public string EntriesIncreasedSweating { get; set; }
         /// <summary>
         /// Ночная потливость (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesNightSweats { get; set; }
+        public string[] TableEntriesNightSweats;
+        [Column("Ночная потливость")]
+        public string EntriesNightSweats { get; set; }
         /// <summary>
         /// Непереносимость тепла (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
