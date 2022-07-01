@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using SQLite;
 
 namespace TestApplication
 {
+    [Table ("Patients")]
     public class Patient
     {
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
         /// <summary>
         /// Фамилия пациента
         /// </summary>

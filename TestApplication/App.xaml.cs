@@ -1,6 +1,7 @@
 ﻿ using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.IO;
 
 namespace TestApplication
 {
@@ -22,7 +23,24 @@ namespace TestApplication
         /// Форма регистрации пациента
         /// </summary>
         public FormPatients formPatients;
-        
+
+
+        public const string DATABASE_NAME = "friends.db";
+        public static PatientRepository database;
+        public static PatientRepository Database
+        {
+            get
+            {
+                if (database == null)
+                {
+                    database = new PatientRepository(
+                        Path.Combine(
+                            Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), DATABASE_NAME));
+                }
+                return database;
+            }
+        }
+
 
         public App()
         {
