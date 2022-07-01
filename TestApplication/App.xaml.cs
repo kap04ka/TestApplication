@@ -25,7 +25,7 @@ namespace TestApplication
         public FormPatients formPatients;
 
 
-        public const string DATABASE_NAME = "friends.db";
+        public const string DATABASE_NAME = "patients.db";
         public static PatientRepository database;
         public static PatientRepository Database
         {

@@ -121,68 +121,103 @@ namespace TestApplication
     }
 
 
+    [Table ("Тест МОСА")]
     public class ResultMOSA
     {
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
+        [Column("ID пациента")]
+        public int IdPatient { get; set; }
+        [Column("Фамилия пациента")]
+        public string Surname { get; set; }
+        [Column("Имя пациента")]
+        public string Name { get; set; }
+
+        [Column("Итоговый результат")]
         /// <summary>
         /// Результат за тест МОСА
         /// </summary>
-        public int resultMOSATest = 0;
+        public int resultMOSATest { get; set; }
+        [Column("Зрительно-конструктивный/исполнительные навыки")]
         /// <summary>
         /// Результат за Зрительно-конструктивные/исполнительные навыки
         /// </summary>
-        public int resultVisualConstructiveSkillsMOSA = 0;
+        public int resultVisualConstructiveSkillsMOSA { get; set; }
+        [Column("Называние")]
         /// <summary>
         /// Результат Называние
         /// </summary>
-        public int resultNamingMOSA = 0;
+        public int resultNamingMOSA { get; set; }
+        [Column("Внимание")]
         /// <summary>
         /// Результат Внимание
         /// </summary>
-        public int resultAttentionMOSA = 0;
+        public int resultAttentionMOSA { get; set; }
+        [Column("Речь")]
         /// <summary>
         /// Результат Речь
         /// </summary>
-        public int resultSpeechMOSA = 0;
+        public int resultSpeechMOSA { get; set; }
+        [Column("Абстракция")]
         /// <summary>
         /// Результат Абстракция
         /// </summary>
-        public int resultAbstractionMOSA = 0;
+        public int resultAbstractionMOSA { get; set; }
+        [Column("Отсроченное воспроизведение")]
         /// <summary>
         /// Результат Отсроченное воспроизведение 
         /// </summary>
-        public int resultDelayedPlaybackMOSA = 0;
+        public int resultDelayedPlaybackMOSA { get; set; }
+        [Column("Ориентация")]
         /// <summary>
         /// Результат Ориентация
         /// </summary>
-        public int resultOrientationMOSA = 0;
+        public int resultOrientationMOSA { get; set; }
     }
 
+
+    [Table ("Тест праксиса и гнозиса")]
     public class ResultPraxisAndGnosis
     {
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
+        [Column("ID пациента")]
+        public int IdPatient { get; set; }
+        [Column("Фамилия пациента")]
+        public string Surname { get; set; }
+        [Column("Имя пациента")]
+        public string Name { get; set; }
+
+        [Column("Моторный праксис")]
         /// <summary>
         /// Ответы моторного праксиса 
         /// </summary>
-        public int resultMotorPraxis = 0;
+        public int resultMotorPraxis { get; set; }
+        [Column("Динамический праксис")]
         /// <summary>
         /// Ответы динамического праксиса
         /// </summary>
-        public int resultDynamicPraxis = 0;
+        public int resultDynamicPraxis { get; set; }
+        [Column("Конструктивный праксис")]
         /// <summary>
         /// Ответы конструктивного праксиса
         /// </summary>
-        public int resultConstructivePraxis = 0;
+        public int resultConstructivePraxis { get; set; }
+        [Column("Объектный гнозис")]
         /// <summary>
         /// Ответы объектного гнозиса
         /// </summary>
-        public int resultSubjectGnosis = 0;
+        public int resultSubjectGnosis { get; set; }
+        [Column("Перерисовывание часов")]
         /// <summary>
         /// Ответы перерисовывания часов
         /// </summary>
-        public int resultClock = 0;
+        public int resultClock { get; set; }
+        [Column("Общий балл")]
         /// <summary>
         /// Ответ на тест Праксиса и Гнозиса
         /// </summary>
-        public int TotalResultPraxisAndGnosis = 0;
+        public int TotalResultPraxisAndGnosis { get; set; }
 
     }
 

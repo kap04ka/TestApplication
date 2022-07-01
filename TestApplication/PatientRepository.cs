@@ -14,6 +14,8 @@ namespace TestApplication
             database.CreateTable<Patient>();
             database.CreateTable<ScoreMFI20>();
             database.CreateTable<TestCorrectionBourdon>();
+            database.CreateTable<ResultMOSA>();
+            database.CreateTable<ResultPraxisAndGnosis>();
         }
         public IEnumerable<Patient> GetItems()
         {
@@ -35,6 +37,8 @@ namespace TestApplication
 
                 database.Update(item.scoreMFI20);
                 database.Update(item.scoreBourdon);
+                database.Update(item.resultMOSA);
+                database.Update(item.resultPraxisAndGnosis);
 
                 return item.Id;
             }
@@ -44,9 +48,13 @@ namespace TestApplication
 
                 item.scoreMFI20.IdPatient = item.Id;
                 item.scoreBourdon.IdPatient = item.Id;
+                item.resultMOSA.IdPatient = item.Id;
+                item.resultPraxisAndGnosis.IdPatient = item.Id;
 
                 database.Insert(item.scoreMFI20);
                 database.Insert(item.scoreBourdon);
+                database.Insert(item.resultMOSA);
+                database.Insert(item.resultPraxisAndGnosis);
 
                 return item.Id;
             }
