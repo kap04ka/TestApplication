@@ -78,6 +78,8 @@ namespace TestApplication
             App.patient.DoctorFIO = entryAttendingDoctor.Text;
             App.patient.DateOfBirth = dataPickerDateOfBirth.Date;
 
+            App.patient.BirthDateString = App.patient.DateOfBirth.ToShortDateString();
+
             App.patient.Age = DateTime.Today.Year - App.patient.DateOfBirth.Year;
             if (App.patient.DateOfBirth.DayOfYear > DateTime.Today.DayOfYear)
             {

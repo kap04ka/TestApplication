@@ -2,6 +2,8 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.IO;
+using System.Threading;
+using System.Globalization;
 
 namespace TestApplication
 {
@@ -53,7 +55,8 @@ namespace TestApplication
             navigationPage = new NavigationPage(mainPage);
             navigationPage.BarBackgroundColor = Color.Orange;
             navigationPage.BarTextColor = Color.Black;
-            
+
+            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("ru-RU");
 
             MainPage = formPatients;
         }

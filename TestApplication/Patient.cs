@@ -27,6 +27,8 @@ namespace TestApplication
         public string Patronymic { get; set; }
 
         [Column("Дата рождения")]
+        public string BirthDateString { get; set; }
+        [Ignore]
         /// <summary>
         /// Дата рождения пациента
         /// </summary>
@@ -173,6 +175,11 @@ namespace TestApplication
         /// Результат Ориентация
         /// </summary>
         public int resultOrientationMOSA { get; set; }
+
+        public ResultMOSA()
+        {
+
+        }
     }
 
 
@@ -219,6 +226,10 @@ namespace TestApplication
         /// </summary>
         public int TotalResultPraxisAndGnosis { get; set; }
 
+        public ResultPraxisAndGnosis()
+        {
+
+        }
     }
 
     public class ResultLocus
@@ -357,7 +368,7 @@ namespace TestApplication
         /// Концентрация внимания
         /// </summary>
         public int ConcentrationOfAtention { get; set; }
-        [Column("Темп выполнения")]
+        [Ignore]
         /// <summary>
         /// Темп выполнения за определенное количество минут
         /// </summary>
@@ -367,6 +378,8 @@ namespace TestApplication
         /// Устойчивость внимания
         /// </summary>
         public int AttentionSpan { get; set; }
+        [Column("Темп выполнения")]
+        public string PaceString { get; set; }
 
         public TestCorrectionBourdon()
         {
