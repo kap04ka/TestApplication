@@ -229,7 +229,7 @@
             </Picker>
 
             <!--Окончание теста-->
-            <Button x:Name="buttonResultTest" Text="Получить результат" HorizontalOptions="End" Margin="0,15,10,20" FontSize="Medium" Clicked="button_CalculateResult" BackgroundColor="#FFE5B4" TextColor="Black"/>
+            <Button x:Name="buttonResultTest" Text="Получить результат" HorizontalOptions="End"  Margin="0,25,30,30" FontSize="Medium" Clicked="button_CalculateResult" BackgroundColor="#FFE5B4" WidthRequest="200" HeightRequest="50" TextColor="Black"/>
 
         </StackLayout>
     </ScrollView>

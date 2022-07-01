@@ -80,8 +80,7 @@ namespace TestApplication
                 }
             }
         }
-
-
+        
         /// <summary>
         /// Проверка на не введенные значения
         /// </summary>

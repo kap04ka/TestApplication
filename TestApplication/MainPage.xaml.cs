@@ -67,7 +67,6 @@ namespace TestApplication
 
         private async void PatientData(Patient patient)
         {
-            //var jsonString = JsonConvert.SerializeObject(patient);
             task = DisplayAlert("Данные о тестах", $" Пациент {patient.Forename} {patient.Surname} {patient.Patronymic}\n\n" +
                                 $"•	Результат теста 'Оценка когнитивной сферы':\n      Общий результат {patient.resultMOSA.resultMOSATest}\n\n" +
                                 $"•	Результат теста 'Шкала Вассермана':\n      Общий результат {patient.resultVasserman.TotalResultVasserman}\n\n" +
@@ -135,7 +134,6 @@ namespace TestApplication
                                 $"Выпадение волос\n1){patient.resultCovidTest.TableEntriesHairLoss[0]}  2){patient.resultCovidTest.TableEntriesHairLoss[1]}  3){patient.resultCovidTest.TableEntriesHairLoss[2]}\n" +
                                 $"Кожные высыпания\n1){patient.resultCovidTest.TableEntriesSkinRashes[0]}  2){patient.resultCovidTest.TableEntriesSkinRashes[1]}  3){patient.resultCovidTest.TableEntriesSkinRashes[2]}\n",
                                 "Ок");
-            //Console.WriteLine($"{jsonString}");
             await task;
         }
 

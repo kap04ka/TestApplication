@@ -141,6 +141,5 @@ namespace TestApplication
 
             App.patient.resultVasserman.TotalResultVasserman = testResult;
         }
-
     }
 }

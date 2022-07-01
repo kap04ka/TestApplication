@@ -1,0 +1,4 @@
+MainPackage=C:\Users\user\Source\Repos\MergedTests\TestApplication.UWP\bin\ARM\Release\TestApplication.UWP_1.0.0.0_ARM.appx
+SymbolPackage=C:\Users\user\Source\Repos\MergedTests\TestApplication.UWP\obj\ARM\Release\Symbols\TestApplication.UWP_1.0.0.0_ARM.appxsym
+ResourcePack=C:\Users\user\Source\Repos\MergedTests\TestApplication.UWP\bin\ARM\Release\TestApplication.UWP_1.0.0.0_scale-100.appx
+ResourcePack=C:\Users\user\Source\Repos\MergedTests\TestApplication.UWP\bin\ARM\Release\TestApplication.UWP_1.0.0.0_scale-400.appx
