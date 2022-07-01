@@ -5,7 +5,7 @@ using SQLite;
 
 namespace TestApplication
 {
-    [Table ("Patients")]
+    [Table ("Пациенты")]
     public class Patient
     {
         [PrimaryKey, AutoIncrement]
@@ -20,36 +20,42 @@ namespace TestApplication
         /// Имя пациента
         /// </summary>
         public string Forename { get; set; }
+        [Column("Отчество пациента")]
         /// <summary>
         /// Отчество пациента
         /// </summary>
         public string Patronymic { get; set; }
 
-
+        [Column("Дата рождения")]
         /// <summary>
         /// Дата рождения пациента
         /// </summary>
         public DateTime DateOfBirth { get; set; }
+        [Column("Возраст пациента")]
         /// <summary>
         /// Возраст пациента
         /// </summary>
         public int Age { get; set; }
 
 
+        [Column("Место работы")]
         /// <summary>
         /// Место работы пациента
         /// </summary>
         public string Company { get; set; }
+        [Column("Электронная почта")]
         /// <summary>
         /// Электронная почта пациента
         /// </summary>
         public string Email { get; set; }
+        [Column("Номер телефона")]
         /// <summary>
         /// Номер телефона пациента
         /// </summary>
         public string PhoneNumber { get; set; }
 
 
+        [Column("ФИО лечащего врача")]
         /// <summary>
         /// ФИО лечащего врача
         /// </summary>
@@ -113,6 +119,7 @@ namespace TestApplication
         }
 
     }
+
 
     public class ResultMOSA
     {
@@ -238,6 +245,7 @@ namespace TestApplication
         public int TotalResultLifeQuality = 0;
     }
 
+
     [Table ("Тест на астению")]
     /// <summary>
     /// Тест на астению
@@ -294,19 +302,32 @@ namespace TestApplication
     }
 
 
+    [Table ("Тест Бурдона")]
     /// <summary>
     /// Ответы на тест корректурная проба Бурдона 
     /// </summary>
     public class TestCorrectionBourdon
     {
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
+        [Column("ID пациента")]
+        public int IdPatient { get; set; }
+        [Column("Фамилия пациента")]
+        public string Surname { get; set; }
+        [Column("Имя пациента")]
+        public string Name { get; set; }
+
+        [Column("Концетрация внимания")]
         /// <summary>
         /// Концентрация внимания
         /// </summary>
         public int ConcentrationOfAtention { get; set; }
+        [Column("Темп выполнения")]
         /// <summary>
         /// Темп выполнения за определенное количество минут
         /// </summary>
         public int[] PaceArray { get; set; }
+        [Column("Устойчивость внимания")]
         /// <summary>
         /// Устойчивость внимания
         /// </summary>

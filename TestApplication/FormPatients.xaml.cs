@@ -86,6 +86,8 @@ namespace TestApplication
 
             App.patient.scoreMFI20.Name = App.patient.Forename;
             App.patient.scoreMFI20.Surname = App.patient.Surname;
+            App.patient.scoreBourdon.Name = App.patient.Forename;
+            App.patient.scoreBourdon.Surname = App.patient.Surname;
         }
 
 
