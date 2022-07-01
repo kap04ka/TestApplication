@@ -12,6 +12,7 @@ namespace TestApplication
         {
             database = new SQLiteConnection(databasePath);
             database.CreateTable<Patient>();
+            database.CreateTable<ScoreMFI20>();
         }
         public IEnumerable<Patient> GetItems()
         {
@@ -30,11 +31,15 @@ namespace TestApplication
             if (item.Id != 0)
             {
                 database.Update(item);
+                database.Update(item.scoreMFI20);
                 return item.Id;
             }
             else
             {
-                return database.Insert(item);
+                database.Insert(item);
+                item.scoreMFI20.IdPatient = item.Id;
+                database.Insert(item.scoreMFI20);
+                return item.Id;
             }
         }
     }

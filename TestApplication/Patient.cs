@@ -10,10 +10,12 @@ namespace TestApplication
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
+        [Column("Фамилия пациента")]
         /// <summary>
         /// Фамилия пациента
         /// </summary>
         public string Surname { get; set; }
+        [Column("Имя пациента")]
         /// <summary>
         /// Имя пациента
         /// </summary>
@@ -236,34 +238,49 @@ namespace TestApplication
         public int TotalResultLifeQuality = 0;
     }
 
-
+    [Table ("Тест на астению")]
     /// <summary>
     /// Тест на астению
     /// </summary>
     public class ScoreMFI20
     {
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
+        [Column("ID пациента")]
+        public int IdPatient { get; set; }
+        [Column("Фамилия пациента")]
+        public string Surname { get; set; }
+        [Column ("Имя пациента")]
+        public string Name { get; set; }
+        
+
+        [Column("Общая астения")]
         /// <summary>
         /// Количество баллов за общая астения в MFI-20
         /// </summary>
         public int ScoreAnswerGeneralAsthenia { get; set; }
+        [Column("Пониженная активность")]
         /// <summary>
         /// Количество баллов за пониженная активность в MFI-20
         /// </summary>
         public int ScoreAnswerReducedActivity { get; set; }
+        [Column("Снижение мотивации")]
         /// <summary>
         /// Количество баллов за снижение мотивации в MFI-20
         /// </summary>
         public int ScoreAnswerDecreasedMotivation { get; set; }
+        [Column("Физическая астения")]
         /// <summary>
         /// Количество баллов за физическую астению в MFI-20
         /// </summary>
         public int ScoreAnswerPhysicalAsthenia { get; set; }
+        [Column("Психическая астения")]
         /// <summary>
         /// Количество баллов за психическую астению в MFI-20
         /// </summary>
         public int ScoreAnswerMentalAsthenia { get; set; }
 
-
+        [Column("Всего баллов")]
         /// <summary>
         /// Количество баллов тест MFI-20
         /// </summary>
