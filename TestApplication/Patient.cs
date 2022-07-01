@@ -520,7 +520,7 @@ namespace TestApplication
         /// <summary>
         /// Снижение концентрации внимания, "туман в мозгу" (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesDecreasedConcentration { get; set; }
+        public string[] TableEntriesDecreasedConcentration;
         [Column("Снижение концентрации внимания")]
         public string EntriesDecreasedConcentration { get; set; }
         /// <summary>
@@ -562,7 +562,7 @@ namespace TestApplication
         /// <summary>
         /// Изменение интенсивности (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesIntensityChange { get; set; }
+        public string[] TableEntriesIntensityChange;
         [Column("Изменение интенсивности")]
         public string EntriesIntensityChange { get; set; }
         /// <summary>
@@ -592,7 +592,7 @@ namespace TestApplication
         /// <summary>
         /// Лихорадка (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesFever { get; set; }
+        public string[] TableEntriesFever;
         [Column("Лихорадка")]
         public string EntriesFever { get; set; }
         /// <summary>
@@ -610,139 +610,207 @@ namespace TestApplication
         /// <summary>
         /// Непереносимость тепла (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesHeatIntolerance { get; set; }
+        public string[] TableEntriesHeatIntolerance;
+        [Column("Непереносимость тепла")]
+        public string EntriesHeatIntolerance { get; set; }
         /// <summary>
         /// Брадикардия (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesBradycardia { get; set; }
+        public string[] TableEntriesBradycardia;
+        [Column("Брадикардия")]
+        public string EntriesBradycardia { get; set; }
         /// <summary>
         /// Тахикардия (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesTachycardia { get; set; }
+        public string[] TableEntriesTachycardia;
+        [Column("Тахикардия")]
+        public string EntriesTachycardia { get; set; }
         /// <summary>
         /// Сердцебиение (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesHeartbeat { get; set; }
+        public string[] TableEntriesHeartbeat;
+        [Column("Сердцебиение")]
+        public string EntriesHeartbeat { get; set; }
         /// <summary>
         /// Подъемы АД (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesBPRises { get; set; }
+        public string[] TableEntriesBPRises;
+        [Column("Подъемы АД")]
+        public string EntriesBPRises { get; set; }
         /// <summary>
         /// Понижение АД (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesLoweringBloodPressure { get; set; }
+        public string[] TableEntriesLoweringBloodPressure;
+        [Column("Понижение АД")]
+        public string EntriesLoweringBloodPressure { get; set; }
         /// <summary>
         /// Обморок (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesFainting { get; set; }
+        public string[] TableEntriesFainting;
+        [Column("Обморок")]
+        public string EntriesFainting { get; set; }
         /// <summary>
         /// Боль в мышцах  (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesMusclePain { get; set; }
+        public string[] TableEntriesMusclePain;
+        [Column("Боль в мышцах")]
+        public string EntriesMusclePain { get; set; }
         /// <summary>
         /// Боль в суставах (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesJointPain { get; set; }
+        public string[] TableEntriesJointPain;
+        [Column("Боль в суставах")]
+        public string EntriesJointPain { get; set; }
         /// <summary>
         /// Головокружение (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesDizziness { get; set; }
+        public string[] TableEntriesDizziness;
+        [Column("Головокружение")]
+        public string EntriesDizziness { get; set; }
         /// <summary>
         /// Нарушение равновесия (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesImbalance { get; set; }
+        public string[] TableEntriesImbalance;
+        [Column("Нарушение равновесия")]
+        public string EntriesImbalance { get; set; }
         /// <summary>
         /// Нарушение зрения (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesVisualImpairment { get; set; }
+        public string[] TableEntriesVisualImpairment;
+        [Column("Нарушение зрения")]
+        public string EntriesVisualImpairment { get; set; }
         /// <summary>
         /// Кожная гиперестезия (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesSkinHyperesthesia { get; set; }
+        public string[] TableEntriesSkinHyperesthesia;
+        [Column("Кожная гиперестезия")]
+        public string EntriesSkinHyperesthesia { get; set; }
         /// <summary>
         /// Боль в конечностях (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesPainInTheLimbs { get; set; }
+        public string[] TableEntriesPainInTheLimbs;
+        [Column("Боль в конечностях")]
+        public string EntriesPainInTheLimbs { get; set; }
         /// <summary>
         /// Онемение в конечностях (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesNumbnessInTheLimbs { get; set; }
+        public string[] TableEntriesNumbnessInTheLimbs;
+        [Column("Онемение в конечностях")]
+        public string EntriesNumbnessInTheLimbs { get; set; }
         /// <summary>
         /// Парестезии (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesParesthesia { get; set; }
+        public string[] TableEntriesParesthesia;
+        [Column("Парестезии")]
+        public string EntriesParesthesia { get; set; }
         /// <summary>
         /// Нарушения вкуса (агевзия, снижение вкуса, искажение вкуса) (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesTasteDisorders { get; set; }
+        public string[] TableEntriesTasteDisorders;
+        [Column("Нарушения вкуса")]
+        public string EntriesTasteDisorders { get; set; }
         /// <summary>
         /// Нарушения обоняния (аносмия, фантомия, паросмия) (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesOlfactoryDisorders { get; set; }
+        public string[] TableEntriesOlfactoryDisorders;
+        [Column("Нарушения обоняния")]
+        public string EntriesOlfactoryDisorders { get; set; }
         /// <summary>
         /// кашель (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesCough { get; set; }
+        public string[] TableEntriesCough;
+        [Column("Кашель")]
+        public string EntriesCough { get; set; }
         /// <summary>
         /// Одышка (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesDyspnea { get; set; }
+        public string[] TableEntriesDyspnea;
+        [Column("Одышка")]
+        public string EntriesDyspnea { get; set; }
         /// <summary>
         /// Стеснение в груди, боль в груди (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesChestPain { get; set; }
+        public string[] TableEntriesChestPain;
+        [Column("Стеснение в груди, боль в груди")]
+        public string EntriesChestPain { get; set; }
         /// <summary>
         /// Учащенное сердцебиение (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesCardiopalmus { get; set; }
+        public string[] TableEntriesCardiopalmus;
+        [Column("Учащенное сердцебиение")]
+        public string EntriesCardiopalmus { get; set; }
         /// <summary>
         /// Анорексия, снижение аппетита (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesAnorexia { get; set; }
+        public string[] TableEntriesAnorexia;
+        [Column("Анорексия, снижение аппетита")]
+        public string EntriesAnorexia { get; set; }
         /// <summary>
         /// Судороги (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesConvulsions { get; set; }
+        public string[] TableEntriesConvulsions;
+        [Column("Судороги")]
+        public string EntriesConvulsions { get; set; }
         /// <summary>
         /// боль в горле (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesSoreThroat { get; set; }
+        public string[] TableEntriesSoreThroat;
+        [Column("Боль в горле")]
+        public string EntriesSoreThroat { get; set; }
         /// <summary>
         /// Шум в ушах (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesNoiseInEars { get; set; }
+        public string[] TableEntriesNoiseInEars;
+        [Column("Шум в ушах")]
+        public string EntriesNoiseInEars { get; set; }
         /// <summary>
         /// Ушная боль (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesEarAche { get; set; }
+        public string[] TableEntriesEarAche;
+        [Column("Ушная боль")]
+        public string EntriesEarAche { get; set; }
         /// <summary>
         /// заложенность носа (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesNasalCongestion { get; set; }
+        public string[] TableEntriesNasalCongestion;
+        [Column("Заложенность носа")]
+        public string EntriesNasalCongestion { get; set; }
         /// <summary>
         /// Боль и сухость носа (Синдром сухого носа) (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesPainAndDrynessOfTheNose { get; set; }
+        public string[] TableEntriesPainAndDrynessOfTheNose;
+        [Column("Боль и сухость носа")]
+        public string EntriesPainAndDrynessOfTheNose { get; set; }
         /// <summary>
         /// Боль в животе (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesAbdominalPain { get; set; }
+        public string[] TableEntriesAbdominalPain;
+        [Column("Боль в животе")]
+        public string EntriesAbdominalPain { get; set; }
         /// <summary>
         /// Диарея (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesDiarrhea { get; set; }
+        public string[] TableEntriesDiarrhea;
+        [Column("Диарея")]
+        public string EntriesDiarrhea { get; set; }
         /// <summary>
         /// тошнота и рвота (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesNauseaAndVomiting { get; set; }
+        public string[] TableEntriesNauseaAndVomiting;
+        [Column("Тошнота и рвота")]
+        public string EntriesNauseaAndVomiting { get; set; }
         /// <summary>
         /// выпадение волос (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesHairLoss { get; set; }
+        public string[] TableEntriesHairLoss;
+        [Column("Выпадение волос")]
+        public string EntriesHairLoss { get; set; }
         /// <summary>
         /// Кожные высыпания (При поступлении, При выписке, Через 3 месяца после выписки)
         /// </summary>
-        public string[] TableEntriesSkinRashes { get; set; }
+        public string[] TableEntriesSkinRashes;
+        [Column("Кожные высыпания")]
+        public string EntriesSkinRashes { get; set; }
 
 
         public CovidTest()
