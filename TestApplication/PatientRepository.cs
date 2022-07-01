@@ -17,6 +17,9 @@ namespace TestApplication
             database.CreateTable<ResultMOSA>();
             database.CreateTable<ResultPraxisAndGnosis>();
             database.CreateTable<ResultVasserman>();
+            database.CreateTable<ResultAnxietyAndDepression>();
+            database.CreateTable<ResultLocus>();
+            database.CreateTable<ResultLifeQuality>();
         }
 
 
@@ -45,6 +48,9 @@ namespace TestApplication
                 database.Update(item.resultMOSA);
                 database.Update(item.resultPraxisAndGnosis);
                 database.Update(item.resultVasserman);
+                database.Update(item.resultAnxietyAndDepression);
+                database.Update(item.resultLocus);
+                database.Update(item.resultLifeQuality);
 
                 return item.Id;
             }
@@ -57,12 +63,18 @@ namespace TestApplication
                 item.resultMOSA.IdPatient = item.Id;
                 item.resultPraxisAndGnosis.IdPatient = item.Id;
                 item.resultVasserman.IdPatient = item.Id;
+                item.resultAnxietyAndDepression.IdPatient = item.Id;
+                item.resultLocus.IdPatient = item.Id;
+                item.resultLifeQuality.IdPatient = item.Id;
 
                 database.Insert(item.scoreMFI20);
                 database.Insert(item.scoreBourdon);
                 database.Insert(item.resultMOSA);
                 database.Insert(item.resultPraxisAndGnosis);
                 database.Insert(item.resultVasserman);
+                database.Insert(item.resultAnxietyAndDepression);
+                database.Insert(item.resultLocus);
+                database.Insert(item.resultLifeQuality);
 
                 return item.Id;
             }

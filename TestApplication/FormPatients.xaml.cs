@@ -96,6 +96,12 @@ namespace TestApplication
             App.patient.resultPraxisAndGnosis.Surname = App.patient.Surname;
             App.patient.resultVasserman.Name = App.patient.Forename;
             App.patient.resultVasserman.Surname = App.patient.Surname;
+            App.patient.resultAnxietyAndDepression.Name = App.patient.Forename;
+            App.patient.resultAnxietyAndDepression.Surname = App.patient.Surname;
+            App.patient.resultLocus.Name = App.patient.Forename;
+            App.patient.resultLocus.Surname = App.patient.Surname;
+            App.patient.resultLifeQuality.Name = App.patient.Forename;
+            App.patient.resultLifeQuality.Surname = App.patient.Surname;
         }
 
 

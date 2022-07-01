@@ -232,17 +232,30 @@ namespace TestApplication
         }
     }
 
+
+    [Table ("Тест локус-контроля")]
     public class ResultLocus
     {
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
+        [Column("ID пациента")]
+        public int IdPatient { get; set; }
+        [Column("Фамилия пациента")]
+        public string Surname { get; set; }
+        [Column("Имя пациента")]
+        public string Name { get; set; }
+
+
         /// <summary>
         /// Массив ответов теста локус-контроля
         /// </summary>
         public int[] arrayAnswerLocus = new int[9];
 
+        [Column("Итоговый балл")]
         /// <summary>
         /// Итоговый результат теста локус-контроля
         /// </summary>
-        public int TotalResultLocus = 0;
+        public int TotalResultLocus { get; set; }
     }
 
 
@@ -271,37 +284,62 @@ namespace TestApplication
         public int TotalResultVasserman { get; set; }
     }
 
+
+    [Table ("Тест на тревожность и депрессию")]
     public class ResultAnxietyAndDepression
     {
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
+        [Column("ID пациента")]
+        public int IdPatient { get; set; }
+        [Column("Фамилия пациента")]
+        public string Surname { get; set; }
+        [Column("Имя пациента")]
+        public string Name { get; set; }
+
         /// <summary>
         /// Массив ответов теста тревожности
         /// </summary>
         public int[] arrayAnswerAnxiety = new int[7];
+        [Column("Балл тревожности")]
         /// <summary>
         /// Итоговый результат тревожности
         /// </summary>
-        public int TotalResultAnxiety = 0;
+        public int TotalResultAnxiety { get; set; }
 
         /// <summary>
         /// Массив ответов теста деперессии
         /// </summary>
         public int[] arrayAnswerDepression = new int[7];
+        [Column("Балл депрессии")]
         /// <summary>
         /// Итоговый результат депрессии
         /// </summary>
-        public int TotalResultDepression = 0;
+        public int TotalResultDepression { get; set; }
     }
 
+
+    [Table ("Тест качества жизни")]
     public class ResultLifeQuality
     {
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
+        [Column("ID пациента")]
+        public int IdPatient { get; set; }
+        [Column("Фамилия пациента")]
+        public string Surname { get; set; }
+        [Column("Имя пациента")]
+        public string Name { get; set; }
+
         /// <summary>
         /// Массив ответов теста качества жизни
         /// </summary>
         public int[] arrayAnswerLifeQuality = new int[6];
+        [Column("Итоговый балл")]
         /// <summary>
         /// Итоговый результат
         /// </summary>
-        public int TotalResultLifeQuality = 0;
+        public int TotalResultLifeQuality { get; set; }
     }
 
 
