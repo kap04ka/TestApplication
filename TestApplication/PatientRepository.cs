@@ -16,7 +16,10 @@ namespace TestApplication
             database.CreateTable<TestCorrectionBourdon>();
             database.CreateTable<ResultMOSA>();
             database.CreateTable<ResultPraxisAndGnosis>();
+            database.CreateTable<ResultVasserman>();
         }
+
+
         public IEnumerable<Patient> GetItems()
         {
             return database.Table<Patient>().ToList();
@@ -29,6 +32,8 @@ namespace TestApplication
         {
             return database.Delete<Patient>(id);
         }
+
+
         public int SaveItem(Patient item)
         {
             if (item.Id != 0)
@@ -39,6 +44,7 @@ namespace TestApplication
                 database.Update(item.scoreBourdon);
                 database.Update(item.resultMOSA);
                 database.Update(item.resultPraxisAndGnosis);
+                database.Update(item.resultVasserman);
 
                 return item.Id;
             }
@@ -50,11 +56,13 @@ namespace TestApplication
                 item.scoreBourdon.IdPatient = item.Id;
                 item.resultMOSA.IdPatient = item.Id;
                 item.resultPraxisAndGnosis.IdPatient = item.Id;
+                item.resultVasserman.IdPatient = item.Id;
 
                 database.Insert(item.scoreMFI20);
                 database.Insert(item.scoreBourdon);
                 database.Insert(item.resultMOSA);
                 database.Insert(item.resultPraxisAndGnosis);
+                database.Insert(item.resultVasserman);
 
                 return item.Id;
             }

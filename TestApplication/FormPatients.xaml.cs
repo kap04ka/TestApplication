@@ -94,6 +94,8 @@ namespace TestApplication
             App.patient.resultMOSA.Surname = App.patient.Surname;
             App.patient.resultPraxisAndGnosis.Name = App.patient.Forename;
             App.patient.resultPraxisAndGnosis.Surname = App.patient.Surname;
+            App.patient.resultVasserman.Name = App.patient.Forename;
+            App.patient.resultVasserman.Surname = App.patient.Surname;
         }
 
 

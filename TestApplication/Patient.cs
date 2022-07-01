@@ -245,17 +245,30 @@ namespace TestApplication
         public int TotalResultLocus = 0;
     }
 
+
+    [Table ("Тест Вассермана")]
     public class ResultVasserman
     {
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
+        [Column("ID пациента")]
+        public int IdPatient { get; set; }
+        [Column("Фамилия пациента")]
+        public string Surname { get; set; }
+        [Column("Имя пациента")]
+        public string Name { get; set; }
+
         /// <summary>
         /// Массив ответов теста Вассермана
         /// </summary>
         public int[] arrayAnswerVasserman = new int[21];
-
+        [Column("Баллы за ответы")]
+        public string AnswersVasserman { get; set; }
+        [Column("Общее количество баллов")]
         /// <summary>
         /// Итоговый результат теста Вассермана
         /// </summary>
-        public int TotalResultVasserman = 0;
+        public int TotalResultVasserman { get; set; }
     }
 
     public class ResultAnxietyAndDepression
