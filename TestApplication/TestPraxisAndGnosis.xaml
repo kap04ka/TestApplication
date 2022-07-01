@@ -19,25 +19,25 @@
             <Label Text="Совершите серию движений по заданному плану" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
             
             <Label Text="1 - Покажите жестом, что вы здороваетесь" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
-            <CheckBox x:Name="motorPraxisFirst" CheckedChanged="OnCheckBoxCheckedChangedMotorPraxis"/>
+            <CheckBox x:Name="motorPraxisFirst" Margin="10, 0, 0, 0" CheckedChanged="OnCheckBoxCheckedChangedMotorPraxis"/>
 
             <Label Text="2 - Покажите жестом, что у вас болит голова" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
-            <CheckBox x:Name="motorPraxisSecond" CheckedChanged="OnCheckBoxCheckedChangedMotorPraxis"/>
+            <CheckBox x:Name="motorPraxisSecond" Margin="10, 0, 0, 0" CheckedChanged="OnCheckBoxCheckedChangedMotorPraxis"/>
 
             <Label Text="3 - Покажите жестом отказ" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
-            <CheckBox x:Name="motorPraxisThird" CheckedChanged="OnCheckBoxCheckedChangedMotorPraxis"/>
+            <CheckBox x:Name="motorPraxisThird" Margin="10, 0, 0, 0" CheckedChanged="OnCheckBoxCheckedChangedMotorPraxis"/>
 
             <Label Text="4 - Покажите жестом согласие" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
-            <CheckBox x:Name="motorPraxisFourth" CheckedChanged="OnCheckBoxCheckedChangedMotorPraxis"/>
+            <CheckBox x:Name="motorPraxisFourth" Margin="10, 0, 0, 0" CheckedChanged="OnCheckBoxCheckedChangedMotorPraxis"/>
 
             <Label Text="5 - Покажите жестом число времен года" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
-            <CheckBox x:Name="motorPraxisFifth" CheckedChanged="OnCheckBoxCheckedChangedMotorPraxis"/>
+            <CheckBox x:Name="motorPraxisFifth" Margin="10, 0, 0, 0" CheckedChanged="OnCheckBoxCheckedChangedMotorPraxis"/>
 
             <!--Задание 2-->
             <Label Text="2.	Динамический праксис" FontSize="Medium" FontAttributes="Bold" Padding="10, 10, 0, 0" TextColor="Black"/>
             <Label Text="Воспроизведите движения по заданной схеме" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
 
-            <Image Source="jesti1.JPG" HeightRequest="200" WidthRequest="200"/>
+            <Image Source="jesti1.JPG" Aspect="AspectFit"/>
 
             <RelativeLayout HorizontalOptions="FillAndExpand">
                 <CheckBox x:Name="dynamicPraxisFirst" CheckedChanged="OnCheckBoxCheckedChangedDynamicPraxis"
@@ -50,19 +50,22 @@
                           RelativeLayout.XConstraint="{ConstraintExpression
                           Type=RelativeToParent,Property=Width,Factor=.75,Constant=0}"/>
             </RelativeLayout>
-            
-            <Image Source="jesti2.JPG" HeightRequest="200" WidthRequest="200" />
+
+            <Image Source="jesti2.JPG" Aspect="AspectFit"/>
 
             <RelativeLayout HorizontalOptions="FillAndExpand">
                 <CheckBox x:Name="dynamicPraxisFourth" CheckedChanged="OnCheckBoxCheckedChangedDynamicPraxis"
                           RelativeLayout.XConstraint="{ConstraintExpression 
                           Type=RelativeToParent,Property=Width,Factor=.15,Constant=0}"/>
+
                 <CheckBox x:Name="dynamicPraxisFifth" CheckedChanged="OnCheckBoxCheckedChangedDynamicPraxis"
                           RelativeLayout.XConstraint="{ConstraintExpression
                           Type=RelativeToParent,Property=Width,Factor=.45,Constant=0}"/>
+  
                 <CheckBox x:Name="dynamicPraxisSixth" CheckedChanged="OnCheckBoxCheckedChangedDynamicPraxis"
                           RelativeLayout.XConstraint="{ConstraintExpression
                           Type=RelativeToParent,Property=Width,Factor=.75,Constant=0}"/>
+
             </RelativeLayout>
 
             <!--Задание 3-->
@@ -112,11 +115,22 @@
 
             <Label Text="Введите количество баллов, на которое пациент скопировал часы (максимум 8)" TextColor="Black" Margin="10, 0" FontSize="Medium"/>
             <Image Source="Watch.JPG" HeightRequest="200" WidthRequest="200" />
-            <Entry x:Name="entryPoints" TextColor="Black" Placeholder="Введите количество баллов" Margin="10,0" PlaceholderColor="Gray" FontSize="Default" Keyboard="Telephone" Text="0" TextChanged="OnTextChanged"/>
+            <Entry x:Name="entryPoints" TextColor="Black" Placeholder="Введите количество баллов" Margin="10, 0, 0, 10" PlaceholderColor="Gray" FontSize="Default" Keyboard="Telephone" Text="0" TextChanged="OnTextChanged"/>
 
-            <!--Окончание теста-->
-            <Button x:Name="buttonResultTest" Text="Получить результат" HorizontalOptions="End"  Margin="0,25,30,30" FontSize="Medium" Clicked="button_CalculateResult" BackgroundColor="#FFE5B4" WidthRequest="200" HeightRequest="50" TextColor="Black"/>
-
+            <Grid Margin="10,20,10,15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <!--Кнопка возврата в общее меню-->
+                <Button x:Name="buttonMainMenu" Grid.Column="0" Grid.Row="0" FontSize="Default" Text="Вернутся в меню" TextColor="Black" Margin="0,0,10,0" BackgroundColor="Orange" Clicked="buttonMainMenu_Clicked"/>
+                <!--Кнопка получения результатов теста-->
+                <Button x:Name="buttonResultTest" Text="Получить результат" Grid.Column="1" Grid.Row="0" FontSize="Default" Margin="10, 0, 0, 0"  Clicked="button_CalculateResult" BackgroundColor="Orange" TextColor="Black"/>
+            </Grid>
+            
         </StackLayout>
     </ScrollView>
     

@@ -122,6 +122,10 @@ namespace TestApplication
 
             
         }
+        private async void buttonMainMenu_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
 
 
         /// <summary>

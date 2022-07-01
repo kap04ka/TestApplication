@@ -22,7 +22,9 @@ namespace TestApplication
         /// Форма регистрации пациента
         /// </summary>
         public FormPatients formPatients;
-        
+
+        public static MainPage startPage;
+
 
         public App()
         {
@@ -31,11 +33,11 @@ namespace TestApplication
             patient = new Patient();
             mainPage = new MainPage();
             formPatients = new FormPatients();
+            startPage = new MainPage();
 
             navigationPage = new NavigationPage(mainPage);
             navigationPage.BarBackgroundColor = Color.Orange;
             navigationPage.BarTextColor = Color.Black;
-            
 
             MainPage = formPatients;
         }

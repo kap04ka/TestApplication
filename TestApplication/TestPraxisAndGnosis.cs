@@ -73,6 +73,11 @@ namespace TestApplication
             await Navigation.PopAsync();
         }
 
+        private async void buttonMainMenu_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
+
         private void SetResults()
         {
             App.patient.resultPraxisAndGnosis.resultMotorPraxis = resultMotor;

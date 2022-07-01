@@ -50,7 +50,10 @@ namespace TestApplication
                 task = DisplayAlert("Предупреждение", "Пожалуйста ответьте на все вопросы", "Хорошо");
             }
         }
-
+        private async void buttonMainMenu_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
         /// <summary>
         /// Считывание ответов из выпадающих списков
         /// </summary>

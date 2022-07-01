@@ -39,6 +39,12 @@ namespace TestApplication
                 task = DisplayAlert("Предупреждение", "Пожалуйста ответьте на все вопросы", "Хорошо");
             }
         }
+
+        private async void buttonMainMenu_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
+
         private string TakeDiagnose(int score)
         {
             if (score == 0) return $"Ваше количество баллов = {score}, нарушений не выявлено";

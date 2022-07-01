@@ -28,6 +28,9 @@ namespace TestApplication.WPF
             Forms.Init();
             LoadApplication(new TestApplication.App());
         }
-        
+
+        public override void OnBackSystemButtonPressed() {
+            
+        }
     }
 }
