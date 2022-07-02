@@ -1,6 +1,9 @@
 ﻿ using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.IO;
+using System.Threading;
+using System.Globalization;
 
 namespace TestApplication
 {
@@ -23,7 +26,26 @@ namespace TestApplication
         /// </summary>
         public FormPatients formPatients;
 
+
+
+        public const string DATABASE_NAME = "patients.db";
+        public static PatientRepository database;
+        public static PatientRepository Database
+        {
+            get
+            {
+                if (database == null)
+                {
+                    database = new PatientRepository(
+                        Path.Combine(
+                            Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), DATABASE_NAME));
+                }
+                return database;
+            }
+        }
+
         public static MainPage startPage;
+
 
 
         public App()
@@ -38,6 +60,10 @@ namespace TestApplication
             navigationPage = new NavigationPage(mainPage);
             navigationPage.BarBackgroundColor = Color.Orange;
             navigationPage.BarTextColor = Color.Black;
+
+
+            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("ru-RU");
+
 
             MainPage = formPatients;
         }

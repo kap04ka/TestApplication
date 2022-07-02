@@ -13,6 +13,7 @@ namespace TestApplication
     public partial class MainPage : ContentPage
     {
         Task task;
+        Button buttonDatabase;
         public MainPage()
         {
 
@@ -30,6 +31,15 @@ namespace TestApplication
                                                                 new TestLifeQuality(), new TestLocus_control()};
 
             Button button = null;
+
+            buttonDatabase = new Button();
+            buttonDatabase.Text = "Сохранение рузультатов в базу данных";
+            buttonDatabase.BackgroundColor = Color.FromRgb(255, 229, 180);
+            buttonDatabase.TextColor = Color.Black;
+            buttonDatabase.BorderColor = Color.Gray;
+            buttonDatabase.VerticalOptions = LayoutOptions.EndAndExpand;
+            buttonDatabase.Margin = new Thickness(15, 25);
+            buttonDatabase.Clicked += ButtonDatabase_Clicked;
 
             for (int i = 0; i < pages.Count; i++)
             {
@@ -215,6 +225,20 @@ namespace TestApplication
         private void button_TestsPatientCOVIDPartSeven()
         {
             PatientDataWPFCOVIDPartSeven(App.patient);
+
+
+            stackLayout.Children.Add(button);
+            stackLayout.Children.Add(buttonDatabase);
+        }
+
+        private void ButtonDatabase_Clicked(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(App.patient.Forename) &&
+               !String.IsNullOrEmpty(App.patient.Surname))
+            {
+                App.Database.SaveItem(App.patient);
+            }
+            DisplayAlert("Сохранение в базу данных", "Данные сохранились", "ОК");
 
         }
 

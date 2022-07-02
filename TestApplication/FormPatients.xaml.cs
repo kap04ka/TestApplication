@@ -78,11 +78,33 @@ namespace TestApplication
             App.patient.DoctorFIO = entryAttendingDoctor.Text;
             App.patient.DateOfBirth = dataPickerDateOfBirth.Date;
 
+            App.patient.BirthDateString = App.patient.DateOfBirth.ToShortDateString();
+
             App.patient.Age = DateTime.Today.Year - App.patient.DateOfBirth.Year;
             if (App.patient.DateOfBirth.DayOfYear > DateTime.Today.DayOfYear)
             {
                 App.patient.Age--;
             }
+
+            //инициализируем имя и фамилия в классах результатов теста для бд
+            App.patient.scoreMFI20.Name = App.patient.Forename;
+            App.patient.scoreMFI20.Surname = App.patient.Surname;
+            App.patient.scoreBourdon.Name = App.patient.Forename;
+            App.patient.scoreBourdon.Surname = App.patient.Surname;
+            App.patient.resultMOSA.Name = App.patient.Forename;
+            App.patient.resultMOSA.Surname = App.patient.Surname;
+            App.patient.resultPraxisAndGnosis.Name = App.patient.Forename;
+            App.patient.resultPraxisAndGnosis.Surname = App.patient.Surname;
+            App.patient.resultVasserman.Name = App.patient.Forename;
+            App.patient.resultVasserman.Surname = App.patient.Surname;
+            App.patient.resultAnxietyAndDepression.Name = App.patient.Forename;
+            App.patient.resultAnxietyAndDepression.Surname = App.patient.Surname;
+            App.patient.resultLocus.Name = App.patient.Forename;
+            App.patient.resultLocus.Surname = App.patient.Surname;
+            App.patient.resultLifeQuality.Name = App.patient.Forename;
+            App.patient.resultLifeQuality.Surname = App.patient.Surname;
+            App.patient.resultCovidTest.Name = App.patient.Forename;
+            App.patient.resultCovidTest.Surname = App.patient.Surname;
         }
 
 

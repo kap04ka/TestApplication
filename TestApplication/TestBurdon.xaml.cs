@@ -158,6 +158,13 @@ namespace TestApplication
             App.patient.scoreBourdon.PaceArray[3] = (int)Math.Round(amountLettersInFourMinutes / 4.0, 0);
             App.patient.scoreBourdon.PaceArray[4] = (int)Math.Round(amountLettersInFiveMinutes / 5.0, 0);
 
+            App.patient.scoreBourdon.PaceString = 
+                App.patient.scoreBourdon.PaceArray[0].ToString() + ", " +
+                App.patient.scoreBourdon.PaceArray[1].ToString() + ", " +
+                App.patient.scoreBourdon.PaceArray[2].ToString() + ", " +
+                App.patient.scoreBourdon.PaceArray[3].ToString() + ", " +
+                App.patient.scoreBourdon.PaceArray[4].ToString();
+
             maxPaceInTime = App.patient.scoreBourdon.PaceArray.Max();
             minPaceInTime = App.patient.scoreBourdon.PaceArray.Min();
             App.patient.scoreBourdon.AttentionSpan = maxPaceInTime - minPaceInTime;
