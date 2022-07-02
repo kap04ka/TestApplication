@@ -35,9 +35,6 @@ namespace TestApplication
 
                 testResult = 0;
                 ResetAnswersInTest();
-                Console.WriteLine($"{App.patient.resultLifeQuality.TotalResultLifeQuality} у пациента");
-                Console.WriteLine($"{testResult} после окончания теста");
-
                 await Navigation.PopAsync();
             }
             //пациент ответил не на все вопросы
@@ -102,22 +99,6 @@ namespace TestApplication
             }
             App.patient.resultLifeQuality.TotalResultLifeQuality = testResult;
         }
-
-       /* private void SaveJson(Client _client)
-        {
-            var jsonString = JsonConvert.SerializeObject(_client);
-
-            var fileName = "result.json";
-            string documentsPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal); // Documents folder
-            var path = Path.Combine(documentsPath, fileName);
-
-            Console.WriteLine(path);
-            Console.WriteLine(jsonString);
-
-            StreamWriter sw = new StreamWriter(path);
-            sw.WriteLine(jsonString);
-            sw.Close();
-        }*/
 
     }
 

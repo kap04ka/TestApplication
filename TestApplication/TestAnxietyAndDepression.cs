@@ -22,8 +22,6 @@ namespace TestApplication
         {
             InitializeComponent();
             Title = "Тест тревожности и депрессии";
-            //clientAnxiety = new Client(7);
-            //clientDepression = new Client(7);
         }
         private async void button_CalculateResult(object sender, System.EventArgs e)
         {
@@ -37,8 +35,6 @@ namespace TestApplication
                 ResetAnswersInTest();
                 intermediateAnxietyResult = 0;
                 intermediateDepressionResult = 0;
-                Console.WriteLine($"Real res = {App.patient.resultAnxietyAndDepression.TotalResultAnxiety} + {App.patient.resultAnxietyAndDepression.TotalResultDepression}");
-                Console.WriteLine($"Intermediate res = {intermediateAnxietyResult} + {intermediateDepressionResult}");
 
                 await Navigation.PopAsync();
             }
@@ -141,20 +137,5 @@ namespace TestApplication
             else return $"Ваш результат {score} - клинически выраженная ";
         }
 
-        /*private void SaveJson(Client _client)
-        {
-            var jsonString = JsonConvert.SerializeObject(_client);
-
-            var fileName = "result.json";
-            string documentsPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal); // Documents folder
-            var path = Path.Combine(documentsPath, fileName);
-
-            Console.WriteLine(path);
-            Console.WriteLine(jsonString);
-
-            StreamWriter sw = new StreamWriter(path);
-            sw.WriteLine(jsonString);
-            sw.Close();
-        }*/
     }
 }

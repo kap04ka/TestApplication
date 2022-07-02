@@ -175,6 +175,8 @@ namespace TestApplication
                     stackLayout.Children.Add(button);
                     break;
             }
+
+            stackLayout.Children.Add(buttonDatabase);
         }
 
         private void button_TestsPatientWPF()
@@ -221,14 +223,9 @@ namespace TestApplication
             PatientDataWPFCOVIDPartSix(App.patient);
 
         }
-
         private void button_TestsPatientCOVIDPartSeven()
         {
             PatientDataWPFCOVIDPartSeven(App.patient);
-
-
-            stackLayout.Children.Add(button);
-            stackLayout.Children.Add(buttonDatabase);
         }
 
         private void ButtonDatabase_Clicked(object sender, EventArgs e)

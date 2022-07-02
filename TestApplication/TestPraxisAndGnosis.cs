@@ -67,9 +67,6 @@ namespace TestApplication
             resultSubject = 0;
             entryPoints.Text = "0";
 
-            Console.WriteLine($"{App.patient.resultPraxisAndGnosis.resultMotorPraxis}, {App.patient.resultPraxisAndGnosis.resultDynamicPraxis}, {App.patient.resultPraxisAndGnosis.resultConstructivePraxis}," +
-                $" {App.patient.resultPraxisAndGnosis.resultSubjectGnosis}, {App.patient.resultPraxisAndGnosis.resultClock}, {App.patient.resultPraxisAndGnosis.TotalResultPraxisAndGnosis} у пациента");
-            Console.WriteLine($"{resultTest}, {resultMotor}, {resultDynamic}, {resultConstructive}, {resultSubject}, {Int32.Parse(entryPoints.Text)} после окончания теста");
             await Navigation.PopAsync();
         }
 

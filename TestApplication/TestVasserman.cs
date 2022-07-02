@@ -29,8 +29,7 @@ namespace TestApplication
                 await task;
                 testResult = 0;
                 ResetAnswersInTest();
-                Console.WriteLine($"{App.patient.resultVasserman.TotalResultVasserman} у пациента");
-                Console.WriteLine($"{testResult} после окончания теста");
+               
                 await Navigation.PopAsync();
             }
             //пациент ответил не на все вопросы
