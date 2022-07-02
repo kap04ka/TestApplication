@@ -173,10 +173,10 @@ namespace TestApplication
                     };
                     button.Clicked += (sender, args) => button_TestsPatient();
                     stackLayout.Children.Add(button);
+                    stackLayout.Children.Add(buttonDatabase);
                     break;
             }
-
-            stackLayout.Children.Add(buttonDatabase);
+            
         }
 
         private void button_TestsPatientWPF()
