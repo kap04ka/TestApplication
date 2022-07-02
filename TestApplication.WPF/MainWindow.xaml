@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TestApplication.WPF"
         xmlns:wpf="clr-namespace:Xamarin.Forms.Platform.WPF;assembly=Xamarin.Forms.Platform.WPF"            
         mc:Ignorable="d"
-        Title="TestApplication" Height="720" Width="1080">
+        Title="TestApplication" Height="1080" Width="1920">
     <Grid>
 
     </Grid>
