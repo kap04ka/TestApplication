@@ -1,0 +1,2 @@
+MainPackage=C:\Users\user\Source\Repos\MergedTests\TestApplication.UWP\bin\x64\Release\TestApplication.UWP_1.0.0.0_x64.appx
+SymbolPackage=C:\Users\user\Source\Repos\MergedTests\TestApplication.UWP\obj\x64\Release\Symbols\TestApplication.UWP_1.0.0.0_x64.appxsym

@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TestApplication"
+             x:Class="TestApplication.TestBurdon"
+             Title="Корректурная проба Бурбона">
+    
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="entryStyle" TargetType="Entry">
+                <Style.Triggers>
+                    <EventTrigger Event="TextChanged">
+                        <local:EntryValidation/>
+                    </EventTrigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <StackLayout BackgroundColor="White">
+
+
+            <!--Первый раздел-->
+            <Frame BorderColor="Orange" BackgroundColor="Orange" CornerRadius="0" Margin="0,0,0,25">
+                <Label Text="Концентрация внимания" FontSize="Medium" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold"/>
+            </Frame>
+
+            <Label TextColor="Black" FontSize="Default" Margin="20,0" Text="Число строк, просмотренных пациентом за 5 минут:"/>
+            <Entry x:Name="entryNumberOfLines" TextColor="Black" Placeholder="Количество строк" Margin="20,0,20,10" FontSize="Default" Style="{StaticResource Key=entryStyle}"/>
+
+            <Label TextColor="Black" FontSize="Default" Margin="20,0" Text="Количество ошибок (пропусков или ошибочных зачеркиваний) за 5 минут:"/>
+            <Entry x:Name="entryNumberOfMistakes" TextColor="Black" Placeholder="Количество ошибок" Margin="20,0,20,50" FontSize="Default" Style="{StaticResource Key=entryStyle}"/>
+
+
+            <!--Второй раздел-->
+            <Frame BorderColor="Orange" BackgroundColor="Orange" CornerRadius="0" Margin="0,0,0,25">
+                <Label Text="Устойчивость внимания" FontSize="Medium" TextColor="Black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold"/>
+            </Frame>
+
+            <Label TextColor="Black" FontSize="Default" Margin="20,0" Text="Количество просомтренных букв пациентом за 1 минуту:"/>
+            <Entry x:Name="entryNumberOfLetters1" TextColor="Black" Placeholder="Просмотренных букв за 60 сек" Margin="20,0,20,10" FontSize="Default" Style="{StaticResource Key=entryStyle}"/>
+
+            <Label TextColor="Black" FontSize="Default" Margin="20,0" Text="Количество просомтренных букв пациентом за 2 минуты:"/>
+            <Entry x:Name="entryNumberOfLetters2" TextColor="Black" Placeholder="Просмотренных букв за 120 сек" Margin="20,0,20,10" FontSize="Default" Style="{StaticResource Key=entryStyle}"/>
+
+            <Label TextColor="Black" FontSize="Default" Margin="20,0" Text="Количество просомтренных букв пациентом за 3 минуты:"/>
+            <Entry x:Name="entryNumberOfLetters3" TextColor="Black" Placeholder="Просмотренных букв за 180 сек" Margin="20,0,20,10" FontSize="Default" Style="{StaticResource Key=entryStyle}"/>
+
+            <Label TextColor="Black" FontSize="Default" Margin="20,0" Text="Количество просомтренных букв пациентом за 4 минуты:"/>
+            <Entry x:Name="entryNumberOfLetters4" TextColor="Black" Placeholder="Просмотренных букв за 240 сек" Margin="20,0,20,10" FontSize="Default" Style="{StaticResource Key=entryStyle}"/>
+
+            <Label TextColor="Black" FontSize="Default" Margin="20,0" Text="Количество просомтренных букв пациентом за 5 минут:"/>
+            <Entry x:Name="entryNumberOfLetters5" TextColor="Black" Placeholder="Просмотренных букв за 300 сек" Margin="20,0,20,50" FontSize="Default" Style="{StaticResource Key=entryStyle}"/>
+
+            <!--Кнопки-->
+            <Grid Margin="10,20,10,15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <!--Кнопка возврата в общее меню-->
+                <Button x:Name="buttonMainMenu" Grid.Column="0" Grid.Row="0" FontSize="Default" Text="Вернутся в меню" TextColor="Black" Margin="0,0,10,0" BackgroundColor="Orange" Clicked="buttonMainMenu_Clicked"/>
+                <!--Кнопка получения результатов теста-->
+                <Button x:Name="buttonCalculateResult" Grid.Column="1" Grid.Row="0" Text="Получить результат" Margin="10, 0, 0, 0" FontSize="Default" Clicked="buttonCalculateResult_Clicked" BackgroundColor="Orange" TextColor="Black"/>
+            </Grid>
+            
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,354 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestApplication.TestCognitive">
+    
+    <!--Отступ сверху для iOS-->
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0"/>
+    </ContentPage.Padding>
+
+    <ScrollView>
+        <StackLayout BackgroundColor="White">
+
+            <!--Зрительно-конструктивные/исполнительные навыки-->
+            <Frame BackgroundColor="Orange" Padding="24" CornerRadius="0">
+                <Label Text="Зрительно-конструктивные/исполнительные навыки" HorizontalTextAlignment="Center" FontSize="Title" FontAttributes="Bold" TextColor="Black"/>
+            </Frame>
+            <!--Задание 1-->
+            <Label Text="Черчение ломаной линии" FontSize="Medium" FontAttributes="Bold" Padding="10, 10, 0, 0" TextColor="Black"/>
+            <Label Text="Попросите исследуемого нарисовать линию от цифры к букве в порядке увеличения. Отметьте задание выполненным, если обследуемый правильно соединяет знаки в следующем порядке: 1-А-2-Б-3-В-4-Г-5-Д так, чтобы линии не пересекались. Любая ошибка, не исправленная немедленно самостоятельно, рассматривается как невыполнение задания." FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Image Source="Putb.JPG" HeightRequest="200" WidthRequest="200"/>
+            
+            <FlexLayout Direction="Row">
+                <Label Text="Результат" WidthRequest="120" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="visualConstructiveSkillsFirst" CheckedChanged="OnCheckBoxCheckedVisualConstructiveSkills"/>
+            </FlexLayout>
+
+            <!--Задание 2-->
+            <Label Text="Оптико-пространственная деятельность (куб)" FontSize="Medium" FontAttributes="Bold" Padding="10, 10, 0, 0" TextColor="Black"/>
+            <Label Text="Попросите пациента аккуратно перерисовать куб." FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="Условия выполнения задания:" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="•	фигура должна быть трехмерной" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="•	должны быть нарисованы все линии;" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="•	не должно быть лишних линий;" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="•	линии должны быть относительно параллельны и незначительно отличаться по длине (принимается рисунок прямоугольной призмы)." FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="Задание не засчитывается, если не выполнено какое-либо из вышеуказанных условий." FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="Если задание выполнено верно, отметьте поле результат." FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Image Source="Cube.JPG" HeightRequest="200" WidthRequest="200"/>
+            
+            <FlexLayout Direction="Row">
+                <Label Text="Результат" WidthRequest="120" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="visualConstructiveSkillsSecond" CheckedChanged="OnCheckBoxCheckedVisualConstructiveSkills"/>
+            </FlexLayout>
+
+            <!--Задание 3-->
+            <Label Text="Оптико-пространственная деятельность (часы)" FontSize="Medium" FontAttributes="Bold" Padding="10, 10, 0, 0" TextColor="Black"/>
+            <Label Text="Попросите пациента нарисовать часы. Скажите, что бы он расставил все цифры и нарисовал стрелки так, чтобы часы показывали десять минут двенадцатого." FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="Отметьте выполненные пациентом условия:" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="•	контур: циферблат должен быть круглым, возможно с погрешностями формы (например, слегка незамкнутым)" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="•	цифры: должны быть все цифры циферблата и не должно быть лишних; цифры должны располагаться в правильном порядке и приблизительно в соответствии с квадрантами циферблата; допускаются римские цифры; цифры могут располагаться снаружи циферблата;" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="•	стрелки: должно быть две стрелки, показывающие правильное время; часовая стрелка должна быть отчетливо короче минутной; стрелки должны сходиться внутри контура циферблата и пересекаться близко к его центру." FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+
+            <FlexLayout Direction="Row">
+                <Label Text="Контур" WidthRequest="100" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="visualConstructiveSkillsThird" CheckedChanged="OnCheckBoxCheckedVisualConstructiveSkills"/>
+            </FlexLayout>
+            
+            <FlexLayout Direction="Row">
+                <Label Text="Цифры" WidthRequest="100" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="visualConstructiveSkillsFourth" CheckedChanged="OnCheckBoxCheckedVisualConstructiveSkills"/>
+            </FlexLayout>
+            
+            <FlexLayout Direction="Row">
+                <Label Text="Стрелки" WidthRequest="100" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="visualConstructiveSkillsFifth" CheckedChanged="OnCheckBoxCheckedVisualConstructiveSkills"/>
+            </FlexLayout>
+            
+            <!--Называние-->
+            <Frame BackgroundColor="Orange" Padding="24" CornerRadius="0">
+                <Label Text="Называние" HorizontalTextAlignment="Center" FontSize="Title" FontAttributes="Bold" TextColor="Black"/>
+            </Frame>
+            <!--Задание 4-->
+            <Label Text="Называние" FontSize="Medium" FontAttributes="Bold" Padding="10, 10, 0, 0" TextColor="Black"/>
+            <Label Text="Попросите пациента назвать животных на картинке." FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Image Source="jivotnie.JPG" HeightRequest="200" WidthRequest="200"/>
+
+            <FlexLayout Direction="Row">
+                <Label Text="Лев" WidthRequest="100" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="namingFirst" CheckedChanged="OnCheckBoxCheckedNaming"/>
+            </FlexLayout>
+
+            <FlexLayout Direction="Row">
+                <Label Text="Носорог" WidthRequest="100" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="namingSecond" CheckedChanged="OnCheckBoxCheckedNaming"/>
+            </FlexLayout>
+
+            <FlexLayout Direction="Row">
+                <Label Text="Верблюд" WidthRequest="100" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="namingThird" CheckedChanged="OnCheckBoxCheckedNaming"/>
+            </FlexLayout>
+            
+            <!--Память-->
+            <Frame BackgroundColor="Orange" Padding="24" CornerRadius="0">
+                <Label Text="Память" HorizontalTextAlignment="Center" FontSize="Title" FontAttributes="Bold" TextColor="Black"/>
+            </Frame>
+            <!--Задание 5-->
+            <Label Text="Память" FontSize="Medium" FontAttributes="Bold" Padding="10, 10, 0, 0" TextColor="Black"/>
+            <Label Text="Назовите пациенту 5 слов со скоростью 1 слово в секунду:" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="Лицо    Бархат    Церковь    Фиалка    Красный" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="Попросите пациента повторить и отметьте в первой колонке слова, которые он смог воспроизвести." FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="Прочитайте слова второй раз, попросите пациента опять воспроизвести все слова, которые он запомнил и отметьте их во второй колонке." FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="В конце второй попытки сообщите пациенту, что попросите его воспроизвести эти слова в конце теста." FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+
+            <FlexLayout Direction="Row">
+                <Label Text="Лицо" WidthRequest="100" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="firstWord1" Margin="10, 0"/>
+                <CheckBox x:Name="firstWord2" />
+            </FlexLayout>
+
+            <FlexLayout Direction="Row">
+                <Label Text="Бархат" WidthRequest="100" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="secondtWord1" Margin="10, 0"/>
+                <CheckBox x:Name="secondWord2" />
+            </FlexLayout>
+
+            <FlexLayout Direction="Row">
+                <Label Text="Церковь" WidthRequest="100" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="thirdWord1" Margin="10, 0"/>
+                <CheckBox x:Name="thirdWord2" />
+            </FlexLayout>
+
+            <FlexLayout Direction="Row">
+                <Label Text="Маргаритка" WidthRequest="100" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="fourthWord1" Margin="10, 0"/>
+                <CheckBox x:Name="fourthWord2" />
+            </FlexLayout>
+
+            <FlexLayout Direction="Row">
+                <Label Text="Красный" WidthRequest="100" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="fifthWord1" Margin="10, 0"/>
+                <CheckBox x:Name="fifthWord2" />
+            </FlexLayout>
+
+            <!--Внимание-->
+            <Frame BackgroundColor="Orange" Padding="24" CornerRadius="0">
+                <Label Text="Внимание" HorizontalTextAlignment="Center" FontSize="Title" FontAttributes="Bold" TextColor="Black"/>
+            </Frame>
+            <!--Задание 6-->
+            <Label Text="Называние чисел в прямом порядке" FontSize="Medium" FontAttributes="Bold" Padding="10, 10, 0, 0" TextColor="Black"/>
+            <Label Text="Назовите пациенту несколько числа и попросите его повторить их:" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="2    1    8    5    4" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="Назовите следующие числа и попросите повторить их в обратном порядке:" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="7    4    2" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="Отметьте варианты, которые пациент воспроизвел правильно" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+
+            <FlexLayout Direction="Row">
+                <Label Text="2 1 8 5 4" WidthRequest="120" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="attentionFirst" CheckedChanged="OnCheckBoxCheckedAttention"/>
+            </FlexLayout>
+            
+            <FlexLayout Direction="Row">
+                <Label Text="2 4 7" WidthRequest="120" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="attentionSecond" CheckedChanged="OnCheckBoxCheckedAttention"/>
+            </FlexLayout>
+            
+            <!--Задание 7-->
+            <Label Text="Реакция" FontSize="Medium" FontAttributes="Bold" Padding="10, 10, 0, 0" TextColor="Black"/>
+            <Label Text="Прочитайте последовательность букв со скоростью одна буква в секунду, попросите пациента хлопать в ладоши на каждую букву 'А':" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="Ф Б А В М Н А А Ж Л К Б А Ф А К Д Е А А А Ж А М О Ф А А Б" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="Отметьте поле результат, если задание выполнено без ошибок." FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="Ошибка – хлопок не на ту букву или отсутствие хлопка на букву А." FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+
+            <FlexLayout Direction="Row">
+                <Label Text="Результат" WidthRequest="120" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="attentionThird" CheckedChanged="OnCheckBoxCheckedAttention"/>
+            </FlexLayout>
+            
+            <!--Задание 8-->
+            <Label Text="Последовательное вычитание по 7" FontSize="Medium" FontAttributes="Bold" Padding="10, 10, 0, 0" TextColor="Black"/>
+            <Label Text="Дайте пациенту указания: «Сейчас отнимите от ста семь, а затем продолжайте вычитать из полученного числа по 7, пока я вас не остановлю»." FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="Каждое вычитание оценивают независимо, то есть, если обследуемый делает ошибку, но продолжает правильно вычитать из результата 7, дают балл за каждое правильное действие." FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+
+            <FlexLayout Direction="Row">
+                <Label Text="Ответ 1: 93" WidthRequest="350" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="serialSubtractionFirst" CheckedChanged="OnCheckBoxCheckedSerialSubtraction"/>
+            </FlexLayout>
+
+            <FlexLayout Direction="Row">
+                <Label Text="Ответ 2: 86 или предыдущее число - 7" WidthRequest="350" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="serialSubtractionSecond" CheckedChanged="OnCheckBoxCheckedSerialSubtraction"/>
+            </FlexLayout>
+            
+            <FlexLayout Direction="Row">
+                <Label Text="Ответ 3: 79 или предыдущее число - 7" WidthRequest="350" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="serialSubtractionThird" CheckedChanged="OnCheckBoxCheckedSerialSubtraction"/>
+            </FlexLayout>
+
+            <FlexLayout Direction="Row">
+                <Label Text="Ответ 4: 72 или предыдущее число - 7" WidthRequest="350" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="serialSubtractionFourth" CheckedChanged="OnCheckBoxCheckedSerialSubtraction"/>
+            </FlexLayout>
+            
+            <FlexLayout Direction="Row">
+                <Label Text="Ответ 5: 65 или предыдущее число - 7" WidthRequest="350" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="serialSubtractionFifth" CheckedChanged="OnCheckBoxCheckedSerialSubtraction"/>
+            </FlexLayout>
+            
+            <!--Речь-->
+            <Frame BackgroundColor="Orange" Padding="24" CornerRadius="0">
+                <Label Text="Речь" HorizontalTextAlignment="Center" FontSize="Title" FontAttributes="Bold" TextColor="Black"/>
+            </Frame>
+            <!--Задание 9-->
+            <Label Text="Повторение предложений" FontSize="Medium" FontAttributes="Bold" Padding="10, 10, 0, 0" TextColor="Black"/>
+            <Label Text="Скажите пациенту, что прочитаете предложение и попросите повторить его слово в слово:" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="'Я не знаю ничего, кроме того что Ваня сегодня дежурит.'" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="Попросите так же повторить слово в слово второе предложение:" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="'Кошка всегда пряталась под диван, когда собака была в комнате.'" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="Отметьте те предложения, которые были повторены слово в слово." FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+
+            <FlexLayout Direction="Row">
+                <Label Text="Я не знаю ничего, кроме того что Ваня сегодня дежурит" WidthRequest="350" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="speechFirst" CheckedChanged="OnCheckBoxCheckedSpeech"/>
+            </FlexLayout>
+
+            <FlexLayout Direction="Row">
+                <Label Text="Кошка всегда пряталась под диван, когда собака была в комнате" WidthRequest="350" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="speechSecond" CheckedChanged="OnCheckBoxCheckedSpeech"/>
+            </FlexLayout>
+
+            <!--Задание 10-->
+            <Label Text="Скорость" FontSize="Medium" FontAttributes="Bold" Padding="10, 10, 0, 0" TextColor="Black"/>
+            <Label Text="Попросите пациента назвать как можно больше слов начинающихся на определенную букву и засеките минуту." FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="Если за минуту пациент назвал 11 слов или более на названную букву, отметьте поле результат." FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+
+            <FlexLayout Direction="Row">
+                <Label Text="Результат" WidthRequest="120" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="speechThird" CheckedChanged="OnCheckBoxCheckedSpeech"/>
+            </FlexLayout>
+            
+            <!--Абстракция-->
+            <Frame BackgroundColor="Orange" Padding="24" CornerRadius="0">
+                <Label Text="Абстракция" HorizontalTextAlignment="Center" FontSize="Title" FontAttributes="Bold" TextColor="Black"/>
+            </Frame>
+            <!--Задание 11-->
+            <Label Text="Абстрактное мышление" FontSize="Medium" FontAttributes="Bold" Padding="10, 10, 0, 0" TextColor="Black"/>
+            <Label Text="Попросите пациента объяснить чем схожи предметы в каждой паре." FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="Начинают с примера: «Скажите, чем похожи апельсин и банан». Если обследуемый дает определенный ответ, ему задают следующий вопрос: «А еще чем они похожи?». Если обследуемый не дает ответа «фрукты», говорят: «Да, а еще все это фрукты». Ничего больше не объясняют." FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="После пробы говорят: «А сейчас скажите, чем похожи поезд и велосипед?»." FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="После ответа дайте следующее задание: «А чем похожи часы и линейка?». Не давайте дополнительных указаний и подсказок." FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="Принимаются следующие ответы:" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="Принимаются следующие ответы:" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="•	Поезд – велосипед = средства передвижения, транспорт, на них можно ездить" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="•	Линейка – часы = измерительные приборы, используются для измерения" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="Не принимаются ответы: поезд – велосипед = у них есть колеса; линейка – часы = на них есть цифры." FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="Отметьте верно сделанные задания." FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+
+            <FlexLayout Direction="Row">
+                <Label Text="поезд - велосипед" WidthRequest="200" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="abstractionFirst" CheckedChanged="OnCheckBoxCheckedAbstraction"/>
+            </FlexLayout>
+
+            <FlexLayout Direction="Row">
+                <Label Text="часы - линейка" WidthRequest="200" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="abstractionSecond" CheckedChanged="OnCheckBoxCheckedAbstraction"/>
+            </FlexLayout>
+            
+            <!--Отсроченное воспроизведение-->
+            <Frame BackgroundColor="Orange" Padding="24" CornerRadius="0">
+                <Label Text="Отсроченное воспроизведение" HorizontalTextAlignment="Center" FontSize="Title" FontAttributes="Bold" TextColor="Black"/>
+            </Frame>
+            <!--Задание 12-->
+            <Label Text="Отсроченное воспроизведение" FontSize="Medium" FontAttributes="Bold" Padding="10, 10, 0, 0" TextColor="Black"/>
+            <Label Text="Дают следующие указания: «Я называл вам слова и просил вас их запомнить. Назовите из этих слов те, которые вы помните». Поставьте галочку в графах, соответствующих словам, которые были названы самостоятельно без подсказки." FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="Если пациент не справляется, вы можете нажать на подсказку и помочь ему с вспоминанием слов." FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="Слова, названные с подсказкой, не оцениваются баллами. Подсказки используют только для клинической оценки. Они позволяют получить дополнительную информацию о виде расстройства памяти. При нарушениях вспоминания можно улучшить результат подсказкой. При нарушениях запоминания (кодирования) результат не улучшается с подсказкой." FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+
+            <FlexLayout Direction="Row">
+                <Label Text="Лицо" WidthRequest="200" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="delayedPlaybackFirst" CheckedChanged="OnCheckBoxCheckedDelayedPlayback"/>
+            </FlexLayout>
+            
+            <FlexLayout Direction="Row">
+                <Label Text="Бархат" WidthRequest="200" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="delayedPlaybackSecond" CheckedChanged="OnCheckBoxCheckedDelayedPlayback"/>
+            </FlexLayout>
+            
+            <FlexLayout Direction="Row">
+                <Label Text="Церковь" WidthRequest="200" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="delayedPlaybackThird" CheckedChanged="OnCheckBoxCheckedDelayedPlayback"/>
+            </FlexLayout>
+            
+            <FlexLayout Direction="Row">
+                <Label Text="Маргаритка" WidthRequest="200" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="delayedPlaybackFourth" CheckedChanged="OnCheckBoxCheckedDelayedPlayback"/>
+            </FlexLayout>
+            
+            <FlexLayout Direction="Row">
+                <Label Text="Красный" WidthRequest="200" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="delayedPlaybackFifth" CheckedChanged="OnCheckBoxCheckedDelayedPlayback"/>
+            </FlexLayout>
+
+            <FlexLayout Direction="Row">
+                <Button x:Name="promptFirst" Text="Подсказка 1" Clicked="button_PromptFirst"/>
+                <Button x:Name="promptSecond" Text="Подсказка 2" IsEnabled="False" Clicked="button_PromptSecond"/>
+            </FlexLayout>
+
+            <!--Ориентация-->
+            <Frame BackgroundColor="Orange" Padding="24" CornerRadius="0">
+                <Label Text="Ориентация" HorizontalTextAlignment="Center" FontSize="Title" FontAttributes="Bold" TextColor="Black"/>
+            </Frame>
+            <!--Задание 13-->
+            <Label Text="Ориентировка" FontSize="Medium" FontAttributes="Bold" Padding="10, 10, 0, 0" TextColor="Black"/>
+            <Label Text="Дают следующие указания: «Назовите сегодняшнюю дату». Если обследуемый не дает полный ответ, ему помогают: «Скажите год/месяц/число/день недели». Затем просят: «Назовите название места, где мы находимся, и этого города»." FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="Отметьте все ответы, которые были даны правильно." FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            <Label Text="Не засчитывается ответ с ошибкой в дате или дне недели на один день." FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+            
+            <FlexLayout Direction="Row">
+                <Label Text="Число" WidthRequest="100" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="orientationFirst" CheckedChanged="OnCheckBoxCheckedOrientation"/>
+            </FlexLayout>
+
+            <FlexLayout Direction="Row">
+                <Label Text="Месяц" WidthRequest="100" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="orientationSecond" CheckedChanged="OnCheckBoxCheckedOrientation"/>
+            </FlexLayout>
+
+            <FlexLayout Direction="Row">
+                <Label Text="Год" WidthRequest="100" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="orientationThird" CheckedChanged="OnCheckBoxCheckedOrientation"/>
+            </FlexLayout>
+
+            <FlexLayout Direction="Row">
+                <Label Text="День недели" WidthRequest="100" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="orientationFourth" CheckedChanged="OnCheckBoxCheckedOrientation"/>
+            </FlexLayout>
+
+            <FlexLayout Direction="Row">
+                <Label Text="Место" WidthRequest="100" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="orientationFifth" CheckedChanged="OnCheckBoxCheckedOrientation"/>
+            </FlexLayout>
+
+            <FlexLayout Direction="Row">
+                <Label Text="Город" WidthRequest="100" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
+                <CheckBox x:Name="orientationSixth" CheckedChanged="OnCheckBoxCheckedOrientation"/>
+            </FlexLayout>
+            
+            <Grid Margin="10,20,10,15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <!--Кнопка возврата в общее меню-->
+                <Button x:Name="buttonMainMenu" Grid.Column="0" Grid.Row="0" FontSize="Default" Text="Вернутся в меню" TextColor="Black" Margin="0,0,10,0" BackgroundColor="Orange" Clicked="buttonMainMenu_Clicked"/>
+                <!--Кнопка получения результатов теста-->
+                <Button x:Name="buttonResultTest" Text="Получить результат" Grid.Column="1" Grid.Row="0" FontSize="Default" Margin="10, 0, 0, 0"  Clicked="button_CalculateResult" BackgroundColor="Orange" TextColor="Black"/>
+            </Grid>
+
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

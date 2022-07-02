@@ -1,0 +1,661 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestApplication.TestCOVID"
+             Title="Тест COVID – 19">
+
+    <ScrollView>
+        <StackLayout BackgroundColor="White">
+
+            <Grid Margin="10,20,10,15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <!--Кнопка возврата в общее меню-->
+                <Button x:Name="buttonMainMenuFirst" Grid.Column="0" Grid.Row="0" FontSize="Default" Text="Вернутся в меню" TextColor="Black" Margin="0,0,10,0" BackgroundColor="Orange" Clicked="buttonMainMenu_Clicked"/>
+            </Grid>
+
+            <!--Сноска сверху-->
+            <BoxView Color="Orange" HeightRequest="2" HorizontalOptions="Fill" Margin="0,5,0,5"/>
+            <Label Text="Опросник на выявление симптомов пролонгированной инфекции COVID – 19" TextColor="Black" FontSize="Title" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+            <BoxView Color="Orange" HeightRequest="2" HorizontalOptions="Fill" Margin="0,5,0,25"/>
+
+            <!--Первый вопрос-->
+            <Label Text="1) Пол:" TextColor="Black" FontSize="Small" Margin="15,0"/>
+            <StackLayout Orientation="Horizontal" Margin="30,0">
+                <CheckBox Color="Orange" x:Name="checkBoxGender1" VerticalOptions="Center" CheckedChanged="checkBoxGender_CheckedChanged"/>
+                <Label x:Name="labelGender1" TextColor="Black" FontSize="Small" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="30,0">
+                <CheckBox Color="Orange" x:Name="checkBoxGender2" VerticalOptions="Center" CheckedChanged="checkBoxGender_CheckedChanged"/>
+                <Label x:Name="labelGender2" TextColor="Black" FontSize="Small" VerticalOptions="Center"/>
+            </StackLayout>
+
+            <!--Второй вопрос-->
+            <Label Text="2) Ваш уровень образования:" TextColor="Black" FontSize="Small" Margin="15,25,15,0"/>
+            <StackLayout Orientation="Horizontal" Margin="30,0">
+                <CheckBox Color="Orange" x:Name="checkBoxEducation1" VerticalOptions="Center" CheckedChanged="checkBoxEducation_CheckedChanged"/>
+                <Label x:Name="labelEducation1" TextColor="Black" FontSize="Small" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="30,0">
+                <CheckBox Color="Orange" x:Name="checkBoxEducation2" VerticalOptions="Center" CheckedChanged="checkBoxEducation_CheckedChanged"/>
+                <Label x:Name="labelEducation2" TextColor="Black" FontSize="Small" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="30,0">
+                <CheckBox Color="Orange" x:Name="checkBoxEducation3" VerticalOptions="Center" CheckedChanged="checkBoxEducation_CheckedChanged"/>
+                <Label x:Name="labelEducation3" TextColor="Black" FontSize="Small" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="30,0">
+                <CheckBox Color="Orange" x:Name="checkBoxEducation4" VerticalOptions="Center" CheckedChanged="checkBoxEducation_CheckedChanged"/>
+                <Label x:Name="labelEducation4" TextColor="Black" FontSize="Small" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="30,0">
+                <CheckBox Color="Orange" x:Name="checkBoxEducation5" VerticalOptions="Center" CheckedChanged="checkBoxEducation_CheckedChanged"/>
+                <Label x:Name="labelEducation5" TextColor="Black" FontSize="Small" VerticalOptions="Center"/>
+            </StackLayout>
+
+            <!--Третий вопрос-->
+            <Label Text="3) Ваша профессиональная деятельность:" TextColor="Black" FontSize="Small" Margin="15,25,15,0"/>
+            <StackLayout Orientation="Horizontal" Margin="30,0">
+                <CheckBox Color="Orange" x:Name="checkBoxActivity1" VerticalOptions="Center" CheckedChanged="checkBoxActivity_CheckedChanged"/>
+                <Label x:Name="labelActivity1" TextColor="Black" FontSize="Small" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="30,0">
+                <CheckBox Color="Orange" x:Name="checkBoxActivity2" VerticalOptions="Center"  CheckedChanged="checkBoxActivity_CheckedChanged"/>
+                <Label x:Name="labelActivity2" TextColor="Black" FontSize="Small" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="30,0">
+                <CheckBox Color="Orange" x:Name="checkBoxActivity3" VerticalOptions="Center"  CheckedChanged="checkBoxActivity_CheckedChanged"/>
+                <Label x:Name="labelActivity3" TextColor="Black" FontSize="Small" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="30,0">
+                <CheckBox Color="Orange" x:Name="checkBoxActivity4" VerticalOptions="Center"  CheckedChanged="checkBoxActivity_CheckedChanged"/>
+                <Label x:Name="labelActivity4" TextColor="Black" FontSize="Small" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="30,0">
+                <CheckBox Color="Orange" x:Name="checkBoxActivity5" VerticalOptions="Center"  CheckedChanged="checkBoxActivity_CheckedChanged"/>
+                <Label x:Name="labelActivity5" TextColor="Black" FontSize="Small" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="30,0">
+                <CheckBox Color="Orange" x:Name="checkBoxActivity6" VerticalOptions="Center"  CheckedChanged="checkBoxActivity_CheckedChanged"/>
+                <Label x:Name="labelActivity6" TextColor="Black" FontSize="Small" VerticalOptions="Center"/>
+            </StackLayout>
+
+            <!--Четвертый вопрос-->
+            <Label Text="4) Были ли у Вас диагностированы какие-либо из следующих состояний до короновирусного заболевания?" TextColor="Black" FontSize="Small" Margin="15,25,15,0"/>
+            <StackLayout Orientation="Horizontal" Margin="30,0">
+                <CheckBox Color="Orange" x:Name="checkBoxDiseases1" VerticalOptions="Center" CheckedChanged="checkBoxDiseases_CheckedChanged"/>
+                <Label x:Name="labelDiseases1" TextColor="Black" FontSize="Small" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="30,0">
+                <CheckBox Color="Orange" x:Name="checkBoxDiseases2" VerticalOptions="Center" CheckedChanged="checkBoxDiseases_CheckedChanged"/>
+                <Label x:Name="labelDiseases2" TextColor="Black" FontSize="Small" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="30,0">
+                <CheckBox Color="Orange" x:Name="checkBoxDiseases3" VerticalOptions="Center" CheckedChanged="checkBoxDiseases_CheckedChanged"/>
+                <Label x:Name="labelDiseases3" TextColor="Black" FontSize="Small" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="30,0">
+                <CheckBox Color="Orange" x:Name="checkBoxDiseases4" VerticalOptions="Center" CheckedChanged="checkBoxDiseases_CheckedChanged"/>
+                <Label x:Name="labelDiseases4" TextColor="Black" FontSize="Small" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="30,0">
+                <CheckBox Color="Orange" x:Name="checkBoxDiseases5" VerticalOptions="Center" CheckedChanged="checkBoxDiseases_CheckedChanged"/>
+                <Label x:Name="labelDiseases5" TextColor="Black" FontSize="Small" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="30,0">
+                <CheckBox Color="Orange" x:Name="checkBoxDiseases6" VerticalOptions="Center" CheckedChanged="checkBoxDiseases_CheckedChanged"/>
+                <Label x:Name="labelDiseases6" TextColor="Black" FontSize="Small" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="30,0">
+                <CheckBox Color="Orange" x:Name="checkBoxDiseases7" VerticalOptions="Center" CheckedChanged="checkBoxDiseases_CheckedChanged"/>
+                <Label x:Name="labelDiseases7" TextColor="Black" FontSize="Small" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="30,0">
+                <CheckBox Color="Orange" x:Name="checkBoxDiseases8" VerticalOptions="Center" CheckedChanged="checkBoxDiseases_CheckedChanged"/>
+                <Label x:Name="labelDiseases8" TextColor="Black" FontSize="Small" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="30,0">
+                <CheckBox Color="Orange" x:Name="checkBoxDiseases9" VerticalOptions="Center" CheckedChanged="checkBoxDiseases_CheckedChanged"/>
+                <Label x:Name="labelDiseases9" TextColor="Black" FontSize="Small" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="30,0">
+                <CheckBox Color="Orange" x:Name="checkBoxDiseases10" VerticalOptions="Center" CheckedChanged="checkBoxDiseases_CheckedChanged"/>
+                <Label x:Name="labelDiseases10" TextColor="Black" FontSize="Small" VerticalOptions="Center"/>
+            </StackLayout>
+
+            <!--Пятый вопрос-->
+            <Label Text="5) Изменилась ли Ваша трудоспособность после перенесенной коронавирусной инфекции?" TextColor="Black" FontSize="Small" Margin="15,25,15,0"/>
+            <StackLayout Orientation="Horizontal" Margin="30,0">
+                <CheckBox Color="Orange" x:Name="checkBoxAbilityToWork1" VerticalOptions="Center" CheckedChanged="checkBoxAbilityToWork_CheckedChanged"/>
+                <Label x:Name="labelAbilityToWork1" TextColor="Black" FontSize="Small" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="30,0">
+                <CheckBox Color="Orange" x:Name="checkBoxAbilityToWork2" VerticalOptions="Center" CheckedChanged="checkBoxAbilityToWork_CheckedChanged"/>
+                <Label x:Name="labelAbilityToWork2" TextColor="Black" FontSize="Small" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="30,0">
+                <CheckBox Color="Orange" x:Name="checkBoxAbilityToWork3" VerticalOptions="Center" CheckedChanged="checkBoxAbilityToWork_CheckedChanged"/>
+                <Label x:Name="labelAbilityToWork3" TextColor="Black" FontSize="Small" VerticalOptions="Center"/>
+            </StackLayout>
+            <Grid Margin="30,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Label x:Name="labelAbilityToWork" Text="На сколько ?" TextColor="Black" FontSize="Small" VerticalOptions="Center" Grid.Column="0"/>
+                <Slider x:Name="sliderAbilityToWork" Maximum="10.49" Minimum="0.5" ThumbColor="Orange" MaximumTrackColor="Gray" MinimumTrackColor="#FFC14E" ValueChanged="slider_ValueChanged" VerticalOptions="Center" Grid.Column="1"/>
+            </Grid>
+
+            <!--Шестой вопрос-->
+            <Label Text="6) Изменилась ли Ваша работоспособность по дому после перенесенной коронавирусной инфекции?" TextColor="Black" FontSize="Small" Margin="15,25,15,0"/>
+            <StackLayout Orientation="Horizontal" Margin="30,0">
+                <CheckBox Color="Orange" x:Name="checkBoxPerformance1" VerticalOptions="Center" CheckedChanged="checkBoxPerformance_CheckedChanged"/>
+                <Label x:Name="labelPerformance1" TextColor="Black" FontSize="Small" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="30,0">
+                <CheckBox Color="Orange" x:Name="checkBoxPerformance2" VerticalOptions="Center" CheckedChanged="checkBoxPerformance_CheckedChanged"/>
+                <Label x:Name="labelPerformance2" TextColor="Black" FontSize="Small" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="30,0">
+                <CheckBox Color="Orange" x:Name="checkBoxPerformance3" VerticalOptions="Center" CheckedChanged="checkBoxPerformance_CheckedChanged"/>
+                <Label x:Name="labelPerformance3" TextColor="Black" FontSize="Small" VerticalOptions="Center"/>
+            </StackLayout>
+            <Grid Margin="30,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Label x:Name="labelPerformance" Text="На сколько ?" TextColor="Black" FontSize="Small" VerticalOptions="Center" Grid.Column="0"/>
+                <Slider x:Name="sliderPerformance" Maximum="10.49" Minimum="0.5" ThumbColor="Orange" MaximumTrackColor="Gray" MinimumTrackColor="#FFC14E" ValueChanged="slider_ValueChanged" VerticalOptions="Center" Grid.Column="1"/>
+            </Grid>
+
+            <!--Седьмой вопрос-->
+            <Label Text="7) Изменилась ли Ваша досуговая активность после перенесенной коронавирусной инфекции?" TextColor="Black" FontSize="Small" Margin="15,25,15,0"/>
+            <StackLayout Orientation="Horizontal" Margin="30,0">
+                <CheckBox Color="Orange" x:Name="checkBoxLeisure1" VerticalOptions="Center" CheckedChanged="checkBoxLeisure_CheckedChanged"/>
+                <Label x:Name="labelLeisure1" TextColor="Black" FontSize="Small" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="30,0">
+                <CheckBox Color="Orange" x:Name="checkBoxLeisure2" VerticalOptions="Center" CheckedChanged="checkBoxLeisure_CheckedChanged"/>
+                <Label x:Name="labelLeisure2" TextColor="Black" FontSize="Small" VerticalOptions="Center"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Margin="30,0">
+                <CheckBox Color="Orange" x:Name="checkBoxLeisure3" VerticalOptions="Center" CheckedChanged="checkBoxLeisure_CheckedChanged"/>
+                <Label x:Name="labelLeisure3" TextColor="Black" FontSize="Small" VerticalOptions="Center"/>
+            </StackLayout>
+            <Grid Margin="30,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Label x:Name="labelLeisure" Text="На сколько ?" TextColor="Black" FontSize="Small" VerticalOptions="Center" Grid.Column="0"/>
+                <Slider x:Name="sliderLeisure" Maximum="10.49" Minimum="0.5" ThumbColor="Orange" MaximumTrackColor="Gray" MinimumTrackColor="#FFC14E" ValueChanged="slider_ValueChanged" VerticalOptions="Center" Grid.Column="1"/>
+            </Grid>
+
+
+            <!--Таблица жалоб-->
+            <Grid ColumnSpacing="3" RowSpacing="3" BackgroundColor="Black" Margin="4,80,4,35">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="0"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="0"/>
+                </Grid.ColumnDefinitions>
+
+
+                <!--Заголовок таблицы-->
+                <BoxView BackgroundColor="Orange" Grid.Column="1" Grid.Row="1"/>
+                <Label Text="Жалобы" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="1" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                <BoxView BackgroundColor="Orange" Grid.Column="2" Grid.Row="1"/>
+                <Label Text="При поступлении" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="2" Grid.Row="1" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                <BoxView BackgroundColor="Orange" Grid.Column="3" Grid.Row="1"/>
+                <Label Text="При выписке" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="3" Grid.Row="1" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                <BoxView BackgroundColor="Orange" Grid.Column="4" Grid.Row="1"/>
+                <Label Text="Через 3 месяца после выписки" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="4" Grid.Row="1" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+
+
+                <!--Подзаголовки таблицы таблицы-->
+                <BoxView BackgroundColor="#FFC14E" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="4"/>
+                <Label Text="Неврологические" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="2" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                <BoxView BackgroundColor="#FFC14E" Grid.Column="1" Grid.Row="10" Grid.ColumnSpan="4"/>
+                <Label Text="Головная боль" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="10" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                <BoxView BackgroundColor="#FFC14E" Grid.Column="1" Grid.Row="14" Grid.ColumnSpan="4"/>
+                <Label Text="Аффективные расстройства" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="14" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                <BoxView BackgroundColor="#FFC14E" Grid.Column="1" Grid.Row="19" Grid.ColumnSpan="4"/>
+                <Label Text="Системные проявления" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="19" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                <BoxView BackgroundColor="#FFC14E" Grid.Column="1" Grid.Row="24" Grid.ColumnSpan="4"/>
+                <Label Text="Сердечно-сосудистая система" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="24" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                <BoxView BackgroundColor="#FFC14E" Grid.Column="1" Grid.Row="31" Grid.ColumnSpan="4"/>
+                <Label Text="Опорно-двигательный аппарат" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="31" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                <BoxView BackgroundColor="#FFC14E" Grid.Column="1" Grid.Row="34" Grid.ColumnSpan="4"/>
+                <Label Text="Органы чувств" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="34" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                <BoxView BackgroundColor="#FFC14E" Grid.Column="1" Grid.Row="44" Grid.ColumnSpan="4"/>
+                <Label Text="Дыхательная система" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="44" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                <BoxView BackgroundColor="#FFC14E" Grid.Column="1" Grid.Row="51" Grid.ColumnSpan="4"/>
+                <Label Text="Лор" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="51" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                <BoxView BackgroundColor="#FFC14E" Grid.Column="1" Grid.Row="57" Grid.ColumnSpan="4"/>
+                <Label Text="Желудочно-кишечный тракт" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="57" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                <BoxView BackgroundColor="#FFC14E" Grid.Column="1" Grid.Row="61" Grid.ColumnSpan="4"/>
+                <Label Text="Дерматологические проблемы" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="61" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+
+
+                <!--Блок неврологических жалоб-->
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="3"/>
+                <Label Text="Кратковременная потеря памяти" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="3" Margin="3,0"/>
+                <Editor x:Name="editorShortTermMemoryLoss1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="3" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorShortTermMemoryLoss_TextChanged"/>
+                <Editor x:Name="editorShortTermMemoryLoss2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="3" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorShortTermMemoryLoss_TextChanged"/>
+                <Editor x:Name="editorShortTermMemoryLoss3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="3" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorShortTermMemoryLoss_TextChanged"/>
+
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="4"/>
+                <Label Text="Снижение памяти" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="4" Margin="3,0"/>
+                <Editor x:Name="editorDecreasedMemory1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="4" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorDecreasedMemory_TextChanged"/>
+                <Editor x:Name="editorDecreasedMemory2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="4" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorDecreasedMemory_TextChanged"/>
+                <Editor x:Name="editorDecreasedMemory3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="4" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorDecreasedMemory_TextChanged"/>
+
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="5"/>
+                <Label Text="Снижение концентрации внимания, 'туман в мозгу'" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="5" Margin="3,0"/>
+                <Editor x:Name="editorDecreasedConcentration1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="5" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorDecreasedConcentration_TextChanged"/>
+                <Editor x:Name="editorDecreasedConcentration2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="5" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorDecreasedConcentration_TextChanged"/>
+                <Editor x:Name="editorDecreasedConcentration3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="5" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorDecreasedConcentration_TextChanged"/>
+
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="6"/>
+                <Label Text="Повышенная утомляемость" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="6" Margin="3,0"/>
+                <Editor x:Name="editorFatigue1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="6" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorFatigue_TextChanged"/>
+                <Editor x:Name="editorFatigue2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="6" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorFatigue_TextChanged"/>
+                <Editor x:Name="editorFatigue3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="6" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorFatigue_TextChanged"/>
+
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="7"/>
+                <Label Text="Спутанность сознания" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="7" Margin="3,0"/>
+                <Editor x:Name="editorConfusion1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="7" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorConfusion_TextChanged"/>
+                <Editor x:Name="editorConfusion2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="7" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorConfusion_TextChanged"/>
+                <Editor x:Name="editorConfusion3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="7" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorConfusion_TextChanged"/>
+
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="8"/>
+                <Label Text="Нарушение сна (патологическое бодрствование, бессонница)" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="8" Margin="3,0"/>
+                <Editor x:Name="editorSleepDisturbance1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="8" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorSleepDisturbance_TextChanged"/>
+                <Editor x:Name="editorSleepDisturbance2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="8" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorSleepDisturbance_TextChanged"/>
+                <Editor x:Name="editorSleepDisturbance3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="8" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorSleepDisturbance_TextChanged"/>
+
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="9"/>
+                <Label Text="Проблемы с речью (подбор слов или произношение)" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="9" Margin="3,0"/>
+                <Editor x:Name="editorSpeechProblems1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="9" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorSpeechProblems_TextChanged"/>
+                <Editor x:Name="editorSpeechProblems2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="9" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorSpeechProblems_TextChanged"/>
+                <Editor x:Name="editorSpeechProblems3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="9" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorSpeechProblems_TextChanged"/>
+
+                <!--Блок жалоб - головная боль-->
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="11"/>
+                <Label Text="Изменение характера" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="11" Margin="3,0"/>
+                <Editor x:Name="editorChangeOfCharacter1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="11" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorChangeOfCharacter_TextChanged"/>
+                <Editor x:Name="editorChangeOfCharacter2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="11" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorChangeOfCharacter_TextChanged"/>
+                <Editor x:Name="editorChangeOfCharacter3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="11" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorChangeOfCharacter_TextChanged"/>
+
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="12"/>
+                <Label Text="Изменение частоты" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="12" Margin="3,0"/>
+                <Editor x:Name="editorFrequencyChange1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="12" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorFrequencyChange_TextChanged"/>
+                <Editor x:Name="editorFrequencyChange2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="12" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorFrequencyChange_TextChanged"/>
+                <Editor x:Name="editorFrequencyChange3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="12" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorFrequencyChange_TextChanged"/>
+
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="13"/>
+                <Label Text="Изменение интенсивности" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="13" Margin="3,0"/>
+                <Editor x:Name="editorIntensityChange1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="13" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorIntensityChange_TextChanged"/>
+                <Editor x:Name="editorIntensityChange2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="13" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorIntensityChange_TextChanged"/>
+                <Editor x:Name="editorIntensityChange3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="13" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorIntensityChange_TextChanged"/>
+
+                <!--Блок жалоб - аффективные расстройства-->
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="15"/>
+                <Label Text="Перепады настроения" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="15" Margin="3,0"/>
+                <Editor x:Name="editorMoodSwings1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="15" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorMoodSwings_TextChanged"/>
+                <Editor x:Name="editorMoodSwings2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="15" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorMoodSwings_TextChanged"/>
+                <Editor x:Name="editorMoodSwings3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="15" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorMoodSwings_TextChanged"/>
+
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="16"/>
+                <Label Text="Тревога" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="16" Margin="3,0"/>
+                <Editor x:Name="editorAnxiety1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="16" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorAnxiety_TextChanged"/>
+                <Editor x:Name="editorAnxiety2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="16" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorAnxiety_TextChanged"/>
+                <Editor x:Name="editorAnxiety3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="16" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorAnxiety_TextChanged"/>
+
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="17"/>
+                <Label Text="Депрессия" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="17" Margin="3,0"/>
+                <Editor x:Name="editorDepression1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="17" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorDepression_TextChanged"/>
+                <Editor x:Name="editorDepression2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="17" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorDepression_TextChanged"/>
+                <Editor x:Name="editorDepression3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="17" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorDepression_TextChanged"/>
+
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="18"/>
+                <Label Text="Навязчивые состояния" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="18" Margin="3,0"/>
+                <Editor x:Name="editorObsessiveStates1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="18" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorObsessiveStates_TextChanged"/>
+                <Editor x:Name="editorObsessiveStates2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="18" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorObsessiveStates_TextChanged"/>
+                <Editor x:Name="editorObsessiveStates3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="18" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorObsessiveStates_TextChanged"/>
+
+                <!--Блок жалоб - системное проявлени-->
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="20"/>
+                <Label Text="Лихорадка" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="20" Margin="3,0"/>
+                <Editor x:Name="editorFever1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="20" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorFever_TextChanged"/>
+                <Editor x:Name="editorFever2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="20" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorFever_TextChanged"/>
+                <Editor x:Name="editorFever3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="20" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorFever_TextChanged"/>
+
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="21"/>
+                <Label Text="Повышенное потоотделение" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="21" Margin="3,0"/>
+                <Editor x:Name="editorIncreasedSweating1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="21" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorIncreasedSweating_TextChanged"/>
+                <Editor x:Name="editorIncreasedSweating2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="21" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorIncreasedSweating_TextChanged"/>
+                <Editor x:Name="editorIncreasedSweating3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="21" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorIncreasedSweating_TextChanged"/>
+
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="22"/>
+                <Label Text="Ночная потливость" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="22" Margin="3,0"/>
+                <Editor x:Name="editorNightSweats1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="22" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorNightSweats_TextChanged"/>
+                <Editor x:Name="editorNightSweats2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="22" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorNightSweats_TextChanged"/>
+                <Editor x:Name="editorNightSweats3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="22" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorNightSweats_TextChanged"/>
+
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="23"/>
+                <Label Text="Непереносимость тепла" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="23" Margin="3,0"/>
+                <Editor x:Name="editorHeatIntolerance1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="23" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorHeatIntolerance_TextChanged"/>
+                <Editor x:Name="editorHeatIntolerance2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="23" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorHeatIntolerance_TextChanged"/>
+                <Editor x:Name="editorHeatIntolerance3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="23" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorHeatIntolerance_TextChanged"/>
+
+                <!--Блок жалоб - сердечно-сосудистая система-->
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="25"/>
+                <Label Text="Брадикардия" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="25" Margin="3,0"/>
+                <Editor x:Name="editorBradycardia1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="25" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorBradycardia_TextChanged"/>
+                <Editor x:Name="editorBradycardia2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="25" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorBradycardia_TextChanged"/>
+                <Editor x:Name="editorBradycardia3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="25" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorBradycardia_TextChanged"/>
+
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="26"/>
+                <Label Text="Тахикардия" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="26" Margin="3,0"/>
+                <Editor x:Name="editorTachycardia1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="26" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorTachycardia_TextChanged"/>
+                <Editor x:Name="editorTachycardia2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="26" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorTachycardia_TextChanged"/>
+                <Editor x:Name="editorTachycardia3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="26" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorTachycardia_TextChanged"/>
+
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="27"/>
+                <Label Text="Сердцебиение" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="27" Margin="3,0"/>
+                <Editor x:Name="editorHeartbeat1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="27" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorHeartbeat_TextChanged"/>
+                <Editor x:Name="editorHeartbeat2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="27" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorHeartbeat_TextChanged"/>
+                <Editor x:Name="editorHeartbeat3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="27" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorHeartbeat_TextChanged"/>
+
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="28"/>
+                <Label Text="Подъемы АД" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="28" Margin="3,0"/>
+                <Editor x:Name="editorBPRises1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="28" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorBPRises_TextChanged"/>
+                <Editor x:Name="editorBPRises2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="28" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorBPRises_TextChanged"/>
+                <Editor x:Name="editorBPRises3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="28" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorBPRises_TextChanged"/>
+
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="29"/>
+                <Label Text="Понижение АД" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="29" Margin="3,0"/>
+                <Editor x:Name="editorLoweringBloodPressure1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="29" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorLoweringBloodPressure_TextChanged"/>
+                <Editor x:Name="editorLoweringBloodPressure2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="29" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorLoweringBloodPressure_TextChanged"/>
+                <Editor x:Name="editorLoweringBloodPressure3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="29" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorLoweringBloodPressure_TextChanged"/>
+
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="30"/>
+                <Label Text="Обморок" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="30" Margin="3,0"/>
+                <Editor x:Name="editorFainting1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="30" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorFainting_TextChanged"/>
+                <Editor x:Name="editorFainting2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="30" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorFainting_TextChanged"/>
+                <Editor x:Name="editorFainting3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="30" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorFainting_TextChanged"/>
+
+                <!--Блок жалоб - опорно-двигательная система-->
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="32"/>
+                <Label Text="Боль в мышцах" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="32" Margin="3,0"/>
+                <Editor x:Name="editorMusclePain1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="32" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorMusclePain_TextChanged"/>
+                <Editor x:Name="editorMusclePain2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="32" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorMusclePain_TextChanged"/>
+                <Editor x:Name="editorMusclePain3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="32" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorMusclePain_TextChanged"/>
+
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="33"/>
+                <Label Text="Боль в суставах" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="33" Margin="3,0"/>
+                <Editor x:Name="editorJointPain1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="33" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorJointPain_TextChanged"/>
+                <Editor x:Name="editorJointPain2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="33" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorJointPain_TextChanged"/>
+                <Editor x:Name="editorJointPain3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="33" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorJointPain_TextChanged"/>
+
+                <!--Блок жалоб - органы чувств-->
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="35"/>
+                <Label Text="Головокружение" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="35" Margin="3,0"/>
+                <Editor x:Name="editorDizziness1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="35" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorDizziness_TextChanged"/>
+                <Editor x:Name="editorDizziness2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="35" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorDizziness_TextChanged"/>
+                <Editor x:Name="editorDizziness3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="35" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorDizziness_TextChanged"/>
+
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="36"/>
+                <Label Text="Нарушение равновесия" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="36" Margin="3,0"/>
+                <Editor x:Name="editorImbalance1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="36" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorImbalance_TextChanged"/>
+                <Editor x:Name="editorImbalance2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="36" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorImbalance_TextChanged"/>
+                <Editor x:Name="editorImbalance3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="36" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorImbalance_TextChanged"/>
+
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="37"/>
+                <Label Text="Нарушение зрения" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="37" Margin="3,0"/>
+                <Editor x:Name="editorVisualImpairment1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="37" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorVisualImpairment_TextChanged"/>
+                <Editor x:Name="editorVisualImpairment2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="37" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorVisualImpairment_TextChanged"/>
+                <Editor x:Name="editorVisualImpairment3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="37" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorVisualImpairment_TextChanged"/>
+
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="38"/>
+                <Label Text="Кожная гиперестезия" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="38" Margin="3,0"/>
+                <Editor x:Name="editorSkinHyperesthesia1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="38" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorSkinHyperesthesia_TextChanged"/>
+                <Editor x:Name="editorSkinHyperesthesia2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="38" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorSkinHyperesthesia_TextChanged"/>
+                <Editor x:Name="editorSkinHyperesthesia3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="38" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorSkinHyperesthesia_TextChanged"/>
+
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="39"/>
+                <Label Text="Боль в конечностях" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="39" Margin="3,0"/>
+                <Editor x:Name="editorPainInTheLimbs1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="39" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorPainInTheLimbs_TextChanged"/>
+                <Editor x:Name="editorPainInTheLimbs2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="39" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorPainInTheLimbs_TextChanged"/>
+                <Editor x:Name="editorPainInTheLimbs3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="39" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorPainInTheLimbs_TextChanged"/>
+
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="40"/>
+                <Label Text="Онемение в конечностях" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="40" Margin="3,0"/>
+                <Editor x:Name="editorNumbnessInTheLimbs1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="40" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorNumbnessInTheLimbs_TextChanged"/>
+                <Editor x:Name="editorNumbnessInTheLimbs2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="40" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorNumbnessInTheLimbs_TextChanged"/>
+                <Editor x:Name="editorNumbnessInTheLimbs3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="40" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorNumbnessInTheLimbs_TextChanged"/>
+
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="41"/>
+                <Label Text="Парестезии" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="41" Margin="3,0"/>
+                <Editor x:Name="editorParesthesia1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="41" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorParesthesia_TextChanged"/>
+                <Editor x:Name="editorParesthesia2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="41" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorParesthesia_TextChanged"/>
+                <Editor x:Name="editorParesthesia3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="41" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorParesthesia_TextChanged"/>
+
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="42"/>
+                <Label Text="Нарушения вкуса (агевзия, снижение вкуса, искажение вкуса)" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="42" Margin="3,0"/>
+                <Editor x:Name="editorTasteDisorders1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="42" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorTasteDisorders_TextChanged"/>
+                <Editor x:Name="editorTasteDisorders2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="42" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorTasteDisorders_TextChanged"/>
+                <Editor x:Name="editorTasteDisorders3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="42" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorTasteDisorders_TextChanged"/>
+
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="43"/>
+                <Label Text="Нарушения обоняния (аносмия, фантомия, паросмия)" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="43" Margin="3,0"/>
+                <Editor x:Name="editorOlfactoryDisorders1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="43" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorOlfactoryDisorders_TextChanged"/>
+                <Editor x:Name="editorOlfactoryDisorders2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="43" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorOlfactoryDisorders_TextChanged"/>
+                <Editor x:Name="editorOlfactoryDisorders3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="43" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorOlfactoryDisorders_TextChanged"/>
+
+                <!--Блок жалоб - дыхательная система-->
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="45"/>
+                <Label Text="Кашель" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="45" Margin="3,0"/>
+                <Editor x:Name="editorCough1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="45" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorCough_TextChanged"/>
+                <Editor x:Name="editorCough2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="45" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorCough_TextChanged"/>
+                <Editor x:Name="editorCough3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="45" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorCough_TextChanged"/>
+
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="46"/>
+                <Label Text="Одышка" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="46" Margin="3,0"/>
+                <Editor x:Name="editorDyspnea1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="46" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorDyspnea_TextChanged"/>
+                <Editor x:Name="editorDyspnea2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="46" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorDyspnea_TextChanged"/>
+                <Editor x:Name="editorDyspnea3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="46" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorDyspnea_TextChanged"/>
+
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="47"/>
+                <Label Text="Стеснение в груди, боль в груди" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="47" Margin="3,0"/>
+                <Editor x:Name="editorChestPain1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="47" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorChestPain_TextChanged"/>
+                <Editor x:Name="editorChestPain2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="47" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorChestPain_TextChanged"/>
+                <Editor x:Name="editorChestPain3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="47" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorChestPain_TextChanged"/>
+
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="48"/>
+                <Label Text="Учащенное сердцебиение" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="48" Margin="3,0"/>
+                <Editor x:Name="editorCardiopalmus1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="48" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorCardiopalmus_TextChanged"/>
+                <Editor x:Name="editorCardiopalmus2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="48" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorCardiopalmus_TextChanged"/>
+                <Editor x:Name="editorCardiopalmus3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="48" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorCardiopalmus_TextChanged"/>
+
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="49"/>
+                <Label Text="Анорексия, снижение аппетита" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="49" Margin="3,0"/>
+                <Editor x:Name="editorAnorexia1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="49" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorAnorexia_TextChanged"/>
+                <Editor x:Name="editorAnorexia2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="49" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorAnorexia_TextChanged"/>
+                <Editor x:Name="editorAnorexia3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="49" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorAnorexia_TextChanged"/>
+
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="50"/>
+                <Label Text="Судороги" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="50" Margin="3,0"/>
+                <Editor x:Name="editorConvulsions1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="50" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorConvulsions_TextChanged"/>
+                <Editor x:Name="editorConvulsions2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="50" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorConvulsions_TextChanged"/>
+                <Editor x:Name="editorConvulsions3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="50" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorConvulsions_TextChanged"/>
+
+                <!--Блок жалоб - лор-->
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="52"/>
+                <Label Text="Боль в горле" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="52" Margin="3,0"/>
+                <Editor x:Name="editorSoreThroat1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="52" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorSoreThroat_TextChanged"/>
+                <Editor x:Name="editorSoreThroat2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="52" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorSoreThroat_TextChanged"/>
+                <Editor x:Name="editorSoreThroat3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="52" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorSoreThroat_TextChanged"/>
+
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="53"/>
+                <Label Text="Шум в ушах" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="53" Margin="3,0"/>
+                <Editor x:Name="editorNoiseInEars1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="53" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorNoiseInEars_TextChanged"/>
+                <Editor x:Name="editorNoiseInEars2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="53" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorNoiseInEars_TextChanged"/>
+                <Editor x:Name="editorNoiseInEars3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="53" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorNoiseInEars_TextChanged"/>
+
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="54"/>
+                <Label Text="Ушная боль" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="54" Margin="3,0"/>
+                <Editor x:Name="editorEarAche1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="54" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorEarAche_TextChanged"/>
+                <Editor x:Name="editorEarAche2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="54" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorEarAche_TextChanged"/>
+                <Editor x:Name="editorEarAche3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="54" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorEarAche_TextChanged"/>
+
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="55"/>
+                <Label Text="Заложенность носа" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="55" Margin="3,0"/>
+                <Editor x:Name="editorNasalCongestion1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="55" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorNasalCongestion_TextChanged"/>
+                <Editor x:Name="editorNasalCongestion2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="55" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorNasalCongestion_TextChanged"/>
+                <Editor x:Name="editorNasalCongestion3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="55" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorNasalCongestion_TextChanged"/>
+
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="56"/>
+                <Label Text="Боль и сухость носа (Синдром сухого носа)" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="56" Margin="3,0"/>
+                <Editor x:Name="editorPainAndDrynessOfTheNose1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="56" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorPainAndDrynessOfTheNose_TextChanged"/>
+                <Editor x:Name="editorPainAndDrynessOfTheNose2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="56" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorPainAndDrynessOfTheNose_TextChanged"/>
+                <Editor x:Name="editorPainAndDrynessOfTheNose3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="56" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorPainAndDrynessOfTheNose_TextChanged"/>
+
+                <!--Блок жалоб - Желудочно-кишечный тракт-->
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="58"/>
+                <Label Text="Боль в животе" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="58" Margin="3,0"/>
+                <Editor x:Name="editorAbdominalPain1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="58" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorAbdominalPain_TextChanged"/>
+                <Editor x:Name="editorAbdominalPain2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="58" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorAbdominalPain_TextChanged"/>
+                <Editor x:Name="editorAbdominalPain3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="58" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorAbdominalPain_TextChanged"/>
+
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="59"/>
+                <Label Text="Диарея" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="59" Margin="3,0"/>
+                <Editor x:Name="editorDiarrhea1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="59" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorDiarrhea_TextChanged"/>
+                <Editor x:Name="editorDiarrhea2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="59" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorDiarrhea_TextChanged"/>
+                <Editor x:Name="editorDiarrhea3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="59" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorDiarrhea_TextChanged"/>
+
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="60"/>
+                <Label Text="Тошнота и рвота" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="60" Margin="3,0"/>
+                <Editor x:Name="editorNauseaAndVomiting1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="60" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorNauseaAndVomiting_TextChanged"/>
+                <Editor x:Name="editorNauseaAndVomiting2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="60" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorNauseaAndVomiting_TextChanged"/>
+                <Editor x:Name="editorNauseaAndVomiting3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="60" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorNauseaAndVomiting_TextChanged"/>
+
+                <!--Блок жалоб - Дерматологические проблемы-->
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="62"/>
+                <Label Text="Выпадение волос" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="62" Margin="3,0"/>
+                <Editor x:Name="editorHairLoss1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="62" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorHairLoss_TextChanged"/>
+                <Editor x:Name="editorHairLoss2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="62" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorHairLoss_TextChanged"/>
+                <Editor x:Name="editorHairLoss3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="62" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorHairLoss_TextChanged"/>
+
+                <BoxView BackgroundColor="White" Grid.Column="1" Grid.Row="63"/>
+                <Label Text="Кожные высыпания" TextColor="Black" FontSize="Small" VerticalTextAlignment="Center" Grid.Column="1" Grid.Row="63" Margin="3,0"/>
+                <Editor x:Name="editorSkinRashes1" BackgroundColor="White" TextColor="Gray" Grid.Column="2" Grid.Row="63" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorSkinRashes_TextChanged"/>
+                <Editor x:Name="editorSkinRashes2" BackgroundColor="White" TextColor="Gray" Grid.Column="3" Grid.Row="63" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorSkinRashes_TextChanged"/>
+                <Editor x:Name="editorSkinRashes3" BackgroundColor="White" TextColor="Gray" Grid.Column="4" Grid.Row="63" AutoSize="TextChanges" MinimumWidthRequest="150" MinimumHeightRequest="50" TextChanged="editorSkinRashes_TextChanged"/>
+
+            </Grid>
+
+            <Grid Margin="10,20,10,15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <!--Кнопка возврата в общее меню-->
+                <Button x:Name="buttonMainMenu" Grid.Column="0" Grid.Row="0" FontSize="Default" Text="Вернутся в меню" TextColor="Black" Margin="0,0,10,0" BackgroundColor="Orange" Clicked="buttonMainMenu_Clicked"/>
+                <!--Кнопка получения результатов теста-->
+                <Button x:Name="buttonSaveData" Text="Сохранить" Grid.Column="1" Grid.Row="0" FontSize="Default" Margin="10, 0, 0, 0" Clicked="buttonSaveData_Clicked" BackgroundColor="Orange" TextColor="Black"/>
+            </Grid>
+            
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

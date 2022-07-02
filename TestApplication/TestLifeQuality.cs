@@ -4,56 +4,60 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
+using System.Threading.Tasks;
+
 using Xamarin.Forms;
 
 namespace TestApplication
 {
-    internal class Client
-    {
-        /// <summary>
-        /// Количество баллов заработанных пациентом за тест
-        /// </summary>
-        public int Score { get; set; }
-        /// <summary>
-        /// Массив ответов
-        /// </summary>
-        public int[] arrayAnswer;
-        public Client()
-        {
-
-        }
-        public Client(int countQuestion)
-        {
-            arrayAnswer = new int[countQuestion];
-        }
-    }
 
     public partial class TestLifeQuality : ContentPage
     {
-        Client client;
+        Task task;
+
+        int testResult = 0;
 
         public TestLifeQuality()
         {
             InitializeComponent();
             Title = "Европейский опросник качества жизнии";
-            client = new Client(6);
         }
 
-        private void button_CalculateResult(object sender, System.EventArgs e)
+        private async void button_CalculateResult(object sender, System.EventArgs e)
         {
             ReadDataPicker();
             if (AnswersAllQuestions())
             {
                 CalculateResult();
-                DisplayAlert("Результат", $"Ваше количетво баллов = {client.Score}", "Принять");
-                //SaveJson(client);
-                client.Score = 0;
+                task = DisplayAlert("Результат", $"Ваше количетво баллов = {App.patient.resultLifeQuality.TotalResultLifeQuality}", "Принять");
+                
+                await task;
+
+                testResult = 0;
+                ResetAnswersInTest();
+                Console.WriteLine($"{App.patient.resultLifeQuality.TotalResultLifeQuality} у пациента");
+                Console.WriteLine($"{testResult} после окончания теста");
+
+                await Navigation.PopAsync();
             }
             //пациент ответил не на все вопросы
             else
             {
-                DisplayAlert("Предупреждение", "Пожалуйста ответьте на все вопросы", "Хорошо");
+                task = DisplayAlert("Предупреждение", "Пожалуйста ответьте на все вопросы", "Хорошо");
             }
+        }
+        private async void buttonMainMenu_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
+        private void ResetAnswersInTest()
+        {
+            firstQuestion.SelectedIndex = -1;
+            secondQuestion.SelectedIndex = -1;
+            thirdQuestion.SelectedIndex = -1;
+            fourthQuestion.SelectedIndex = -1;
+            fifthQuestion.SelectedIndex = -1;
+            sixthQuestion.SelectedIndex = -1;
         }
 
         /// <summary>
@@ -61,12 +65,12 @@ namespace TestApplication
         /// </summary>
         private void ReadDataPicker()
         {
-            client.arrayAnswer[0] = firstQuestion.SelectedIndex;
-            client.arrayAnswer[1] = secondQuestion.SelectedIndex;
-            client.arrayAnswer[2] = thirdQuestion.SelectedIndex;
-            client.arrayAnswer[3] = fourthQuestion.SelectedIndex;
-            client.arrayAnswer[4] = fifthQuestion.SelectedIndex;
-            client.arrayAnswer[5] = sixthQuestion.SelectedIndex;
+            App.patient.resultLifeQuality.arrayAnswerLifeQuality[0] = firstQuestion.SelectedIndex;
+            App.patient.resultLifeQuality.arrayAnswerLifeQuality[1] = secondQuestion.SelectedIndex;
+            App.patient.resultLifeQuality.arrayAnswerLifeQuality[2] = thirdQuestion.SelectedIndex;
+            App.patient.resultLifeQuality.arrayAnswerLifeQuality[3] = fourthQuestion.SelectedIndex;
+            App.patient.resultLifeQuality.arrayAnswerLifeQuality[4] = fifthQuestion.SelectedIndex;
+            App.patient.resultLifeQuality.arrayAnswerLifeQuality[5] = sixthQuestion.SelectedIndex;
         }
 
         /// <summary>
@@ -75,9 +79,10 @@ namespace TestApplication
         /// <returns></returns>
         private bool AnswersAllQuestions()
         {
+
             for (int i = 0; i < 6; i++)
             {
-                if (client.arrayAnswer[i] == -1)
+                if (App.patient.resultLifeQuality.arrayAnswerLifeQuality[i] == -1)
                 {
                     return false;
                 }
@@ -93,12 +98,12 @@ namespace TestApplication
         {
             for (int i = 0; i < 6; i++)
             {
-                client.Score += client.arrayAnswer[i];
+                testResult += App.patient.resultLifeQuality.arrayAnswerLifeQuality[i];
             }
-           
+            App.patient.resultLifeQuality.TotalResultLifeQuality = testResult;
         }
 
-        private void SaveJson(Client _client)
+       /* private void SaveJson(Client _client)
         {
             var jsonString = JsonConvert.SerializeObject(_client);
 
@@ -112,7 +117,7 @@ namespace TestApplication
             StreamWriter sw = new StreamWriter(path);
             sw.WriteLine(jsonString);
             sw.Close();
-        }
+        }*/
 
     }
 

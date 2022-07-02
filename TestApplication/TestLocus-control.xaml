@@ -10,7 +10,7 @@
     </ContentPage.Padding>
 
     <ScrollView>
-        <StackLayout>
+        <StackLayout BackgroundColor="White">
 
             <!--Название теста в рамке-->
             <Frame BackgroundColor="Orange" Padding="24" CornerRadius="0">
@@ -125,9 +125,20 @@
                 </Picker.Items>
             </Picker>
 
-            <!--Окончание теста-->
-            <Button x:Name="buttonResultTest" Text="Получить результат" HorizontalOptions="End" Margin="0,15,10,20" FontSize="Medium" Clicked="button_CalculateResult" BackgroundColor="Orange" TextColor="Black"/>
-
+            <Grid Margin="10,20,10,15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <!--Кнопка возврата в общее меню-->
+                <Button x:Name="buttonMainMenu" Grid.Column="0" Grid.Row="0" FontSize="Default" Text="Вернутся в меню" TextColor="Black" Margin="0,0,10,0" BackgroundColor="Orange" Clicked="buttonMainMenu_Clicked"/>
+                <!--Кнопка получения результатов теста-->
+                <Button x:Name="buttonResultTest" Text="Получить результат" Grid.Column="1" Grid.Row="0" FontSize="Default"  Margin="10, 0, 0, 0" Clicked="button_CalculateResult" BackgroundColor="Orange" TextColor="Black"/>
+            </Grid>
+            
         </StackLayout>
     </ScrollView>
 

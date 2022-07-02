@@ -123,7 +123,7 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2478" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
@@ -132,5 +132,26 @@
       <Project>{0498CBB0-4D8E-491D-8D2B-C8DC535AD283}</Project>
       <Name>TestApplication</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Cube.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\jesti1.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\jesti2.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\jivotnie.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\PictureWithItems.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Putb.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Watch.JPG" />
   </ItemGroup>
 </Project>

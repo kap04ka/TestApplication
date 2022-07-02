@@ -4,7 +4,7 @@
              x:Class="TestApplication.MainPage">
 
     <ScrollView>
-        <StackLayout x:Name="stackLayout">
+        <StackLayout x:Name="stackLayout" BackgroundColor="#abcdef">
 
         </StackLayout>
     </ScrollView>
