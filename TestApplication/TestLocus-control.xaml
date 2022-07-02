@@ -11,7 +11,18 @@
 
     <ScrollView>
         <StackLayout BackgroundColor="White">
-
+            
+            <Grid Margin="10,20,10,15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <!--Кнопка возврата в общее меню-->
+                <Button x:Name="buttonMainMenuFirst" Grid.Column="0" Grid.Row="0" FontSize="Default" Text="Вернутся в меню" TextColor="Black" Margin="0,0,10,0" BackgroundColor="Orange" Clicked="buttonMainMenu_Clicked"/>
+            </Grid>
+            
             <!--Название теста в рамке-->
             <Frame BackgroundColor="Orange" Padding="24" CornerRadius="0">
                 <Label Text="Тест по шкале локуса-контроля" HorizontalTextAlignment="Center" FontSize="Title" FontAttributes="Bold" TextColor="Black"/>
@@ -19,7 +30,7 @@
 
             <!--Первый вопрос-->
             <Label Text="1) То, что со мною будет в будущем, зависит от меня самого, а не от того, что для меня сделают другие люди." FontSize="Medium" Padding="10,0" TextColor="Black"/>
-            <Picker x:Name="pickerFirstQuestion" Margin="10,0,10,10" FontSize="Medium">
+            <Picker x:Name="pickerFirstQuestion" Margin="10,0,10,10" FontSize="Medium" HorizontalOptions="Start" WidthRequest="400">
                 <Picker.Items>
                     <x:String>Совершенно согласен</x:String>
                     <x:String>Согласен</x:String>
@@ -31,7 +42,7 @@
 
             <!--Второй вопрос-->
             <Label Text="2) Реальные изменения зависят от того, что я сам делаю, чтобы помочь себе." FontSize="Medium" Padding="10,0" TextColor="Black"/>
-            <Picker x:Name="pickerSecondQuestion" Margin="10,0,10,10" FontSize="Medium">
+            <Picker x:Name="pickerSecondQuestion" Margin="10,0,10,10" FontSize="Medium" HorizontalOptions="Start" WidthRequest="400">
                 <Picker.Items>
                     <x:String>Совершенно согласен</x:String>
                     <x:String>Согласен</x:String>
@@ -43,7 +54,7 @@
 
             <!--Третий вопрос-->
             <Label Text="3) Я уверен, что, невзирая на обстоятельства, сделаю все возможное для достижения наиболее полного восстановления." FontSize="Medium" Padding="10,0" TextColor="Black"/>
-            <Picker x:Name="pickerThirdQuestion" Margin="10,0,10,10" FontSize="Medium">
+            <Picker x:Name="pickerThirdQuestion" Margin="10,0,10,10" FontSize="Medium" HorizontalOptions="Start" WidthRequest="400">
                 <Picker.Items>
                     <x:String>Совершенно согласен</x:String>
                     <x:String>Согласен</x:String>
@@ -55,7 +66,7 @@
 
             <!--Четвертый вопрос-->
             <Label Text="4) Достижение улучшения — это теперь вопрос моей собственной решимости, а не чьей-то чужой воли." FontSize="Medium" Padding="10,0" TextColor="Black"/>
-            <Picker x:Name="pickerFourthQuestion" Margin="10,0,10,10" FontSize="Medium">
+            <Picker x:Name="pickerFourthQuestion" Margin="10,0,10,10" FontSize="Medium" HorizontalOptions="Start" WidthRequest="400">
                 <Picker.Items>
                     <x:String>Совершенно согласен</x:String>
                     <x:String>Согласен</x:String>
@@ -67,7 +78,7 @@
 
             <!--Пятый вопрос-->
             <Label Text="5) Неважно, сколько помощи ты получаешь, в конечном счете важны собственные усилия." FontSize="Medium" Padding="10,0" TextColor="Black"/>
-            <Picker x:Name="pickerFifthQuestion" Margin="10,0,10,10" FontSize="Medium">
+            <Picker x:Name="pickerFifthQuestion" Margin="10,0,10,10" FontSize="Medium" HorizontalOptions="Start" WidthRequest="400">
                 <Picker.Items>
                     <x:String>Совершенно согласен</x:String>
                     <x:String>Согласен</x:String>
@@ -79,7 +90,7 @@
 
             <!--Шестой вопрос-->
             <Label Text="6) Часто лучше всего подождать и посмотреть, что произойдет." FontSize="Medium" Padding="10,0" TextColor="Black"/>
-            <Picker x:Name="pickerSixthQuestion" Margin="10,0,10,10" FontSize="Medium">
+            <Picker x:Name="pickerSixthQuestion" Margin="10,0,10,10" FontSize="Medium" HorizontalOptions="Start" WidthRequest="400">
                 <Picker.Items>
                     <x:String>Совершенно согласен</x:String>
                     <x:String>Согласен</x:String>
@@ -91,7 +102,7 @@
 
             <!--Седьмой вопрос-->
             <Label Text="7) Мои собственные усилия не очень важны, в действительности восстановление зависит от окружающих." FontSize="Medium" Padding="10,0" TextColor="Black"/>
-            <Picker x:Name="pickerSeventhQuestion" Margin="10,0,10,10" FontSize="Medium">
+            <Picker x:Name="pickerSeventhQuestion" Margin="10,0,10,10" FontSize="Medium" HorizontalOptions="Start" WidthRequest="400">
                 <Picker.Items>
                     <x:String>Совершенно согласен</x:String>
                     <x:String>Согласен</x:String>
@@ -103,7 +114,7 @@
 
             <!--Восьмой вопрос-->
             <Label Text="8) Мой собственный вклад в восстановление не должен быть очень большим." FontSize="Medium" Padding="10,0" TextColor="Black"/>
-            <Picker x:Name="pickerEighthQuestion" Margin="10,0,10,10" FontSize="Medium">
+            <Picker x:Name="pickerEighthQuestion" Margin="10,0,10,10" FontSize="Medium" HorizontalOptions="Start" WidthRequest="400">
                 <Picker.Items>
                     <x:String>Совершенно согласен</x:String>
                     <x:String>Согласен</x:String>
@@ -115,7 +126,7 @@
 
             <!--Девятый вопрос-->
             <Label Text="9) Я почти не контролирую или совсем не контролирую процесс улучшения." FontSize="Medium" Padding="10,0" TextColor="Black"/>
-            <Picker x:Name="pickerNinthQuestion" Margin="10,0,10,10" FontSize="Medium">
+            <Picker x:Name="pickerNinthQuestion" Margin="10,0,10,10" FontSize="Medium" HorizontalOptions="Start" WidthRequest="400">
                 <Picker.Items>
                     <x:String>Совершенно согласен</x:String>
                     <x:String>Согласен</x:String>

@@ -12,10 +12,21 @@
     <ScrollView>
         <StackLayout BackgroundColor="White">
 
+            <Grid Margin="10,20,10,15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <!--Кнопка возврата в общее меню-->
+                <Button x:Name="buttonMainMenuFirst" Grid.Column="0" Grid.Row="0" FontSize="Default" Text="Вернутся в меню" TextColor="Black" Margin="0,0,10,0" BackgroundColor="Orange" Clicked="buttonMainMenu_Clicked"/>
+            </Grid>
+
             <Label Text="Выберите ответы, характеризующие состояние пациента." HorizontalTextAlignment="Center" FontSize="Medium" FontAttributes="Bold" TextColor="Black" Padding="10, 10, 10, 0" />
 
             <Label Text="Спонтанная идиалогическая речь" FontSize="Medium" Padding="10, 10, 0, 0" TextColor="Black"/>
-            <Picker x:Name="firstQuestion" Margin="10,0,10,10" FontSize="Medium">
+            <Picker x:Name="firstQuestion" Margin="10,0,10,10" FontSize="Medium" HorizontalOptions="Start" WidthRequest="400">
                 <Picker.Items>
                     <x:String>0б - Нарушения отсутствуют.</x:String>
                     <x:String>1б - Некоторое обеднение речи.Редкие парафазии, элементы аграматизма.</x:String>
@@ -27,7 +38,7 @@
             </Picker>
 
             <Label Text="Повествовательная (монологическая) речь" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
-            <Picker x:Name="secondQuestion" Margin="10,0,10,10" FontSize="Medium">
+            <Picker x:Name="secondQuestion" Margin="10,0,10,10" FontSize="Medium" HorizontalOptions="Start" WidthRequest="400">
                 <Picker.Items>
                     <x:String>0б - Нарушения отсутствуют.</x:String>
                     <x:String>1б - Признаки нарушения как и в следующем варианте, но выражены незначительно.</x:String>
@@ -37,7 +48,7 @@
             </Picker>
 
             <Label Text="Составление рассказа по сюжетной картинке" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
-            <Picker x:Name="thirdQuestion" Margin="10,0,10,10" FontSize="Medium">
+            <Picker x:Name="thirdQuestion" Margin="10,0,10,10" FontSize="Medium" HorizontalOptions="Start" WidthRequest="400">
                 <Picker.Items>
                     <x:String>0б - Нарушения отсутствуют.</x:String>
                     <x:String>1б - Признаки нарушения как и в следующем варианте, но выражены незначительно.</x:String>
@@ -47,7 +58,7 @@
             </Picker>
 
             <Label Text="Аграмматизм" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
-            <Picker x:Name="fourthQuestion" Margin="10,0,10,10" FontSize="Medium">
+            <Picker x:Name="fourthQuestion" Margin="10,0,10,10" FontSize="Medium" HorizontalOptions="Start" WidthRequest="400">
                 <Picker.Items>
                     <x:String>0б - Нарушения отсутствуют.</x:String>
                     <x:String>1б - Теже признаки, что и в следующих пунтках а), б), но слабовыраженные.</x:String>
@@ -59,7 +70,7 @@
             </Picker>
 
             <Label Text="Отраженная речь (повторение)" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
-            <Picker x:Name="fifthQuestion" Margin="10,0,10,10" FontSize="Medium">
+            <Picker x:Name="fifthQuestion" Margin="10,0,10,10" FontSize="Medium" HorizontalOptions="Start" WidthRequest="400">
                 <Picker.Items>
                     <x:String>0б - Повторение полностью сохранено.</x:String>
                     <x:String>1б - Сохранено почти полностью, но встречаются отдельные ошибки (замены, персеверации) при повторении сложных и редко встречающихся слов.</x:String>
@@ -69,7 +80,7 @@
             </Picker>
 
             <Label Text="Повторение речевых рядов (серии слогов, слов, простых и сложных предложений)" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
-            <Picker x:Name="sixthQuestion" Margin="10,0,10,10" FontSize="Medium">
+            <Picker x:Name="sixthQuestion" Margin="10,0,10,10" FontSize="Medium" HorizontalOptions="Start" WidthRequest="400">
                 <Picker.Items>
                     <x:String>0б - Нарушения отсутствуют.</x:String>
                     <x:String>1б - Удерживают и повторяют элементы всей цепи, но не воспроизводят заданный порядок ихследования, отмечаются негрубые искажения отдельных элементов речевого ряда.</x:String>
@@ -79,7 +90,7 @@
             </Picker>
 
             <Label Text="Называние" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
-            <Picker x:Name="seventhQuestion" Margin="10,0,10,10" FontSize="Medium">
+            <Picker x:Name="seventhQuestion" Margin="10,0,10,10" FontSize="Medium" HorizontalOptions="Start" WidthRequest="400">
                 <Picker.Items>
                     <x:String>0б - Называние практически сохранено.</x:String>
                     <x:String>1б - Называние предметов и действий возможно, отмечается поиск первыхбукв слова, подсказка помогает, увеличение времени припоминания слов. Затруднения при назывании более редко употребляемых объектов и действий.</x:String>
@@ -89,7 +100,7 @@
             </Picker>
 
             <Label Text="Произношение речевых звуков" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
-            <Picker x:Name="eighthQuestion" Margin="10,0,10,10" FontSize="Medium">
+            <Picker x:Name="eighthQuestion" Margin="10,0,10,10" FontSize="Medium" HorizontalOptions="Start" WidthRequest="400">
                 <Picker.Items>
                     <x:String>0б - Нарушения отсутствуют.</x:String>
                     <x:String>1б - Деформация отдельных артикулем, нередко придающая речи «иностранный» акцент.</x:String>
@@ -99,7 +110,7 @@
             </Picker>
 
             <Label Text="Усилия ,напряжение в речи, запинания, дезавтоматизация речи" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
-            <Picker x:Name="ninthQuestion" Margin="10,0,10,10" FontSize="Medium">
+            <Picker x:Name="ninthQuestion" Margin="10,0,10,10" FontSize="Medium" HorizontalOptions="Start" WidthRequest="400">
                 <Picker.Items>
                     <x:String>0б - Нарушения отсутствуют.</x:String>
                     <x:String>1б - Признаки нарушения как и в следующем варианте, но выражены незначительно.</x:String>
@@ -109,7 +120,7 @@
             </Picker>
 
             <Label Text="Темп речи" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
-            <Picker x:Name="tenthQuestion" Margin="10,0,10,10" FontSize="Medium">
+            <Picker x:Name="tenthQuestion" Margin="10,0,10,10" FontSize="Medium" HorizontalOptions="Start" WidthRequest="400">
                 <Picker.Items>
                     <x:String>0б - Нарушения отсутствуют.</x:String>
                     <x:String>1б - Склонность к логорее-ускоренности (замедленности) выявляется только в процессе развернутой беседы.</x:String>
@@ -119,7 +130,7 @@
             </Picker>
 
             <Label Text="Просодии (интонация, ритм высказывания, ударение, мелодика речи)" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
-            <Picker x:Name="eleventhQuestion" Margin="10,0,10,10" FontSize="Medium">
+            <Picker x:Name="eleventhQuestion" Margin="10,0,10,10" FontSize="Medium" HorizontalOptions="Start" WidthRequest="400">
                 <Picker.Items>
                     <x:String>0б - Нарушения отсутствуют.</x:String>
                     <x:String>1б - Признаки нарушения как и в следующем варианте, но выражены незначительно.</x:String>
@@ -129,7 +140,7 @@
             </Picker>
 
             <Label Text="Вербальные парафазии" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
-            <Picker x:Name="twelfthQuestion" Margin="10,0,10,10" FontSize="Medium">
+            <Picker x:Name="twelfthQuestion" Margin="10,0,10,10" FontSize="Medium" HorizontalOptions="Start" WidthRequest="400">
                 <Picker.Items>
                     <x:String>0б - Отсутствуют.</x:String>
                     <x:String>1б - Вербальные парафазии редки.</x:String>
@@ -139,7 +150,7 @@
             </Picker>
 
             <Label Text="Литеральные парафазии" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
-            <Picker x:Name="thirteenthQuestion" Margin="10,0,10,10" FontSize="Medium">
+            <Picker x:Name="thirteenthQuestion" Margin="10,0,10,10" FontSize="Medium" HorizontalOptions="Start" WidthRequest="400">
                 <Picker.Items>
                     <x:String>0б - Отсутствуют.</x:String>
                     <x:String>1б - Признаки нарушения как и в следующем варианте, но выражены незначительно.</x:String>
@@ -149,7 +160,7 @@
             </Picker>
 
             <Label Text="Понимание ситуативной речи и словесных значении" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
-            <Picker x:Name="fourteenthQuestion" Margin="10,0,10,10" FontSize="Medium">
+            <Picker x:Name="fourteenthQuestion" Margin="10,0,10,10" FontSize="Medium" HorizontalOptions="Start" WidthRequest="400">
                 <Picker.Items>
                     <x:String>0б - Нарушения отсутствуют.</x:String>
                     <x:String>1б - Затруднение понимания ситуативной речи и простых команд выступает только в особых условиях: прибыстрой речи, отвлечении внимания больного.</x:String>
@@ -159,7 +170,7 @@
             </Picker>
 
             <Label Text="Отношение к дефекту речи" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
-            <Picker x:Name="fifteenthQuestion" Margin="10,0,10,10" FontSize="Medium">
+            <Picker x:Name="fifteenthQuestion" Margin="10,0,10,10" FontSize="Medium" HorizontalOptions="Start" WidthRequest="400">
                 <Picker.Items>
                     <x:String>0б - Полностью осознанное отношение кдефекту речи, его отдельным проявлениям.</x:String>
                     <x:String>1б - Изредка не замечаются отдельные литеральные или, в меньшей мере, вербальные парафазии в собственной речи.</x:String>
@@ -169,7 +180,7 @@
             </Picker>
 
             <Label Text="Чтение (вслух)" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
-            <Picker x:Name="sixteenthQuestion" Margin="10,0,10,10" FontSize="Medium">
+            <Picker x:Name="sixteenthQuestion" Margin="10,0,10,10" FontSize="Medium" HorizontalOptions="Start" WidthRequest="400">
                 <Picker.Items>
                     <x:String>0б - Нарушения практически отсутствуют.</x:String>
                     <x:String>1б - Сохраняется ограниченная возможность чтения простых текстов, но при этом встречаются отдельные литеральные и вербальные парафазии. Темп чтения медленный.</x:String>
@@ -179,7 +190,7 @@
             </Picker>
 
             <Label Text="Чтение (про себя)" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
-            <Picker x:Name="seventeenthQuestion" Margin="10,0,10,10" FontSize="Medium">
+            <Picker x:Name="seventeenthQuestion" Margin="10,0,10,10" FontSize="Medium" HorizontalOptions="Start" WidthRequest="400">
                 <Picker.Items>
                     <x:String>0б - Нарушения отсутствуют.</x:String>
                     <x:String>1б - Выполняются письменные задания, хотя встречаются неточности в понимании более сложных команд и конструкций. Возможно также частичное понимание прочитанных про себя текстов.</x:String>
@@ -189,7 +200,7 @@
             </Picker>
 
             <Label Text="Чтение букв" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
-            <Picker x:Name="eighteenthQuestion" Margin="10,0,10,10" FontSize="Medium">
+            <Picker x:Name="eighteenthQuestion" Margin="10,0,10,10" FontSize="Medium" HorizontalOptions="Start" WidthRequest="400">
                 <Picker.Items>
                     <x:String>0б -Нарушения отсутствуют.</x:String>
                     <x:String>1б -Ошибки встречаются изредка, главным образом, при чтении букв, изображенных непривычным шрифтом или в затрудненных для чтения условиях (наложенные друг на друга, на фоне однородног ошума и т.д.).</x:String>
@@ -199,7 +210,7 @@
             </Picker>
 
             <Label Text="Списывание" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
-            <Picker x:Name="nineteenthQuestion" Margin="10,0,10,10" FontSize="Medium">
+            <Picker x:Name="nineteenthQuestion" Margin="10,0,10,10" FontSize="Medium" HorizontalOptions="Start" WidthRequest="400">
                 <Picker.Items>
                     <x:String>0б -Нарушения отсутствуют.</x:String>
                     <x:String>1б -Отдельные ошибки, главным образом, при списывании, редко встречающихся и многосложных слов.</x:String>
@@ -209,7 +220,7 @@
             </Picker>
 
             <Label Text="Письмо букв под диктовку" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
-            <Picker x:Name="twentiethQuestion" Margin="10,0,10,10" FontSize="Medium">
+            <Picker x:Name="twentiethQuestion" Margin="10,0,10,10" FontSize="Medium" HorizontalOptions="Start" WidthRequest="400">
                 <Picker.Items>
                     <x:String>0б -Нарушения отсутствуют.</x:String>
                     <x:String>1б -Редкие ошибки.</x:String>
@@ -219,7 +230,7 @@
             </Picker>
 
             <Label Text="Письмо (самостоятельное и под диктовку)" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
-            <Picker x:Name="twentyFirstQuestion" Margin="10,0,10,10" FontSize="Medium">
+            <Picker x:Name="twentyFirstQuestion" Margin="10,0,10,10" FontSize="Medium" HorizontalOptions="Start" WidthRequest="400">
                 <Picker.Items>
                     <x:String>0б -Нарушения отсутствуют.</x:String>
                     <x:String>1б -Самостоятельное письмо возможно, но отражает особенности экспрессивной речи больного. Письмо под диктовку сохранено, но существляется с параграфиями (пропусками, заменами, перестановками букв и т.д.).</x:String>

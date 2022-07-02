@@ -49,7 +49,7 @@ namespace TestApplication
                     BorderColor = Color.Gray,
                     Text = nameTests[i],
                     BackgroundColor = Color.FromRgb(255, 229, 180),
-                    HeightRequest = 50
+                    HeightRequest = 60
 
                 };
 
@@ -169,7 +169,7 @@ namespace TestApplication
                         TextColor = Color.Black,
                         BorderColor = Color.Gray,
                         BackgroundColor = Color.Orange,
-                        HeightRequest = 30
+                        HeightRequest = 60
                     };
                     button.Clicked += (sender, args) => button_TestsPatient();
                     stackLayout.Children.Add(button);
