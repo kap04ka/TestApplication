@@ -38,7 +38,9 @@ namespace TestApplication
                     TextColor = Color.Black,
                     BorderColor = Color.Gray,
                     Text = nameTests[i],
-                    BackgroundColor = Color.FromRgb(255, 229, 180)
+                    BackgroundColor = Color.FromRgb(255, 229, 180),
+                    HeightRequest = 50
+
                 };
 
                 ContentPage page = pages[i];
@@ -55,39 +57,87 @@ namespace TestApplication
                         Text = "Получить результаты тестов пациента",
                         TextColor = Color.Black,
                         BorderColor = Color.Gray,
-                        BackgroundColor = Color.FromRgb(128, 128, 128),
+                        BackgroundColor = Color.Orange,
+                        HeightRequest = 30
                     };
                     button.Clicked += (sender, args) => button_TestsPatientWPF();
                     stackLayout.Children.Add(button);
 
                     button = new Button
                     {
-                        Text = "Результаты covid-19 таблицы неврологические жалобы, головная боль, аффективные расстройства, системное проявление",
+                        Text = "Результаты covid-19 таблицы. Неврологические жалобы, головная боль",
                         TextColor = Color.Black,
                         BorderColor = Color.Gray,
-                        BackgroundColor = Color.FromRgb(128, 128, 128),
+                        BackgroundColor = Color.Orange,
+                        HeightRequest = 30
                     };
                     button.Clicked += (sender, args) => button_TestsPatientCOVIDPartOne();
                     stackLayout.Children.Add(button);
 
                     button = new Button
                     {
-                        Text = "Результаты covid-19 таблицы сердечно-сосудистая система опорно-двигательная система, органы чувств",
+                        Text = "Результаты covid-19 таблицы. Аффективные расстройства, системное проявление",
                         TextColor = Color.Black,
                         BorderColor = Color.Gray,
-                        BackgroundColor = Color.FromRgb(128, 128, 128),
+                        BackgroundColor = Color.Orange,
+                        HeightRequest = 30
                     };
                     button.Clicked += (sender, args) => button_TestsPatientCOVIDPartTwo();
                     stackLayout.Children.Add(button);
 
                     button = new Button
                     {
-                        Text = "Результаты covid-19 таблицы дыхательная система, лор, желудочно-кишечный тракт, дерматологические проблемы",
+                        Text = "Результаты covid-19 таблицы. Сердечно-сосудистая система, опорно-двигательная система",
                         TextColor = Color.Black,
                         BorderColor = Color.Gray,
-                        BackgroundColor = Color.FromRgb(128, 128, 128),
+                        BackgroundColor = Color.Orange,
+                        HeightRequest = 30
                     };
                     button.Clicked += (sender, args) => button_TestsPatientCOVIDPartThree();
+                    stackLayout.Children.Add(button);
+
+                    button = new Button
+                    {
+                        Text = "Результаты covid-19 таблицы. Органы чувств",
+                        TextColor = Color.Black,
+                        BorderColor = Color.Gray,
+                        BackgroundColor = Color.Orange,
+                        HeightRequest = 30
+                    };
+                    button.Clicked += (sender, args) => button_TestsPatientCOVIDPartFour();
+                    stackLayout.Children.Add(button);
+
+                    button = new Button
+                    {
+                        Text = "Результаты covid-19 таблицы. Дыхательная система",
+                        TextColor = Color.Black,
+                        BorderColor = Color.Gray,
+                        BackgroundColor = Color.Orange,
+                        HeightRequest = 30
+                    };
+                    button.Clicked += (sender, args) => button_TestsPatientCOVIDPartFive();
+                    stackLayout.Children.Add(button);
+
+                    button = new Button
+                    {
+                        Text = "Результаты covid-19 таблицы. Лор",
+                        TextColor = Color.Black,
+                        BorderColor = Color.Gray,
+                        BackgroundColor = Color.Orange,
+                        HeightRequest = 30
+                    };
+                    button.Clicked += (sender, args) => button_TestsPatientCOVIDPartSix();
+                    stackLayout.Children.Add(button);
+
+                    button = new Button
+                    {
+                        Text = "Результаты covid-19 таблицы. Желудочно-кишечный тракт, дерматологические проблемы",
+                        TextColor = Color.Black,
+                        BorderColor = Color.Gray,
+                        BackgroundColor = Color.Orange,
+                        HeightRequest = 30
+                    };
+                    button.Clicked += (sender, args) => button_TestsPatientCOVIDPartSeven();
                     stackLayout.Children.Add(button);
                     break;
 
@@ -97,7 +147,8 @@ namespace TestApplication
                         Text = "Получить результаты тестов пациента",
                         TextColor = Color.Black,
                         BorderColor = Color.Gray,
-                        BackgroundColor = Color.FromRgb(128, 128, 128),
+                        BackgroundColor = Color.Orange,
+                        HeightRequest = 30
                     };
                     button.Clicked += (sender, args) => button_TestsPatient();
                     stackLayout.Children.Add(button);
@@ -124,6 +175,30 @@ namespace TestApplication
         private void button_TestsPatientCOVIDPartThree()
         {
             PatientDataWPFCOVIDPartThree(App.patient);
+
+        }
+
+        private void button_TestsPatientCOVIDPartFour()
+        {
+            PatientDataWPFCOVIDPartFour(App.patient);
+
+        }
+
+        private void button_TestsPatientCOVIDPartFive()
+        {
+            PatientDataWPFCOVIDPartFive(App.patient);
+
+        }
+
+        private void button_TestsPatientCOVIDPartSix()
+        {
+            PatientDataWPFCOVIDPartSix(App.patient);
+
+        }
+
+        private void button_TestsPatientCOVIDPartSeven()
+        {
+            PatientDataWPFCOVIDPartSeven(App.patient);
 
         }
 
@@ -218,20 +293,20 @@ namespace TestApplication
         }
         private async void PatientDataWPF(Patient patient)
         {
-            task = DisplayAlert("Данные о тестах", $" Пациент {patient.Forename} {patient.Surname} {patient.Patronymic}\n\n" +
-                               $"•	Результат теста 'Оценка когнитивной сферы':\n      Общий результат {patient.resultMOSA.resultMOSATest}\n\n" +
-                               $"•	Результат теста 'Шкала Вассермана':\n      Общий результат {patient.resultVasserman.TotalResultVasserman}\n\n" +
-                               $"•	Результат теста 'Корректурная проба Бурдона':\n      Концентрация внимания = {patient.scoreBourdon.ConcentrationOfAtention}\n      Устойчивость внимания = {patient.scoreBourdon.AttentionSpan}\n\n" +
+            task = DisplayAlert("Данные о тестах", $" Пациент {patient.Forename} {patient.Surname} {patient.Patronymic}\n" +
+                               $"•	Результат теста 'Оценка когнитивной сферы':\n      Общий результат {patient.resultMOSA.resultMOSATest}\n" +
+                               $"•	Результат теста 'Шкала Вассермана':\n      Общий результат {patient.resultVasserman.TotalResultVasserman}\n" +
+                               $"•	Результат теста 'Корректурная проба Бурдона':\n      Концентрация внимания = {patient.scoreBourdon.ConcentrationOfAtention}\n      Устойчивость внимания = {patient.scoreBourdon.AttentionSpan}\n" +
                                $"•	Результат теста 'Тесты на оценку конструктивного, моторного и динамического праксиса, предметного гнозиса':\n      Общий результат {patient.resultPraxisAndGnosis.TotalResultPraxisAndGnosis}\n" +
                                $"      Результат моторного праксиса {patient.resultPraxisAndGnosis.resultMotorPraxis}\n      Результат динамического праксиса {patient.resultPraxisAndGnosis.resultDynamicPraxis}\n" +
                                $"      Результат конструктивного\n      праксиса {patient.resultPraxisAndGnosis.resultConstructivePraxis}\n      Результат объектного гнозиса {patient.resultPraxisAndGnosis.resultSubjectGnosis}\n" +
-                               $"      Результат копирования часов {patient.resultPraxisAndGnosis.resultClock}\n\n" +
-                               $"•	Результат теста 'Шкала тревоги и депрессии':\n      Общий результат тревоги {patient.resultAnxietyAndDepression.TotalResultAnxiety}\n      Общий результат депрессии {patient.resultAnxietyAndDepression.TotalResultDepression}\n\n" +
+                               $"      Результат копирования часов {patient.resultPraxisAndGnosis.resultClock}\n" +
+                               $"•	Результат теста 'Шкала тревоги и депрессии':\n      Общий результат тревоги {patient.resultAnxietyAndDepression.TotalResultAnxiety}\n      Общий результат депрессии {patient.resultAnxietyAndDepression.TotalResultDepression}\n" +
                                $"•	Результат теста 'Субъективная шкала оценки астении':\n      Общий результат {patient.scoreMFI20.TotalTestScore}\n      Балл за общую астению {patient.scoreMFI20.ScoreAnswerGeneralAsthenia}\n" +
                                $"      Балл за пониженную активность {patient.scoreMFI20.ScoreAnswerReducedActivity}\n      Балл за снижение мотивации {patient.scoreMFI20.ScoreAnswerDecreasedMotivation}\n" +
-                               $"      Балл за физическую астению {patient.scoreMFI20.ScoreAnswerPhysicalAsthenia}\n      Балл за психическую астению {patient.scoreMFI20.ScoreAnswerMentalAsthenia}\n\n" +
-                               $"•	Результат теста 'Европейский опросник качества жизни':\n      Общий результат {patient.resultLifeQuality.TotalResultLifeQuality}\n\n" +
-                               $"•	Результат теста 'Шкала локуса-контроля':\n      Общий результат {patient.resultLocus.TotalResultLocus}\n\n",
+                               $"      Балл за физическую астению {patient.scoreMFI20.ScoreAnswerPhysicalAsthenia}\n      Балл за психическую астению {patient.scoreMFI20.ScoreAnswerMentalAsthenia}\n" +
+                               $"•	Результат теста 'Европейский опросник качества жизни':\n      Общий результат {patient.resultLifeQuality.TotalResultLifeQuality}\n" +
+                               $"•	Результат теста 'Шкала локуса-контроля':\n      Общий результат {patient.resultLocus.TotalResultLocus}\n",
                                "Ok");
             await task;
 
@@ -239,7 +314,7 @@ namespace TestApplication
 
         private async void PatientDataWPFCOVIDPartOne(Patient patient)
         {
-            task = DisplayAlert("Данные covid-19", $" Пациент {patient.Forename} {patient.Surname} {patient.Patronymic}\n\n" +
+            task = DisplayAlert("Данные covid-19",
                                     $"•	Неврологические жалобы:\n" +
                                     $"Кратковременная потеря памяти\n1){patient.resultCovidTest.TableEntriesShortTermMemoryLoss[0]}  2){patient.resultCovidTest.TableEntriesShortTermMemoryLoss[1]}  3){patient.resultCovidTest.TableEntriesShortTermMemoryLoss[2]}\n" +
                                     $"Снижение памяти\n1){patient.resultCovidTest.TableEntriesDecreasedMemory[0]}  2){patient.resultCovidTest.TableEntriesDecreasedMemory[1]}  3){patient.resultCovidTest.TableEntriesDecreasedMemory[2]}\n" +
@@ -251,7 +326,13 @@ namespace TestApplication
                                     $"•	Головная боль :\n" +
                                     $"Изменение характера\n1){patient.resultCovidTest.TableEntriesChangeOfCharacter[0]}  2){patient.resultCovidTest.TableEntriesChangeOfCharacter[1]}  3){patient.resultCovidTest.TableEntriesChangeOfCharacter[2]}\n" +
                                     $"Изменение частоты\n1){patient.resultCovidTest.TableEntriesFrequencyChange[0]}  2){patient.resultCovidTest.TableEntriesFrequencyChange[1]}  3){patient.resultCovidTest.TableEntriesFrequencyChange[2]}\n" +
-                                    $"Изменение интенсивности\n1){patient.resultCovidTest.TableEntriesIntensityChange[0]}  2){patient.resultCovidTest.TableEntriesIntensityChange[1]}  3){patient.resultCovidTest.TableEntriesIntensityChange[2]}\n" +
+                                    $"Изменение интенсивности\n1){patient.resultCovidTest.TableEntriesIntensityChange[0]}  2){patient.resultCovidTest.TableEntriesIntensityChange[1]}  3){patient.resultCovidTest.TableEntriesIntensityChange[2]}\n",
+                                    "Ok");
+            await task;
+        }
+        private async void PatientDataWPFCOVIDPartTwo(Patient patient)
+        {
+            task = DisplayAlert("Данные covid-19",
                                     $"•	Аффективные растройства:\n" +
                                     $"Перепады настроения\n1){patient.resultCovidTest.TableEntriesMoodSwings[0]}  2){patient.resultCovidTest.TableEntriesMoodSwings[1]}  3){patient.resultCovidTest.TableEntriesMoodSwings[2]}\n" +
                                     $"Тревога\n1){patient.resultCovidTest.TableEntriesAnxiety[0]}  2){patient.resultCovidTest.TableEntriesAnxiety[1]}  3){patient.resultCovidTest.TableEntriesAnxiety[2]}\n" +
@@ -266,9 +347,10 @@ namespace TestApplication
             await task;
         }
 
-        private async void PatientDataWPFCOVIDPartTwo(Patient patient)
+        
+        private async void PatientDataWPFCOVIDPartThree(Patient patient)
         {
-            task = DisplayAlert("Данные covid-19", $" Пациент {patient.Forename} {patient.Surname} {patient.Patronymic}\n\n" +
+            task = DisplayAlert("Данные covid-19",
                                     $"•	Сердечно-сосудистая система:\n" +
                                     $"Брадикардия\n1){patient.resultCovidTest.TableEntriesBradycardia[0]}  2){patient.resultCovidTest.TableEntriesBradycardia[1]}  3){patient.resultCovidTest.TableEntriesBradycardia[2]}\n" +
                                     $"Тахикардия\n1){patient.resultCovidTest.TableEntriesTachycardia[0]}  2){patient.resultCovidTest.TableEntriesTachycardia[1]}  3){patient.resultCovidTest.TableEntriesTachycardia[2]}\n" +
@@ -278,8 +360,15 @@ namespace TestApplication
                                     $"Обморок\n1){patient.resultCovidTest.TableEntriesFainting[0]}  2){patient.resultCovidTest.TableEntriesFainting[1]}  3){patient.resultCovidTest.TableEntriesFainting[2]}\n" +
                                     $"•	Опорно-двигательная система:\n" +
                                     $"Боль в мышцах\n1){patient.resultCovidTest.TableEntriesMusclePain[0]}  2){patient.resultCovidTest.TableEntriesMusclePain[1]}  3){patient.resultCovidTest.TableEntriesMusclePain[2]}\n" +
-                                    $"Боль в суставах\n1){patient.resultCovidTest.TableEntriesJointPain[0]}  2){patient.resultCovidTest.TableEntriesJointPain[1]}  3){patient.resultCovidTest.TableEntriesJointPain[2]}\n" +
-                                    $"•	Органы чувств:\n" + 
+                                    $"Боль в суставах\n1){patient.resultCovidTest.TableEntriesJointPain[0]}  2){patient.resultCovidTest.TableEntriesJointPain[1]}  3){patient.resultCovidTest.TableEntriesJointPain[2]}\n",
+                                    "Ok");
+            await task;
+        }
+
+        private async void PatientDataWPFCOVIDPartFour(Patient patient)
+        {
+            task = DisplayAlert("Данные covid-19",
+                                    $"•	Органы чувств:\n" +
                                     $"Головокружение\n1){patient.resultCovidTest.TableEntriesDizziness[0]}  2){patient.resultCovidTest.TableEntriesDizziness[1]}  3){patient.resultCovidTest.TableEntriesDizziness[2]}\n" +
                                     $"Нарушение равновесия\n1){patient.resultCovidTest.TableEntriesImbalance[0]}  2){patient.resultCovidTest.TableEntriesImbalance[1]}  3){patient.resultCovidTest.TableEntriesImbalance[2]}\n" +
                                     $"Нарушение зрения\n1){patient.resultCovidTest.TableEntriesVisualImpairment[0]}  2){patient.resultCovidTest.TableEntriesVisualImpairment[1]}  3){patient.resultCovidTest.TableEntriesVisualImpairment[2]}\n" +
@@ -292,22 +381,37 @@ namespace TestApplication
                                     "Ok");
             await task;
         }
-        private async void PatientDataWPFCOVIDPartThree(Patient patient)
+
+        private async void PatientDataWPFCOVIDPartFive(Patient patient)
         {
-            task = DisplayAlert("Данные covid-19", $" Пациент {patient.Forename} {patient.Surname} {patient.Patronymic}\n\n" +
+            task = DisplayAlert("Данные covid-19",
                                     $"•	Дыхательная система:\n" +
                                     $"Кашель\n1){patient.resultCovidTest.TableEntriesCough[0]}  2){patient.resultCovidTest.TableEntriesCough[1]}  3){patient.resultCovidTest.TableEntriesCough[2]}\n" +
                                     $"Одышка\n1){patient.resultCovidTest.TableEntriesDyspnea[0]}  2){patient.resultCovidTest.TableEntriesDyspnea[1]}  3){patient.resultCovidTest.TableEntriesDyspnea[2]}\n" +
                                     $"Стеснение в груди, боль в груди\n1){patient.resultCovidTest.TableEntriesChestPain[0]}  2){patient.resultCovidTest.TableEntriesChestPain[1]}  3){patient.resultCovidTest.TableEntriesChestPain[2]}\n" +
                                     $"Учащенное сердцебиение\n1){patient.resultCovidTest.TableEntriesCardiopalmus[0]}  2){patient.resultCovidTest.TableEntriesCardiopalmus[1]}  3){patient.resultCovidTest.TableEntriesCardiopalmus[2]}\n" +
                                     $"Анорексия, снижение аппетита\n1){patient.resultCovidTest.TableEntriesAnorexia[0]}  2){patient.resultCovidTest.TableEntriesAnorexia[1]}  3){patient.resultCovidTest.TableEntriesAnorexia[2]}\n" +
-                                    $"Судороги\n1){patient.resultCovidTest.TableEntriesConvulsions[0]}  2){patient.resultCovidTest.TableEntriesConvulsions[1]}  3){patient.resultCovidTest.TableEntriesConvulsions[2]}\n" +
+                                    $"Судороги\n1){patient.resultCovidTest.TableEntriesConvulsions[0]}  2){patient.resultCovidTest.TableEntriesConvulsions[1]}  3){patient.resultCovidTest.TableEntriesConvulsions[2]}\n",
+                                    "Ok");
+            await task;
+        }
+
+        private async void PatientDataWPFCOVIDPartSix(Patient patient)
+        {
+            task = DisplayAlert("Данные covid-19",
                                     $"•	Лор:\n" +
                                     $"Боль в горле\n1){patient.resultCovidTest.TableEntriesSoreThroat[0]}  2){patient.resultCovidTest.TableEntriesSoreThroat[1]}  3){patient.resultCovidTest.TableEntriesSoreThroat[2]}\n" +
                                     $"Шум в ушах\n1){patient.resultCovidTest.TableEntriesNoiseInEars[0]}  2){patient.resultCovidTest.TableEntriesNoiseInEars[1]}  3){patient.resultCovidTest.TableEntriesNoiseInEars[2]}\n" +
                                     $"Ушная боль\n1){patient.resultCovidTest.TableEntriesEarAche[0]}  2){patient.resultCovidTest.TableEntriesEarAche[1]}  3){patient.resultCovidTest.TableEntriesEarAche[2]}\n" +
                                     $"Заложенность носа\n1){patient.resultCovidTest.TableEntriesNasalCongestion[0]}  2){patient.resultCovidTest.TableEntriesNasalCongestion[1]}  3){patient.resultCovidTest.TableEntriesNasalCongestion[2]}\n" +
-                                    $"Боль и сухость носа\n1){patient.resultCovidTest.TableEntriesPainAndDrynessOfTheNose[0]}  2){patient.resultCovidTest.TableEntriesPainAndDrynessOfTheNose[1]}  3){patient.resultCovidTest.TableEntriesPainAndDrynessOfTheNose[2]}\n" +
+                                    $"Боль и сухость носа\n1){patient.resultCovidTest.TableEntriesPainAndDrynessOfTheNose[0]}  2){patient.resultCovidTest.TableEntriesPainAndDrynessOfTheNose[1]}  3){patient.resultCovidTest.TableEntriesPainAndDrynessOfTheNose[2]}\n",
+                                    "Ok");
+            await task;
+        }
+
+        private async void PatientDataWPFCOVIDPartSeven(Patient patient)
+        {
+            task = DisplayAlert("Данные covid-19",
                                     $"•	Желудочно-кишечный тракт:\n" +
                                     $"Боль в животе\n1){patient.resultCovidTest.TableEntriesAbdominalPain[0]}  2){patient.resultCovidTest.TableEntriesAbdominalPain[1]}  3){patient.resultCovidTest.TableEntriesAbdominalPain[2]}\n" +
                                     $"Диарея\n1){patient.resultCovidTest.TableEntriesDiarrhea[0]}  2){patient.resultCovidTest.TableEntriesDiarrhea[1]}  3){patient.resultCovidTest.TableEntriesDiarrhea[2]}\n" +

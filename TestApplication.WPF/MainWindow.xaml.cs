@@ -25,6 +25,8 @@ namespace TestApplication.WPF
         public MainWindow()
         {
             InitializeComponent();
+            MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
+            MaxWidth = SystemParameters.MaximizedPrimaryScreenWidth;
             Forms.Init();
             LoadApplication(new TestApplication.App());
         }

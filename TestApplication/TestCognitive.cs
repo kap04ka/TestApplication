@@ -290,6 +290,5 @@ namespace TestApplication
                          "красный, синий, зеленый\n",
                          "Ok");
         }
-
     }
 }
