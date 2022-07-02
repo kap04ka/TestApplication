@@ -207,8 +207,319 @@ namespace TestApplication
             else
             {
                 SaveData();
+                WriteAnswersForDatabase();
                 await DisplayAlert("Сохранение", "Данные теста сохранились", "ОК");
                 await Navigation.PopAsync();
+            }
+        }
+
+
+        private void WriteAnswersForDatabase()
+        {
+            App.patient.resultCovidTest.EntriesShortTermMemoryLoss = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesShortTermMemoryLoss.Length; i++) 
+            {
+                App.patient.resultCovidTest.EntriesShortTermMemoryLoss += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesShortTermMemoryLoss[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesDecreasedMemory = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesDecreasedMemory.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesDecreasedMemory += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesDecreasedMemory[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesDecreasedConcentration = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesDecreasedConcentration.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesDecreasedConcentration += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesDecreasedConcentration[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesFatigue = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesFatigue.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesFatigue += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesFatigue[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesConfusion = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesConfusion.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesConfusion += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesConfusion[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesSleepDisturbance = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesSleepDisturbance.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesSleepDisturbance += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesSleepDisturbance[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesSpeechProblems = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesSpeechProblems.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesSpeechProblems += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesSpeechProblems[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesChangeOfCharacter = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesChangeOfCharacter.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesChangeOfCharacter += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesChangeOfCharacter[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesFrequencyChange = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesFrequencyChange.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesFrequencyChange += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesFrequencyChange[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesIntensityChange = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesIntensityChange.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesIntensityChange += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesIntensityChange[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesMoodSwings = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesMoodSwings.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesMoodSwings += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesMoodSwings[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesAnxiety = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesAnxiety.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesAnxiety += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesAnxiety[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesDepression = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesDepression.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesDepression += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesDepression[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesObsessiveStates = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesObsessiveStates.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesObsessiveStates += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesObsessiveStates[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesFever = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesFever.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesFever += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesFever[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesIncreasedSweating = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesIncreasedSweating.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesIncreasedSweating += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesIncreasedSweating[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesNightSweats = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesNightSweats.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesNightSweats += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesNightSweats[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesHeatIntolerance = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesHeatIntolerance.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesHeatIntolerance += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesHeatIntolerance[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesBradycardia = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesBradycardia.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesBradycardia += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesBradycardia[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesTachycardia = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesTachycardia.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesTachycardia += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesTachycardia[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesHeartbeat = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesHeartbeat.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesHeartbeat += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesHeartbeat[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesBPRises = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesBPRises.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesBPRises += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesBPRises[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesLoweringBloodPressure = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesLoweringBloodPressure.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesLoweringBloodPressure += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesLoweringBloodPressure[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesFainting = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesFainting.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesFainting += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesFainting[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesMusclePain = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesMusclePain.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesMusclePain += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesMusclePain[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesJointPain = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesJointPain.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesJointPain += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesJointPain[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesDizziness = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesDizziness.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesDizziness += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesDizziness[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesImbalance = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesImbalance.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesImbalance += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesImbalance[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesVisualImpairment = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesVisualImpairment.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesVisualImpairment += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesVisualImpairment[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesSkinHyperesthesia = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesSkinHyperesthesia.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesSkinHyperesthesia += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesSkinHyperesthesia[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesPainInTheLimbs = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesPainInTheLimbs.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesPainInTheLimbs += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesPainInTheLimbs[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesNumbnessInTheLimbs = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesNumbnessInTheLimbs.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesNumbnessInTheLimbs += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesNumbnessInTheLimbs[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesParesthesia = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesParesthesia.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesParesthesia += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesParesthesia[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesTasteDisorders = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesTasteDisorders.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesTasteDisorders += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesTasteDisorders[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesOlfactoryDisorders = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesOlfactoryDisorders.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesOlfactoryDisorders += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesOlfactoryDisorders[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesCough = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesCough.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesCough += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesCough[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesDyspnea = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesDyspnea.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesDyspnea += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesDyspnea[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesChestPain = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesChestPain.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesChestPain += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesChestPain[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesCardiopalmus = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesCardiopalmus.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesCardiopalmus += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesCardiopalmus[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesAnorexia = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesAnorexia.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesAnorexia += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesAnorexia[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesConvulsions = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesConvulsions.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesConvulsions += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesConvulsions[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesSoreThroat = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesSoreThroat.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesSoreThroat += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesSoreThroat[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesNoiseInEars = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesNoiseInEars.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesNoiseInEars += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesNoiseInEars[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesEarAche = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesEarAche.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesEarAche += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesEarAche[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesNasalCongestion = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesNasalCongestion.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesNasalCongestion += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesNasalCongestion[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesPainAndDrynessOfTheNose = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesPainAndDrynessOfTheNose.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesPainAndDrynessOfTheNose += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesPainAndDrynessOfTheNose[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesAbdominalPain = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesAbdominalPain.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesAbdominalPain += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesAbdominalPain[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesDiarrhea = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesDiarrhea.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesDiarrhea += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesDiarrhea[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesNauseaAndVomiting = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesNauseaAndVomiting.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesNauseaAndVomiting += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesNauseaAndVomiting[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesHairLoss = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesHairLoss.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesHairLoss += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesHairLoss[i]) + "\n";
+            }
+
+            App.patient.resultCovidTest.EntriesSkinRashes = "";
+            for (int i = 0; i < App.patient.resultCovidTest.TableEntriesSkinRashes.Length; i++)
+            {
+                App.patient.resultCovidTest.EntriesSkinRashes += ((i + 1).ToString() + ") " + App.patient.resultCovidTest.TableEntriesSkinRashes[i]) + "\n";
             }
         }
 
