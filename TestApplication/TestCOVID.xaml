@@ -7,6 +7,17 @@
     <ScrollView>
         <StackLayout BackgroundColor="White">
 
+            <Grid Margin="10,20,10,15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <!--Кнопка возврата в общее меню-->
+                <Button x:Name="buttonMainMenuFirst" Grid.Column="0" Grid.Row="0" FontSize="Default" Text="Вернутся в меню" TextColor="Black" Margin="0,0,10,0" BackgroundColor="Orange" Clicked="buttonMainMenu_Clicked"/>
+            </Grid>
+
             <!--Сноска сверху-->
             <BoxView Color="Orange" HeightRequest="2" HorizontalOptions="Fill" Margin="0,5,0,5"/>
             <Label Text="Опросник на выявление симптомов пролонгированной инфекции COVID – 19" TextColor="Black" FontSize="Title" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
@@ -630,9 +641,20 @@
 
             </Grid>
 
-            <!--Получение результатов-->
-            <Button x:Name="buttonSaveData" Text="Сохранить" HorizontalOptions="End" Margin="0,25,30,30" FontSize="Small" Clicked="buttonSaveData_Clicked" BackgroundColor="Orange" WidthRequest="200" HeightRequest="50" TextColor="Black"/>
-
+            <Grid Margin="10,20,10,15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <!--Кнопка возврата в общее меню-->
+                <Button x:Name="buttonMainMenu" Grid.Column="0" Grid.Row="0" FontSize="Default" Text="Вернутся в меню" TextColor="Black" Margin="0,0,10,0" BackgroundColor="Orange" Clicked="buttonMainMenu_Clicked"/>
+                <!--Кнопка получения результатов теста-->
+                <Button x:Name="buttonSaveData" Text="Сохранить" Grid.Column="1" Grid.Row="0" FontSize="Default" Margin="10, 0, 0, 0" Clicked="buttonSaveData_Clicked" BackgroundColor="Orange" TextColor="Black"/>
+            </Grid>
+            
         </StackLayout>
     </ScrollView>
 

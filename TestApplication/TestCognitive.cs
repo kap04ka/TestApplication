@@ -133,7 +133,10 @@ namespace TestApplication
 
             await Navigation.PopAsync();
         }
-
+        private async void buttonMainMenu_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
         private void OnCheckBoxCheckedVisualConstructiveSkills(object sender, CheckedChangedEventArgs e)
         {
             CheckBox chBox = (CheckBox)sender;
@@ -287,6 +290,5 @@ namespace TestApplication
                          "красный, синий, зеленый\n",
                          "Ok");
         }
-
     }
 }

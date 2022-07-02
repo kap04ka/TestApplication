@@ -27,6 +27,7 @@ namespace TestApplication
         public FormPatients formPatients;
 
 
+
         public const string DATABASE_NAME = "patients.db";
         public static PatientRepository database;
         public static PatientRepository Database
@@ -43,6 +44,9 @@ namespace TestApplication
             }
         }
 
+        public static MainPage startPage;
+
+
 
         public App()
         {
@@ -51,12 +55,15 @@ namespace TestApplication
             patient = new Patient();
             mainPage = new MainPage();
             formPatients = new FormPatients();
+            startPage = new MainPage();
 
             navigationPage = new NavigationPage(mainPage);
             navigationPage.BarBackgroundColor = Color.Orange;
             navigationPage.BarTextColor = Color.Black;
 
+
             Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture("ru-RU");
+
 
             MainPage = formPatients;
         }

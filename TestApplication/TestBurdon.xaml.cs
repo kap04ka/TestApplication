@@ -80,7 +80,10 @@ namespace TestApplication
                 }
             }
         }
-
+        private async void buttonMainMenu_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
 
         /// <summary>
         /// Проверка на не введенные значения
