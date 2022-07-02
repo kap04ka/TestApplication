@@ -103,6 +103,19 @@ namespace TestApplication
             App.patient.resultVasserman.arrayAnswerVasserman[18] = nineteenthQuestion.SelectedIndex;
             App.patient.resultVasserman.arrayAnswerVasserman[19] = twentiethQuestion.SelectedIndex;
             App.patient.resultVasserman.arrayAnswerVasserman[20] = twentyFirstQuestion.SelectedIndex;
+
+            App.patient.resultVasserman.AnswersVasserman = "";
+            for (int i = 0; i < App.patient.resultVasserman.arrayAnswerVasserman.Length; i++) 
+            {
+                if (i == App.patient.resultVasserman.arrayAnswerVasserman.Length - 1)
+                {
+                    App.patient.resultVasserman.AnswersVasserman += App.patient.resultVasserman.arrayAnswerVasserman[i];
+                }
+                else
+                {
+                    App.patient.resultVasserman.AnswersVasserman += (App.patient.resultVasserman.arrayAnswerVasserman[i] + ", ");
+                }
+            }
         }
 
         /// <summary>

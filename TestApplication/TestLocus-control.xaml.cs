@@ -37,8 +37,6 @@ namespace TestApplication
 
                 testResult = 0;
 
-                Console.WriteLine($"{App.patient.resultLocus.TotalResultLocus} у пациента");
-                Console.WriteLine($"{testResult} после окончания теста");
                 await task;
                 ResetAnswersInTest();
                 //возврат в меню тестов
