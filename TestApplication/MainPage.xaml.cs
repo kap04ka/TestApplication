@@ -54,13 +54,24 @@ namespace TestApplication
                 case Device.WPF:
                     button = new Button
                     {
-                        Text = "Получить результаты тестов пациента",
+                        Text = "Получить результаты тестов пациента (Оценка когнитивной сферы, Шкала Вассермана, Корректурная проба Бурдона, Тесты на оценку конструктивного, моторного и динамического праксиса, предметного гнозиса)",
                         TextColor = Color.Black,
                         BorderColor = Color.Gray,
                         BackgroundColor = Color.Orange,
                         HeightRequest = 30
                     };
                     button.Clicked += (sender, args) => button_TestsPatientWPF();
+                    stackLayout.Children.Add(button);
+
+                    button = new Button
+                    {
+                        Text = "Получить результаты тестов пациента (Шкала тревоги и депрессии, Субъективная шкала оценки астении, Европейский опросник качества жизни, Шкала локуса-контроля)",
+                        TextColor = Color.Black,
+                        BorderColor = Color.Gray,
+                        BackgroundColor = Color.Orange,
+                        HeightRequest = 30
+                    };
+                    button.Clicked += (sender, args) => button_TestsPatientWPFTwo();
                     stackLayout.Children.Add(button);
 
                     button = new Button
@@ -158,7 +169,12 @@ namespace TestApplication
 
         private void button_TestsPatientWPF()
         {
-            PatientDataWPF(App.patient);
+            PatientDataWPFOne(App.patient);
+        }
+
+        private void button_TestsPatientWPFTwo()
+        {
+            PatientDataWPFTwo(App.patient);
         }
 
         private void button_TestsPatientCOVIDPartOne()
@@ -291,7 +307,7 @@ namespace TestApplication
                                 "Ок");
             await task;
         }
-        private async void PatientDataWPF(Patient patient)
+        private async void PatientDataWPFOne(Patient patient)
         {
             task = DisplayAlert("Данные о тестах", $" Пациент {patient.Forename} {patient.Surname} {patient.Patronymic}\n" +
                                $"•	Результат теста 'Оценка когнитивной сферы':\n      Общий результат {patient.resultMOSA.resultMOSATest}\n" +
@@ -300,7 +316,15 @@ namespace TestApplication
                                $"•	Результат теста 'Тесты на оценку конструктивного, моторного и динамического праксиса, предметного гнозиса':\n      Общий результат {patient.resultPraxisAndGnosis.TotalResultPraxisAndGnosis}\n" +
                                $"      Результат моторного праксиса {patient.resultPraxisAndGnosis.resultMotorPraxis}\n      Результат динамического праксиса {patient.resultPraxisAndGnosis.resultDynamicPraxis}\n" +
                                $"      Результат конструктивного\n      праксиса {patient.resultPraxisAndGnosis.resultConstructivePraxis}\n      Результат объектного гнозиса {patient.resultPraxisAndGnosis.resultSubjectGnosis}\n" +
-                               $"      Результат копирования часов {patient.resultPraxisAndGnosis.resultClock}\n" +
+                               $"      Результат копирования часов {patient.resultPraxisAndGnosis.resultClock}\n",
+                               "Ok");
+            await task;
+
+        }
+
+        private async void PatientDataWPFTwo(Patient patient)
+        {
+            task = DisplayAlert("Данные о тестах",
                                $"•	Результат теста 'Шкала тревоги и депрессии':\n      Общий результат тревоги {patient.resultAnxietyAndDepression.TotalResultAnxiety}\n      Общий результат депрессии {patient.resultAnxietyAndDepression.TotalResultDepression}\n" +
                                $"•	Результат теста 'Субъективная шкала оценки астении':\n      Общий результат {patient.scoreMFI20.TotalTestScore}\n      Балл за общую астению {patient.scoreMFI20.ScoreAnswerGeneralAsthenia}\n" +
                                $"      Балл за пониженную активность {patient.scoreMFI20.ScoreAnswerReducedActivity}\n      Балл за снижение мотивации {patient.scoreMFI20.ScoreAnswerDecreasedMotivation}\n" +

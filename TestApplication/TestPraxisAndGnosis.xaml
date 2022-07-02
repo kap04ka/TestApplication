@@ -37,7 +37,7 @@
             <Label Text="2.	Динамический праксис" FontSize="Medium" FontAttributes="Bold" Padding="10, 10, 0, 0" TextColor="Black"/>
             <Label Text="Воспроизведите движения по заданной схеме" FontSize="Medium" Padding="10, 0" TextColor="Black"/>
 
-            <Image Source="jesti1.JPG" Aspect="AspectFit"/>
+            <Image Source="jesti1.JPG" HeightRequest="200" WidthRequest="200"/>
 
             <RelativeLayout HorizontalOptions="FillAndExpand">
                 <CheckBox x:Name="dynamicPraxisFirst" CheckedChanged="OnCheckBoxCheckedChangedDynamicPraxis"
@@ -51,7 +51,7 @@
                           Type=RelativeToParent,Property=Width,Factor=.75,Constant=0}"/>
             </RelativeLayout>
 
-            <Image Source="jesti2.JPG" Aspect="AspectFit"/>
+            <Image Source="jesti2.JPG" HeightRequest="200" WidthRequest="200"/>
 
             <RelativeLayout HorizontalOptions="FillAndExpand">
                 <CheckBox x:Name="dynamicPraxisFourth" CheckedChanged="OnCheckBoxCheckedChangedDynamicPraxis"
